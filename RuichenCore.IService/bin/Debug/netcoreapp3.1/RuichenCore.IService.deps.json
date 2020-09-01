@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "RuichenCore.IService/1.0.0": {
+        "runtime": {
+          "RuichenCore.IService.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RuichenCore.IService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
