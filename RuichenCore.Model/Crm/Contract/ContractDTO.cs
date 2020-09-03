@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RuichenCore.Model.Crm.Contract
+namespace RuichenCore.Model
 {
     public class ContractDTO
     {
