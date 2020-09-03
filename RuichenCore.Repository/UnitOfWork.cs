@@ -9,12 +9,12 @@ namespace RuichenCore.Repository
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly RuichenContext context;
-        public UnitOfWork(RuichenContext ruichenContext)
+        private readonly CrmContext context;
+        public UnitOfWork(CrmContext ruichenContext)
         {
             context = ruichenContext;
         }
-        public RuichenContext GetDbContext()
+        public CrmContext GetDbContext()
         {
             return context;
         }

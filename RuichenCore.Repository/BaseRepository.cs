@@ -11,7 +11,7 @@ namespace RuichenCore.Repository
     public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
     {
         private IUnitOfWork unitOfWork;
-        private RuichenContext ruichenContext;
+        private CrmContext ruichenContext;
         public BaseRepository(IUnitOfWork unit)
         {
             unitOfWork = unit;

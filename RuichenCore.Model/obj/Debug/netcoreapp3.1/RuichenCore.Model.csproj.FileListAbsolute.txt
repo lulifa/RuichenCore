@@ -1,0 +1,8 @@
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Model\bin\Debug\netcoreapp3.1\RuichenCore.Model.deps.json
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Model\bin\Debug\netcoreapp3.1\RuichenCore.Model.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Model\bin\Debug\netcoreapp3.1\RuichenCore.Model.pdb
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Model\obj\Debug\netcoreapp3.1\RuichenCore.Model.AssemblyInfoInputs.cache
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Model\obj\Debug\netcoreapp3.1\RuichenCore.Model.AssemblyInfo.cs
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Model\obj\Debug\netcoreapp3.1\RuichenCore.Model.csproj.CoreCompileInputs.cache
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Model\obj\Debug\netcoreapp3.1\RuichenCore.Model.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Model\obj\Debug\netcoreapp3.1\RuichenCore.Model.pdb

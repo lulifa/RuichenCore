@@ -10,21 +10,25 @@ namespace RuichenCore.Common
 {
     public static class SectionManager
     {
-        private static IConfiguration config;
-        static SectionManager()
-        {
-            GetConfiguration();
-        }
+        private static IConfiguration config => GetConfiguration();
+        public static string ConnectionString => GetConnectionString();
 
         /// <summary>
         /// 这种方式，可以直接读目录里的json文件，而不是 bin 文件夹下的，所以不用修改复制属性
         /// </summary>
-        private static void GetConfiguration()
+        private static IConfiguration GetConfiguration()
         {
             string contentPath = $"appsettings.json";
-            config = new ConfigurationBuilder()
+            IConfiguration config = new ConfigurationBuilder()
                .Add(new JsonConfigurationSource { Path = contentPath, Optional = false, ReloadOnChange = true })
                .Build();
+            return config;
+        }
+
+        private static string GetConnectionString()
+        {
+            string conn = GetSection("Ruichen", "DbContext", "MySql", "ConnectionString");
+            return conn;
         }
 
         ///// <summary>

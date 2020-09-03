@@ -8,6 +8,7 @@ using RuichenCore.IService;
 using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using RuichenCore.Common;
 
 namespace RuichenCore.Service
 {

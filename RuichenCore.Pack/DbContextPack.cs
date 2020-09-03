@@ -13,10 +13,9 @@ namespace RuichenCore.Extension
     {
         public static void AddDbContextService(this IServiceCollection services)
         {
-            services.AddDbContext<RuichenContext>(options =>
-            {
-                options.UseMySql(SectionManager.GetSection("Ruichen", "DbContext", "MySql","ConnectionString"));
-            });
+            // 以后用autofac批量注入
+            services.AddDbContext<CrmContext>();
+
         }
     }
 }
