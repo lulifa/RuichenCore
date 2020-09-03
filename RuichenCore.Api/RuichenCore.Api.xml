@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RuichenCore.Api</name>
+    </assembly>
+    <members>
+        <member name="M:RuichenCore.Api.Controllers.ContractController.GetPagedList">
+            <summary>
+            合同列表
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

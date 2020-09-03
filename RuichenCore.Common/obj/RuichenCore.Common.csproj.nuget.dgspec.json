@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\Netcore\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj": {}
+    "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj": {}
   },
   "projects": {
-    "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\Netcore\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj": {
+    "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\Netcore\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj",
+        "projectUniqueName": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj",
         "projectName": "RuichenCore.Common",
-        "projectPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\Netcore\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj",
+        "projectPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj",
         "packagesPath": "C:\\Users\\lulif\\.nuget\\packages\\",
-        "outputPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\Netcore\\RuichenCore\\RuichenCore.Common\\obj\\",
+        "outputPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -41,6 +41,24 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

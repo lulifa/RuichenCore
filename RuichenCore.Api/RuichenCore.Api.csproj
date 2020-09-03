@@ -4,5 +4,37 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>..\RuichenCore.Api\RuichenCore.Api.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="index.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RuichenCore.IRepository\RuichenCore.IRepository.csproj" />
+    <ProjectReference Include="..\RuichenCore.IService\RuichenCore.IService.csproj" />
+    <ProjectReference Include="..\RuichenCore.Pack\RuichenCore.Extension.csproj" />
+    <ProjectReference Include="..\RuichenCore.Repository\RuichenCore.Repository.csproj" />
+    <ProjectReference Include="..\RuichenCore.Service\RuichenCore.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 
 </Project>

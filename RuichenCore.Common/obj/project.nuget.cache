@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "ELlWET3lZtPqrobsQ3VvkGiWEGtRBusmW9fCiYHyC5j8pojpNTAb7EYPFFy/jQMknLzfpA4+CfiKaAidUFSpLw==",
+  "dgSpecHash": "kL4G51fof6trpJi7TQEjuojUSvze86CdkY3MPt+jK84pzgfuNhncfikwD6D4aM/ZaY/ZLgNqIw5cW/Ts3L7Vtw==",
   "success": true,
-  "projectFilePath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\Netcore\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lulif\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.7\\microsoft.extensions.configuration.3.1.7.nupkg.sha512",
+    "C:\\Users\\lulif\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.7\\microsoft.extensions.configuration.abstractions.3.1.7.nupkg.sha512",
+    "C:\\Users\\lulif\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.1.7\\microsoft.extensions.configuration.binder.3.1.7.nupkg.sha512",
+    "C:\\Users\\lulif\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\3.1.7\\microsoft.extensions.configuration.fileextensions.3.1.7.nupkg.sha512",
+    "C:\\Users\\lulif\\.nuget\\packages\\microsoft.extensions.configuration.json\\3.1.7\\microsoft.extensions.configuration.json.3.1.7.nupkg.sha512",
+    "C:\\Users\\lulif\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\3.1.7\\microsoft.extensions.fileproviders.abstractions.3.1.7.nupkg.sha512",
+    "C:\\Users\\lulif\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\3.1.7\\microsoft.extensions.fileproviders.physical.3.1.7.nupkg.sha512",
+    "C:\\Users\\lulif\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\3.1.7\\microsoft.extensions.filesystemglobbing.3.1.7.nupkg.sha512",
+    "C:\\Users\\lulif\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.7\\microsoft.extensions.primitives.3.1.7.nupkg.sha512"
+  ],
   "logs": []
 }

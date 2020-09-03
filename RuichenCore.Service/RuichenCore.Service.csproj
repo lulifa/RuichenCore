@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RuichenCore.IRepository\RuichenCore.IRepository.csproj" />
+    <ProjectReference Include="..\RuichenCore.IService\RuichenCore.IService.csproj" />
+  </ItemGroup>
+
 </Project>
