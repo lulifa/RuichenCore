@@ -92,3 +92,10 @@ C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll

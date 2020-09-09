@@ -37,6 +37,7 @@ namespace RuichenCore.Api
             services.AddSwaggerServices();
             services.AddMiniProfilerService();
             services.AddDbContextService();
+            services.AddBeaerJwtServices();
 
             services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             services.AddScoped(typeof(IContractService), typeof(ContractService));
@@ -51,11 +52,15 @@ namespace RuichenCore.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             app.UseSwaggerMid(()=>GetType().Assembly.GetManifestResourceStream("RuichenCore.Api.index.html"));
 
             app.UseMiniProfilerMid();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

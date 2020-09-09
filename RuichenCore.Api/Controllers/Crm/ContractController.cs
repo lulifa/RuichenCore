@@ -13,7 +13,9 @@ using StackExchange.Profiling;
 
 namespace RuichenCore.Api.Controllers
 {
-    [Description("商务管理-合同")]
+    /// <summary>
+    /// 商务模块
+    /// </summary>
     [AllowAnonymous]
     public class ContractController : ApiController
     {

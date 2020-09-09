@@ -13,5 +13,5 @@ C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Com
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Common\obj\Debug\netcoreapp3.1\RuichenCore.Common.AssemblyInfo.cs
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Common\obj\Debug\netcoreapp3.1\RuichenCore.Common.dll
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Common\obj\Debug\netcoreapp3.1\RuichenCore.Common.pdb
-C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Common\obj\Debug\netcoreapp3.1\RuichenCore.Common.csproj.CoreCompileInputs.cache
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Common\obj\Debug\netcoreapp3.1\RuichenCore.Common.csprojAssemblyReference.cache
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Common\obj\Debug\netcoreapp3.1\RuichenCore.Common.csproj.CoreCompileInputs.cache
