@@ -9,10 +9,11 @@ namespace RuichenCore.EFCore
 {
     public abstract class RuichenDbContext:DbContext
     {
-        public RuichenDbContext(DbContextOptions<CrmContext> dbContextOptions):base(dbContextOptions)
+        public RuichenDbContext(DbContextOptions dbContextOptions):base(dbContextOptions)
         {
 
         }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies();

@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MyEUNeCMXTezdcAT9TLfB+WcaBonKs55fi90n6jkj4WyZm4VyXf0IlEaJQLmIBxJv8Zb9lINH731hE9NxZhlSQ==",
+  "dgSpecHash": "9ngG/250wkLqVJ8j5W/qqjIM2WK75tuB+/sOsrcYmTrjRfV8/LwxNOQ77dGaNfMItIMvab5gjius4UPRvRz2Pw==",
   "success": true,
   "projectFilePath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Api\\RuichenCore.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\lulif\\.nuget\\packages\\autofac\\5.2.0\\autofac.5.2.0.nupkg.sha512",
+    "C:\\Users\\lulif\\.nuget\\packages\\autofac.extensions.dependencyinjection\\6.0.0\\autofac.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\lulif\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\lulif\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Users\\lulif\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

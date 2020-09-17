@@ -399,6 +399,12 @@
               },
               "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj": {
                 "projectPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj"
+              },
+              "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.IRepository\\RuichenCore.IRepository.csproj": {
+                "projectPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.IRepository\\RuichenCore.IRepository.csproj"
+              },
+              "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Repository\\RuichenCore.Repository.csproj": {
+                "projectPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Repository\\RuichenCore.Repository.csproj"
               }
             }
           }
@@ -412,6 +418,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.8, )"

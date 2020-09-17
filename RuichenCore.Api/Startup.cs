@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -38,10 +39,6 @@ namespace RuichenCore.Api
             services.AddMiniProfilerService();
             services.AddDbContextService();
             services.AddBeaerJwtServices();
-
-            services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-            services.AddScoped(typeof(IContractService), typeof(ContractService));
-            services.AddScoped(typeof(IUnitOfWork),typeof(UnitOfWork));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,6 +65,11 @@ namespace RuichenCore.Api
             {
                 endpoints.MapControllers();
             });
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule<AutoFacPack>();
         }
     }
 }
