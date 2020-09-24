@@ -16,7 +16,6 @@ namespace RuichenCore.Api.Controllers
     /// <summary>
     /// 商务模块
     /// </summary>
-    [AllowAnonymous]
     public class ContractController : ApiController
     {
         protected readonly IContractService ContractService;

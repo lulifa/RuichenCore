@@ -1,0 +1,14 @@
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\bin\Release\netcoreapp3.1\RuichenCore.IRepository.deps.json
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\bin\Release\netcoreapp3.1\RuichenCore.IRepository.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\bin\Release\netcoreapp3.1\RuichenCore.IRepository.pdb
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\bin\Release\netcoreapp3.1\RuichenCore.Common.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\bin\Release\netcoreapp3.1\RuichenCore.EFCore.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\bin\Release\netcoreapp3.1\RuichenCore.EFCore.pdb
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\bin\Release\netcoreapp3.1\RuichenCore.Common.pdb
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\obj\Release\netcoreapp3.1\RuichenCore.IRepository.csprojAssemblyReference.cache
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\obj\Release\netcoreapp3.1\RuichenCore.IRepository.AssemblyInfoInputs.cache
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\obj\Release\netcoreapp3.1\RuichenCore.IRepository.AssemblyInfo.cs
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\obj\Release\netcoreapp3.1\RuichenCore.IRepository.csproj.CoreCompileInputs.cache
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\obj\Release\netcoreapp3.1\RuichenCore.IRepository.csproj.CopyComplete
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\obj\Release\netcoreapp3.1\RuichenCore.IRepository.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\obj\Release\netcoreapp3.1\RuichenCore.IRepository.pdb

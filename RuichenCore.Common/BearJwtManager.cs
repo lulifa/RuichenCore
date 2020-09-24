@@ -63,6 +63,11 @@ namespace RuichenCore.Common
             return encodeJwt;
         }
 
+        /// <summary>
+        /// 反序列Token
+        /// </summary>
+        /// <param name="jwtStr"></param>
+        /// <returns></returns>
         public static TokenModelJwt SerializeJwt(string jwtStr)
         {
             JwtSecurityToken jwtToken = new JwtSecurityTokenHandler().ReadJwtToken(jwtStr);

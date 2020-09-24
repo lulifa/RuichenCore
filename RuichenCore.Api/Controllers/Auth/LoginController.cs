@@ -22,21 +22,35 @@ namespace RuichenCore.Api.Controllers
         /// <param name="name"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        [HttpGet]
-        public ResponseResult GetJwtStr(string name, string password)
+        [HttpPost]
+        public ResponseResult GetJwtStr([FromBody] LoginModel model)
         {
-            string[] userIds = new string[] { "lulifa" };
+            string[] userIds = new string[] { "admin" };
             List<string> ids = userIds.ToList();
-            if (!ids.Contains(name))
+            if (!ids.Contains(model.name))
             {
                 return JsonCore(false, "用户名和密码不正确");
             }
             TokenModelJwt tokenModelJwt = new TokenModelJwt();
-            tokenModelJwt.UserId = name;
+            tokenModelJwt.UserId = model.name;
             tokenModelJwt.Role = "Admin,User";
             string jwtStr = BearJwtManager.IssueJwt(tokenModelJwt);
-            return JsonCore(true, data: jwtStr);
+            return JsonCore(true, new
+            {
+                token = jwtStr,
+                user = new
+                {
+                    id="admin",
+                    name="卢立法"
+                },
+                expireAt = DateTime.Now.AddSeconds(20)
+            });
         }
 
+    }
+
+    public class LoginModel
+    {
+        public string name { get; set; }
     }
 }
