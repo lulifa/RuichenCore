@@ -19,9 +19,11 @@ namespace RuichenCore.Api.Controllers
     public class ContractController : ApiController
     {
         protected readonly IContractService ContractService;
-        public ContractController(IContractService contractService)
+        protected readonly IUser CurrentUser;
+        public ContractController(IContractService contractService,IUser user)
         {
             ContractService = contractService;
+            CurrentUser = user;
         }
 
         /// <summary>
@@ -31,11 +33,8 @@ namespace RuichenCore.Api.Controllers
         [HttpPost]
         public async Task<ResponseResult> GetPagedList()
         {
-            using (MiniProfiler.Current.Step("立法试试"))
-            {
-                List<Contract> contracts = await ContractService.GetContractList();
-                return JsonCore(true, contracts.ToJsonPaged(contracts.Count));
-            }
+            List<Contract> contracts = await ContractService.GetContractList();
+            return JsonCore(true, contracts.ToJsonPaged(contracts.Count));
         }
     }
 }

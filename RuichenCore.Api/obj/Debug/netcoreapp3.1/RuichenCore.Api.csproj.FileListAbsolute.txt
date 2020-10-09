@@ -101,3 +101,8 @@ C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Autofac.dll
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Autofac.Extensions.DependencyInjection.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Scrutor.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Annotations.dll
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Filters.dll

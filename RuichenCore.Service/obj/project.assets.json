@@ -1801,7 +1801,10 @@
         },
         "runtime": {
           "bin/placeholder/RuichenCore.Common.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "RuichenCore.EFCore/1.0.0": {
         "type": "project",
@@ -1818,7 +1821,10 @@
         },
         "runtime": {
           "bin/placeholder/RuichenCore.EFCore.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "RuichenCore.IRepository/1.0.0": {
         "type": "project",
@@ -1831,7 +1837,10 @@
         },
         "runtime": {
           "bin/placeholder/RuichenCore.IRepository.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "RuichenCore.IService/1.0.0": {
         "type": "project",
@@ -1844,7 +1853,10 @@
         },
         "runtime": {
           "bin/placeholder/RuichenCore.IService.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -6432,6 +6444,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

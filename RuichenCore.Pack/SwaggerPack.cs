@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using RuichenCore.Common;
+using Swashbuckle.AspNetCore.Filters;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System;
 using System.Collections.Generic;
@@ -48,12 +49,12 @@ namespace RuichenCore.Extension
                 });
                 string xmlPath = Path.Combine(AppContext.BaseDirectory, "RuichenCore.Api.xml");
                 c.IncludeXmlComments(xmlPath, true);
-                ////开启加权小锁
-                //c.OperationFilter<AddResponseHeadersFilter>();
-                //c.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
+                //开启加权小锁
+                c.OperationFilter<AddResponseHeadersFilter>();
+                c.OperationFilter<AppendAuthorizeToSummaryOperationFilter>();
 
-                ////在header中添加token，传递到后台中
-                //c.OperationFilter<SecurityRequirementsOperationFilter>();
+                //在header中添加token，传递到后台中
+                c.OperationFilter<SecurityRequirementsOperationFilter>();
 
                 // Jwt Bearer认证 必须是oauth2
                 c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme

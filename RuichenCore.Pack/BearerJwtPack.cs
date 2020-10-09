@@ -30,6 +30,7 @@ namespace RuichenCore.Extension
                 ValidateAudience = true,
                 ValidAudience = audience,
                 ValidateLifetime = true,
+                ClockSkew=TimeSpan.FromSeconds(30),
                 RequireExpirationTime = true
             };
 

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RuichenCore.Api</name>
+    </assembly>
+    <members>
+        <member name="T:RuichenCore.Api.Controllers.LoginController">
+            <summary>
+            登录模块
+            </summary>
+        </member>
+        <member name="M:RuichenCore.Api.Controllers.LoginController.GetJwtStr(RuichenCore.Api.Controllers.LoginModel)">
+            <summary>
+            获取字符串
+            </summary>
+            <param name="name"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RuichenCore.Api.Controllers.ContractController">
+            <summary>
+            商务模块
+            </summary>
+        </member>
+        <member name="M:RuichenCore.Api.Controllers.ContractController.GetPagedList">
+            <summary>
+            合同列表
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

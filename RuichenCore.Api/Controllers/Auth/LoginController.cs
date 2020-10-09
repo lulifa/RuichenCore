@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -19,8 +21,7 @@ namespace RuichenCore.Api.Controllers
         /// <summary>
         /// 获取字符串
         /// </summary>
-        /// <param name="name"></param>
-        /// <param name="password"></param>
+        /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
         public ResponseResult GetJwtStr([FromBody] LoginModel model)
@@ -33,18 +34,10 @@ namespace RuichenCore.Api.Controllers
             }
             TokenModelJwt tokenModelJwt = new TokenModelJwt();
             tokenModelJwt.UserId = model.name;
+            tokenModelJwt.UserName = model.name;
             tokenModelJwt.Role = "Admin,User";
-            string jwtStr = BearJwtManager.IssueJwt(tokenModelJwt);
-            return JsonCore(true, new
-            {
-                token = jwtStr,
-                user = new
-                {
-                    id="admin",
-                    name="卢立法"
-                },
-                expireAt = DateTime.Now.AddSeconds(20)
-            });
+            TokenShowModel info = BearJwtManager.BuildJwtToken(tokenModelJwt);
+            return JsonCore(true, info);
         }
 
     }

@@ -39,6 +39,7 @@ namespace RuichenCore.Api
             services.AddMiniProfilerService();
             services.AddDbContextService();
             services.AddBeaerJwtServices();
+            services.AddHttpContextServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

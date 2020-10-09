@@ -11,8 +11,8 @@ C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Pac
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Pack\obj\Debug\netcoreapp3.1\RuichenCore.Extension.csproj.CopyComplete
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Pack\bin\Debug\netcoreapp3.1\RuichenCore.EFCore.dll
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Pack\bin\Debug\netcoreapp3.1\RuichenCore.EFCore.pdb
-C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Pack\obj\Debug\netcoreapp3.1\RuichenCore.Extension.csproj.CoreCompileInputs.cache
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Pack\bin\Debug\netcoreapp3.1\RuichenCore.IRepository.dll
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Pack\bin\Debug\netcoreapp3.1\RuichenCore.Repository.dll
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Pack\bin\Debug\netcoreapp3.1\RuichenCore.IRepository.pdb
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Pack\bin\Debug\netcoreapp3.1\RuichenCore.Repository.pdb
+C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.Pack\obj\Debug\netcoreapp3.1\RuichenCore.Extension.csproj.CoreCompileInputs.cache
