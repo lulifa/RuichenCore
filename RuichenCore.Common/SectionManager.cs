@@ -64,16 +64,4 @@ namespace RuichenCore.Common
             return config.GetSection(string.Join(":", sections)).Get<T>();
         }
     }
-
-    public class Test
-    {
-        public string B { get; set; }
-        public List<Student> C { get; set; } = new List<Student>();
-
-    }
-    public class Student
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
 }
