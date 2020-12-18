@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.IService\\RuichenCore.IService.csproj": {}
+    "D:\\Study\\Git\\RuichenCore\\RuichenCore.IService\\RuichenCore.IService.csproj": {}
   },
   "projects": {
-    "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj": {
+    "D:\\Study\\Git\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj",
+        "projectUniqueName": "D:\\Study\\Git\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj",
         "projectName": "RuichenCore.Common",
-        "projectPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj",
-        "packagesPath": "C:\\Users\\lulif\\.nuget\\packages\\",
-        "outputPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\obj\\",
+        "projectPath": "D:\\Study\\Git\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj",
+        "packagesPath": "C:\\Users\\lulifa\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\Git\\RuichenCore\\RuichenCore.Common\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lulif\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\lulifa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -30,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
@@ -74,30 +72,29 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj": {
+    "D:\\Study\\Git\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj",
+        "projectUniqueName": "D:\\Study\\Git\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj",
         "projectName": "RuichenCore.EFCore",
-        "projectPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj",
-        "packagesPath": "C:\\Users\\lulif\\.nuget\\packages\\",
-        "outputPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.EFCore\\obj\\",
+        "projectPath": "D:\\Study\\Git\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj",
+        "packagesPath": "C:\\Users\\lulifa\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\Git\\RuichenCore\\RuichenCore.EFCore\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lulif\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\lulifa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -108,9 +105,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj": {
-                "projectPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj"
+              "D:\\Study\\Git\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj": {
+                "projectPath": "D:\\Study\\Git\\RuichenCore\\RuichenCore.Common\\RuichenCore.Common.csproj"
               }
             }
           }
@@ -123,6 +121,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -152,30 +151,29 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.IService\\RuichenCore.IService.csproj": {
+    "D:\\Study\\Git\\RuichenCore\\RuichenCore.IService\\RuichenCore.IService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.IService\\RuichenCore.IService.csproj",
+        "projectUniqueName": "D:\\Study\\Git\\RuichenCore\\RuichenCore.IService\\RuichenCore.IService.csproj",
         "projectName": "RuichenCore.IService",
-        "projectPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.IService\\RuichenCore.IService.csproj",
-        "packagesPath": "C:\\Users\\lulif\\.nuget\\packages\\",
-        "outputPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.IService\\obj\\",
+        "projectPath": "D:\\Study\\Git\\RuichenCore\\RuichenCore.IService\\RuichenCore.IService.csproj",
+        "packagesPath": "C:\\Users\\lulifa\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\Git\\RuichenCore\\RuichenCore.IService\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\lulif\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\lulifa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -186,9 +184,10 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj": {
-                "projectPath": "C:\\UserAccountLuLiFa\\Git开源项目\\卤菜大煎饼\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj"
+              "D:\\Study\\Git\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj": {
+                "projectPath": "D:\\Study\\Git\\RuichenCore\\RuichenCore.EFCore\\RuichenCore.EFCore.csproj"
               }
             }
           }
@@ -201,6 +200,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -212,11 +212,14 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -21,3 +21,17 @@ C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRe
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\obj\Debug\netcoreapp3.1\RuichenCore.IRepository.csproj.CopyComplete
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\obj\Debug\netcoreapp3.1\RuichenCore.IRepository.dll
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.IRepository\obj\Debug\netcoreapp3.1\RuichenCore.IRepository.pdb
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\bin\Debug\netcoreapp3.1\RuichenCore.IRepository.deps.json
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\bin\Debug\netcoreapp3.1\RuichenCore.IRepository.dll
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\bin\Debug\netcoreapp3.1\RuichenCore.IRepository.pdb
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\bin\Debug\netcoreapp3.1\RuichenCore.Common.dll
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\bin\Debug\netcoreapp3.1\RuichenCore.EFCore.dll
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\bin\Debug\netcoreapp3.1\RuichenCore.EFCore.pdb
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\bin\Debug\netcoreapp3.1\RuichenCore.Common.pdb
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\obj\Debug\netcoreapp3.1\RuichenCore.IRepository.csprojAssemblyReference.cache
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\obj\Debug\netcoreapp3.1\RuichenCore.IRepository.AssemblyInfoInputs.cache
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\obj\Debug\netcoreapp3.1\RuichenCore.IRepository.AssemblyInfo.cs
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\obj\Debug\netcoreapp3.1\RuichenCore.IRepository.csproj.CoreCompileInputs.cache
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\obj\Debug\netcoreapp3.1\RuichenCore.IRepository.csproj.CopyComplete
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\obj\Debug\netcoreapp3.1\RuichenCore.IRepository.dll
+D:\Study\Git\RuichenCore\RuichenCore.IRepository\obj\Debug\netcoreapp3.1\RuichenCore.IRepository.pdb

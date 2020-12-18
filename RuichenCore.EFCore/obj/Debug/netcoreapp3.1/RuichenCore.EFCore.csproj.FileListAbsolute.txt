@@ -19,3 +19,15 @@ C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.EFC
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.EFCore\obj\Debug\netcoreapp3.1\RuichenCore.EFCore.dll
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.EFCore\obj\Debug\netcoreapp3.1\RuichenCore.EFCore.pdb
 C:\UserAccountLuLiFa\Git开源项目\卤菜大煎饼\RuichenCore\RuichenCore.EFCore\obj\Debug\netcoreapp3.1\RuichenCore.EFCore.csproj.CoreCompileInputs.cache
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\bin\Debug\netcoreapp3.1\RuichenCore.EFCore.deps.json
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\bin\Debug\netcoreapp3.1\RuichenCore.EFCore.dll
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\bin\Debug\netcoreapp3.1\RuichenCore.EFCore.pdb
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\bin\Debug\netcoreapp3.1\RuichenCore.Common.dll
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\bin\Debug\netcoreapp3.1\RuichenCore.Common.pdb
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\obj\Debug\netcoreapp3.1\RuichenCore.EFCore.csprojAssemblyReference.cache
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\obj\Debug\netcoreapp3.1\RuichenCore.EFCore.AssemblyInfoInputs.cache
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\obj\Debug\netcoreapp3.1\RuichenCore.EFCore.AssemblyInfo.cs
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\obj\Debug\netcoreapp3.1\RuichenCore.EFCore.csproj.CoreCompileInputs.cache
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\obj\Debug\netcoreapp3.1\RuichenCore.EFCore.csproj.CopyComplete
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\obj\Debug\netcoreapp3.1\RuichenCore.EFCore.dll
+D:\Study\Git\RuichenCore\RuichenCore.EFCore\obj\Debug\netcoreapp3.1\RuichenCore.EFCore.pdb

@@ -13,6 +13,7 @@ namespace RuichenCore.Api.Controllers.Auth
         protected readonly IUser CurrentUser;
         public MenuController(IUser user)
         {
+            var test = this.User.Identity.Name;
             CurrentUser = user;
         }
 

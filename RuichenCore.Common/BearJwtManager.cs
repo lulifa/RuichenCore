@@ -64,33 +64,36 @@ namespace RuichenCore.Common
             return encodeJwt;
         }
 
-        public static TokenShowModel BuildJwtToken(TokenModelJwt tokenModelJwt)
+        public static string BuildJwtToken(string userId, bool isAdmin = true)
+        {
+            List<Claim> claims = new List<Claim>();
+            claims.Add(new Claim(ClaimTypes.Name, userId));
+            claims.Add(new Claim(JwtRegisteredClaimNames.Jti, userId));
+            if (isAdmin)
+            {
+                claims.Add(new Claim(JwtRegisteredClaimNames.Sub, "adminrole"));
+            }
+            return BuildJwtToken(claims);
+        }
+
+        public static string BuildJwtToken(IEnumerable<Claim> claims)
         {
             string issuer = SectionManager.GetSection("Ruichen", "Jwt", "Issuer");
             string audience = SectionManager.GetSection("Ruichen", "Jwt", "Audience");
             string secret = SectionManager.GetSection("Ruichen", "Jwt", "Secret");
-            List<Claim> claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Name, tokenModelJwt.UserId));
             SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
             SigningCredentials credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-            JwtSecurityToken token = new JwtSecurityToken(
+            JwtSecurityToken token = new JwtSecurityToken
+                (
                 issuer: issuer,
                 audience: audience,
                 claims: claims,
                 notBefore: DateTime.Now,
-                expires: DateTime.Now.AddSeconds(20),
+                expires: DateTime.Now.AddHours(1),
                 signingCredentials: credentials
                 );
-            string encodeJwt = new JwtSecurityTokenHandler().WriteToken(token);
-            TokenShowModel model = new TokenShowModel();
-            model.Token = encodeJwt;
-            model.User = new
-            {
-                id = "admin",
-                name = "卢立法"
-            };
-            model.ExpireAt = DateTime.Now.AddSeconds(20 + 30);
-            return model;
+            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+            return handler.WriteToken(token);
         }
 
         /// <summary>
@@ -98,22 +101,23 @@ namespace RuichenCore.Common
         /// </summary>
         /// <param name="jwtStr"></param>
         /// <returns></returns>
-        public static TokenModelJwt SerializeJwt(string jwtStr)
+        public static TokenModel SerializeJwtToken(string token)
         {
-            JwtSecurityToken jwtToken = new JwtSecurityTokenHandler().ReadJwtToken(jwtStr);
-            TokenModelJwt tokenModelJwt = new TokenModelJwt();
-            tokenModelJwt.UserId = jwtToken.Id;
-            jwtToken.Payload.TryGetValue(ClaimTypes.Role, out object role);
-            tokenModelJwt.Role = role as string;
-            return tokenModelJwt;
+            JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
+            JwtSecurityToken jwtToken = handler.ReadJwtToken(token);
+            TokenModel model = new TokenModel();
+            model.UserId = jwtToken.Id;
+            model.Role = jwtToken.Subject;
+            model.ExpireAt = jwtToken.ValidTo;
+            return model;
         }
     }
 
 
-    public class TokenShowModel
+    public class TokenModel
     {
-        public string Token { get; set; }
-        public object User { get; set; }
+        public string Role { get; set; }
+        public string UserId { get; set; }
         public DateTime ExpireAt { get; set; }
     }
 

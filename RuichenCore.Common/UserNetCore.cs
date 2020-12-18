@@ -27,4 +27,10 @@ namespace RuichenCore.Common
             return accessor.HttpContext.Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
         }
     }
+
+    public interface IUser
+    {
+        string UserId { get; }
+        string Token { get; }
+    }
 }

@@ -32,12 +32,19 @@ namespace RuichenCore.Api.Controllers
             {
                 return JsonCore(false, "用户名和密码不正确");
             }
-            TokenModelJwt tokenModelJwt = new TokenModelJwt();
-            tokenModelJwt.UserId = model.name;
-            tokenModelJwt.UserName = model.name;
-            tokenModelJwt.Role = "Admin,User";
-            TokenShowModel info = BearJwtManager.BuildJwtToken(tokenModelJwt);
-            return JsonCore(true, info);
+            string token = BearJwtManager.BuildJwtToken(model.name);
+            TokenModel tokenModel = BearJwtManager.SerializeJwtToken(token);
+            return JsonCore(true, new
+            {
+                token,
+                user = new
+                {
+                    id = tokenModel.UserId,
+                    name = "卢立法"
+                },
+                expireAt = tokenModel.ExpireAt,
+                role = tokenModel.Role
+            });
         }
 
     }
