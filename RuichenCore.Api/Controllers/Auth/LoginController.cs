@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Claims;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RuichenCore.Common;
+using RuichenCore.EFCore;
+using RuichenCore.IService;
 
 namespace RuichenCore.Api.Controllers
 {
@@ -17,30 +14,49 @@ namespace RuichenCore.Api.Controllers
     [AllowAnonymous]
     public class LoginController : ApiController
     {
+        protected readonly IUserService UserService;
+        public LoginController(IUserService userService)
+        {
+            UserService = userService;
+        }
 
         /// <summary>
-        /// 获取字符串
+        /// 登录方法
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
-        public ResponseResult GetJwtStr([FromBody] LoginModel model)
+        public async Task<ResponseResult> Login([FromBody] LoginModel model)
         {
-            string[] userIds = new string[] { "admin" };
-            List<string> ids = userIds.ToList();
-            if (!ids.Contains(model.name))
+            if (string.IsNullOrEmpty(model.Name) || string.IsNullOrEmpty(model.Password))
             {
-                return JsonCore(false, "用户名和密码不正确");
+                return JsonCore(false, "用户名和密码不能为空");
             }
-            string token = BearJwtManager.BuildJwtToken(model.name);
+            User user = await UserService.GetSingle(model.Name);
+            if (user == null)
+            {
+                return JsonCore(false, "用户不存在");
+            }
+            string password = "qf2M4Facmq4koaBljbCUIw==";
+            if (user.Password != password)
+            {
+                return JsonCore(false, "密码错误");
+            }
+            return TokenFormat(user);
+        }
+
+        private ResponseResult TokenFormat(User user)
+        {
+            bool isAdmin = false;
+            string token = BearJwtManager.BuildJwtToken(user.Id, isAdmin);
             TokenModel tokenModel = BearJwtManager.SerializeJwtToken(token);
             return JsonCore(true, new
             {
                 token,
                 user = new
                 {
-                    id = tokenModel.UserId,
-                    name = "卢立法"
+                    user.Id,
+                    user.Name
                 },
                 expireAt = tokenModel.ExpireAt,
                 role = tokenModel.Role
@@ -51,6 +67,7 @@ namespace RuichenCore.Api.Controllers
 
     public class LoginModel
     {
-        public string name { get; set; }
+        public string Name { get; set; }
+        public string Password { get; set; }
     }
 }

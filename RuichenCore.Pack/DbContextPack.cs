@@ -15,7 +15,7 @@ namespace RuichenCore.Extension
     {
         public static void AddDbContextService(this IServiceCollection services)
         {
-            services.AddDbContext<CrmContext>();
+            services.AddDbContext<MysqlEFCoreContext>();
         }
     }
 }

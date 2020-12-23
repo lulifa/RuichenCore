@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RuichenCore.EFCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace RuichenCore.IRepository
 {
-    public interface IBaseRepository<TEntity> where TEntity : class
+    public interface IBaseRepository<TEntity>
+        where TEntity:class
     {
         Task<int> Add(TEntity entity);
 

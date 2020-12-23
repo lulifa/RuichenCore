@@ -9,9 +9,9 @@
             登录模块
             </summary>
         </member>
-        <member name="M:RuichenCore.Api.Controllers.LoginController.GetJwtStr(RuichenCore.Api.Controllers.LoginModel)">
+        <member name="M:RuichenCore.Api.Controllers.LoginController.Login(RuichenCore.Api.Controllers.LoginModel)">
             <summary>
-            获取字符串
+            登录方法
             </summary>
             <param name="model"></param>
             <returns></returns>

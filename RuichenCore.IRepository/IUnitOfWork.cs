@@ -8,7 +8,7 @@ namespace RuichenCore.IRepository
 {
     public interface IUnitOfWork
     {
-        CrmContext GetDbContext();
+        MysqlEFCoreContext GetDbContext();
 
         Task<int> SaveChanges();
 

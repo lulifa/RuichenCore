@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace RuichenCore.Repository
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork: IUnitOfWork
     {
-        private readonly CrmContext context;
-        public UnitOfWork(CrmContext ruichenContext)
+        private readonly MysqlEFCoreContext context;
+        public UnitOfWork(MysqlEFCoreContext ruichenContext)
         {
             context = ruichenContext;
         }
-        public CrmContext GetDbContext()
+        public MysqlEFCoreContext GetDbContext()
         {
             return context;
         }

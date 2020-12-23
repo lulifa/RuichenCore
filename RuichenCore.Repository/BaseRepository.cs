@@ -8,54 +8,57 @@ using System.Threading.Tasks;
 
 namespace RuichenCore.Repository
 {
-    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity>
+        where TEntity : class
     {
-        private IUnitOfWork unitOfWork;
-        private CrmContext ruichenContext;
-        public BaseRepository(IUnitOfWork unit)
+        private IUnitOfWork baseUnitOfWork;
+        private MysqlEFCoreContext ruichenContext;
+
+
+        public BaseRepository(IUnitOfWork unitOfWork)
         {
-            unitOfWork = unit;
-            ruichenContext = unitOfWork.GetDbContext();
+            baseUnitOfWork = unitOfWork;
+            ruichenContext = baseUnitOfWork.GetDbContext();
         }
         public async Task<int> Add(TEntity entity)
         {
             ruichenContext.Add(entity);
-            return await unitOfWork.SaveChanges();
+            return await baseUnitOfWork.SaveChanges();
         }
 
         public async Task<int> Add(IEnumerable<TEntity> entities)
         {
             ruichenContext.AddRange(entities);
-            return await unitOfWork.SaveChanges();
+            return await baseUnitOfWork.SaveChanges();
         }
 
         public async Task<int> Remove(TEntity entity)
         {
             ruichenContext.Remove(entity);
-            return await unitOfWork.SaveChanges();
+            return await baseUnitOfWork.SaveChanges();
         }
 
         public async Task<int> Remove(IEnumerable<TEntity> entities)
         {
             ruichenContext.RemoveRange(entities);
-            return await unitOfWork.SaveChanges();
+            return await baseUnitOfWork.SaveChanges();
         }
 
         public async Task<int> Update(TEntity entity)
         {
             ruichenContext.Update(entity);
-            return await unitOfWork.SaveChanges();
+            return await baseUnitOfWork.SaveChanges();
         }
 
         public async Task<int> Update(IEnumerable<TEntity> entities)
         {
             ruichenContext.UpdateRange(entities);
-            return await unitOfWork.SaveChanges();
+            return await baseUnitOfWork.SaveChanges();
         }
 
         public async Task<TEntity> Find(object id)
         {
-           return  await ruichenContext.Set<TEntity>().FindAsync(id);
+            return await ruichenContext.Set<TEntity>().FindAsync(id);
         }
 
         public IQueryable<TEntity> Query()
