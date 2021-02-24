@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RuichenCore.Common;
 using RuichenCore.EFCore;
 using RuichenCore.IService;
@@ -33,8 +34,20 @@ namespace RuichenCore.Api.Controllers
         [HttpPost]
         public async Task<ResponseResult> GetPagedList()
         {
-            List<Contract> contracts = await ContractService.GetContractList();
-            return JsonCore(true, contracts.ToJsonPaged(contracts.Count));
+            IQueryable<Contract> query = ContractService.Query();
+            int count = query.Count();
+            List<Contract> contracts = await query.ToListAsync();
+            List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
+            list.AddRange(contracts.Select(item => SelectContract(item)));
+            return JsonCore(true, contracts.ToJsonPaged(count));
+        }
+        private static Dictionary<string,object> SelectContract(Contract model)
+        {
+            Dictionary<string, object> dict = new Dictionary<string, object>();
+            dict["id"] = model.Id;
+            dict["name"] = model.Name;
+            dict["amount"] = model.Amount;
+            return dict;
         }
     }
 }

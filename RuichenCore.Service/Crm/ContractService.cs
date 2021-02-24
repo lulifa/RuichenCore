@@ -5,6 +5,7 @@ using RuichenCore.IRepository;
 using RuichenCore.IService;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace RuichenCore.Service
@@ -19,10 +20,15 @@ namespace RuichenCore.Service
 
         protected IBaseRepository<Contract> contractRepository => provider.GetService<IBaseRepository<Contract>>();
 
-        public async Task<List<Contract>> GetContractList()
+        public async Task<List<Contract>> GetList()
         {
             List<Contract> contracts = await contractRepository.Query().ToListAsync();
             return contracts;
+        }
+        public IQueryable<Contract> Query()
+        {
+            IQueryable<Contract> query = contractRepository.Query();
+            return query;
         }
     }
 }
