@@ -11,7 +11,10 @@ namespace RuichenCore.Common
             this.success = true;
             this.msg = "成功";
         }
-
+        public ResponseResult(bool success)
+        {
+            this.success = success;
+        }
         public ResponseResult(bool success, string msg)
         {
             this.success = success;

@@ -19,6 +19,11 @@ namespace RuichenCore.Api.Controllers
             return new ResponseResult();
         }
 
+        protected ResponseResult JsonCore(bool success)
+        {
+            return new ResponseResult(success);
+        }
+
         protected ResponseResult JsonCore(bool success,string msg)
         {
             return new ResponseResult(success, msg);

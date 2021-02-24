@@ -10,5 +10,6 @@ namespace RuichenCore.IService
     {
         Task<List<User>> GetList();
         Task<User> GetSingle(object id);
+        Task<int> Update(User user);
     }
 }

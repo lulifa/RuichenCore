@@ -30,5 +30,11 @@ namespace RuichenCore.Service
             User user = await userRepository.Find(id);
             return user;
         }
+
+        public Task<int> Update(User user)
+        {
+            Task<int> result= userRepository.Update(user);
+            return result;
+        }
     }
 }
