@@ -1,0 +1,568 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Vacations</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Vacations.Vacation">
+            <summary>
+            表示休假记录。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.Vacation.Id">
+            <summary>
+            获取或设置Id。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.Vacation.UserId">
+            <summary>
+            获取或设置UserId。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.Vacation.FromTime">
+            <summary>
+            获取或设置FromTime。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.Vacation.ToTime">
+            <summary>
+            获取或设置ToTime。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.Vacation.Type">
+            <summary>
+            获取或设置休假类型。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.Vacation.Content">
+            <summary>
+            获取或设置休假内容。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.Vacation.Approved">
+            <summary>
+            获取或设置审核结果。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.Vacation.OtherInfos">
+            <summary>
+            获取或设置OtherInfos。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.Vacation.GetWorkTime(Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取总工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.Vacation.GetWorkTime(System.DateTime,System.DateTime,Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取指定时间段的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.Vacation.GetWorkTime(System.DateTime,Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取指定日期的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.Vacation.GetWorkTime(System.Int32,System.Int32,Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取指定月的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.Vacation.GetWorkTime(System.Int32,Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取指定年的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.Vacation.GetWorkTimeAccurateToSeconds(System.DateTime,System.DateTime,Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取指定时间段的工时数。精确到时分秒。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationInfos.EmptyVacationInfo">
+            <summary>
+            空白休假信息类。提供对空白休假按不同日期条件进行休假查询统计的功能。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationInfos.GlobalVacationInfo">
+            <summary>
+            全局休假信息类。提供对全局休假按不同日期条件进行休假查询统计的功能。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationInfos.PredicateVacationInfo">
+            <summary>
+            指定谓词表达式的休假信息类。提供对满足指定谓词表达式的休假数据，按不同日期条件进行休假查询统计的功能。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationInfos.PredicateVacationInfo.Predicate">
+            <summary>
+            获取谓词表达式。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationInfos.TypeVacationInfo">
+            <summary>
+            Type休假信息类。提供对指定Type按不同日期条件进行休假查询统计的功能。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationInfos.TypeVacationInfo.Types">
+            <summary>
+            获取Type只读集合。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationInfos.UserTypeVacationInfo">
+            <summary>
+            User、Type休假信息类。提供对指定User、Type按不同日期条件进行休假查询统计的功能。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationInfos.UserTypeVacationInfo.UserIds">
+            <summary>
+            获取UserId只读集合。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationInfos.UserTypeVacationInfo.Types">
+            <summary>
+            获取Type只读集合。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationInfos.UserVacationInfo">
+            <summary>
+            User休假信息类。提供对指定User按不同日期条件进行休假查询统计的功能。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationInfos.UserVacationInfo.UserIds">
+            <summary>
+            获取UserId只读集合。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationInfos.VacationInfo">
+            <summary>
+            休假信息抽象类。提供按不同日期条件进行休假查询统计的功能。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationInfos.VacationInfo.Calculator">
+            <summary>
+            获取或设置休假时间计算器。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationInfos.VacationInfo.AdditionalPredicate">
+            <summary>
+            获取或设置额外的谓词表达式。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationInfos.VacationInfo.IncludeContent">
+            <summary>
+            获取或设置在检索Vacation对象时是否包含Content属性。默认值为true。
+            <para>当不需要Content数据时，可以设置为false，这样可以提高性能。</para>
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationInfos.VacationInfo.IncludeOtherInfos">
+            <summary>
+            获取或设置在检索Vacation对象时是否包含OtherInfos属性。默认值为true。
+            <para>当不需要OtherInfos数据时，可以设置为false，这样可以提高性能。</para>
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationInfos.VacationInfo.CacheUnit">
+            <summary>
+            获取或设置缓存单位。默认值为月。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.ClearCache">
+            <summary>
+            清空已经缓存的数据。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.Preload(System.DateTime,System.DateTime)">
+            <summary>
+            预加载指定时间段的满足统计条件的休假数据，后续获取相关休假数据时，只要不超出这个时间段，不会再访问数据库。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.Preload">
+            <summary>
+            预加载所有的满足统计条件的休假数据，后续获取相关休假数据时，不会再访问数据库。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetWorkTime">
+            <summary>
+            获取总工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetWorkTime(System.DateTime)">
+            <summary>
+            获取指定日期的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetWorkTime(System.DateTime,System.DateTime)">
+            <summary>
+            获取指定时间段的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetWorkTime(System.Int32,System.Int32)">
+            <summary>
+            获取指定月的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetWorkTime(System.Int32)">
+            <summary>
+            获取指定年的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetVacations">
+            <summary>
+            获取所有的Vacation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetVacations(System.DateTime)">
+            <summary>
+            获取指定日期的Vacation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetVacations(System.DateTime,System.DateTime)">
+            <summary>
+            获取指定时间段的Vacation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetVacations(System.Int32,System.Int32)">
+            <summary>
+            获取指定月的Vacation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetVacations(System.Int32)">
+            <summary>
+            获取指定年的Vacation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetTotalEntry">
+            <summary>
+            获取记录总休假数据的Entry。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetDayEntry(System.DateTime)">
+            <summary>
+            获取记录某天休假数据的Entry。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.CalculateCacheDates(System.DateTime,System.DateTime@,System.DateTime@)">
+            <summary>
+            根据指定日期，计算出需要缓存的日期期间。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.CalculateDayEntries(System.DateTime,System.DateTime)">
+            <summary>
+            计算指定时间段的休假数据。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.CalculateTotalEntry">
+            <summary>
+            计算总的休假数据。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.RetrieveVacations(System.DateTime,System.DateTime)">
+            <summary>
+            根据类本身的条件，以及指定时间段条件，获取Vacation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.RetrieveVacations">
+            <summary>
+            根据类本身的条件，获取Vacation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.ExecuteQuery(System.Linq.Expressions.Expression{System.Func{Power.Vacations.Vacation,System.Boolean}})">
+            <summary>
+            执行指定的查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetPredicate(System.DateTime,System.DateTime)">
+            <summary>
+            根据类本身的条件，以及指定时间段条件，获取对Vacation的查询谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationInfos.VacationInfo.GetPredicate">
+            <summary>
+            根据类本身的条件，获取对Vacation的查询谓词表达式。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationInfos.VacationInfoCacheUnit">
+            <summary>
+            休假信息缓存单位。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationServices">
+            <summary>
+            休假服务，负责检索或保存休假。
+            </summary>
+        </member>
+        <member name="F:Power.Vacations.VacationServices.s_AddBuffer">
+            <summary>
+            缓存需要批量添加的休假。当该字段为null时，表示当前未处于批量添加状态。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.Add(Power.Vacations.Vacation)">
+            <summary>
+            添加一条休假。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.AddRange(System.Collections.Generic.IEnumerable{Power.Vacations.Vacation})">
+            <summary>
+            添加多条休假。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.StartBatchAdd">
+            <summary>
+            开始批量添加。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.CancelBatchAdd">
+            <summary>
+            取消批量添加。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.FinishBatchAdd">
+            <summary>
+            完成批量添加。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.FinishBatchAddAsync">
+            <summary>
+            异步完成批量添加。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="E:Power.Vacations.VacationServices.VacationsAdded">
+            <summary>
+            当休假添加后发生。
+            </summary>
+        </member>
+        <member name="F:Power.Vacations.VacationServices.s_ClearBuffer">
+            <summary>
+            缓存需要批量清空的休假的条件表达式。当该字段为null时，表示当前未处于批量清空状态。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.Clear(System.Linq.Expressions.Expression{System.Func{Power.Vacations.Vacation,System.Boolean}})">
+            <summary>
+            清空满足指定条件的所有休假。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.StartBatchClear">
+            <summary>
+            开始批量清空。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.CancelBatchClear">
+            <summary>
+            取消批量清空。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.FinishBatchClear">
+            <summary>
+            完成批量清空。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.FinishBatchClearAsync">
+            <summary>
+            异步完成批量清空。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.GetById(System.Guid)">
+            <summary>
+            通过Id获取休假。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.GetByIds(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过Id序列获取休假序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.Get(System.Linq.Expressions.Expression{System.Func{Power.Vacations.Vacation,System.Boolean}})">
+            <summary>
+            获取满足指定条件表达式的所有休假。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="F:Power.Vacations.VacationServices.s_ModifyBuffer">
+            <summary>
+            缓存需要批量修改的休假。当该字段为null时，表示当前未处于批量修改状态。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.Modify(Power.Vacations.Vacation)">
+            <summary>
+            修改一条休假。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.ModifyRange(System.Collections.Generic.IEnumerable{Power.Vacations.Vacation})">
+            <summary>
+            修改多条休假。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.StartBatchModify">
+            <summary>
+            开始批量修改。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.CancelBatchModify">
+            <summary>
+            取消批量修改。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.FinishBatchModify">
+            <summary>
+            完成批量修改。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.FinishBatchModifyAsync">
+            <summary>
+            异步完成批量修改。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="E:Power.Vacations.VacationServices.VacationsModified">
+            <summary>
+            当休假修改后发生。
+            </summary>
+        </member>
+        <member name="F:Power.Vacations.VacationServices.s_RemoveBuffer">
+            <summary>
+            缓存需要批量移除的休假Id。当该字段为null时，表示当前未处于批量移除状态。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.Remove(System.Guid)">
+            <summary>
+            移除一条休假。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.RemoveRange(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            移除多条休假。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.StartBatchRemove">
+            <summary>
+            开始批量移除。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.CancelBatchRemove">
+            <summary>
+            取消批量移除。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.FinishBatchRemove">
+            <summary>
+            完成批量移除。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Vacations.VacationServices.FinishBatchRemoveAsync">
+            <summary>
+            异步完成批量移除。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="E:Power.Vacations.VacationServices.VacationsRemoved">
+            <summary>
+            当休假移除后发生。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationsAddedEventArgs">
+            <summary>
+            为VacationsAdded事件提供数据。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationsModifiedEventArgs">
+            <summary>
+            为VacationsModified事件提供数据。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationsRemovedEventArgs">
+            <summary>
+            为VacationsRemoved事件提供数据。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationsExtensions">
+            <summary>
+            为IEnumerable&lt;Vacation&gt;提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationsExtensions.GetWorkTime(System.Collections.Generic.IEnumerable{Power.Vacations.Vacation},Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取总工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationsExtensions.GetWorkTime(System.Collections.Generic.IEnumerable{Power.Vacations.Vacation},System.DateTime,System.DateTime,Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取指定时间段的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationsExtensions.GetWorkTime(System.Collections.Generic.IEnumerable{Power.Vacations.Vacation},System.DateTime,Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取指定日期的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationsExtensions.GetWorkTime(System.Collections.Generic.IEnumerable{Power.Vacations.Vacation},System.Int32,System.Int32,Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取指定月的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationsExtensions.GetWorkTime(System.Collections.Generic.IEnumerable{Power.Vacations.Vacation},System.Int32,Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取指定年的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationsExtensions.GetWorkTimeAccurateToSeconds(System.Collections.Generic.IEnumerable{Power.Vacations.Vacation},System.DateTime,System.DateTime,Power.Vacations.VacationWorkTimeCalculator)">
+            <summary>
+            获取指定时间段的工时数。精确到时分秒。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationVisitorBase">
+            <summary>
+            Vacation访问器。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationVisitorBase.Vacation">
+            <summary>
+            获取Vacation。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.FullWorkVacationWorkTimeCalculator">
+            <summary>
+            认为24小时工作的休假工时数计算器。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.FullWorkVacationWorkTimeCalculator.CalculateWorkTime(Power.Vacations.Vacation,System.DateTime,System.DateTime)">
+            <summary>
+            计算某条休假记录在指定两个时刻之间的工时数。精确到时分秒。
+            </summary>
+        </member>
+        <member name="T:Power.Vacations.VacationWorkTimeCalculator">
+            <summary>
+            休假工时数计算器。
+            </summary>
+        </member>
+        <member name="M:Power.Vacations.VacationWorkTimeCalculator.CalculateWorkTime(Power.Vacations.Vacation,System.DateTime,System.DateTime)">
+            <summary>
+            计算某条休假记录在指定两个时刻之间的工时数。精确到时分秒。
+            </summary>
+        </member>
+        <member name="P:Power.Vacations.VacationWorkTimeCalculator.Default">
+            <summary>
+            获取或设置默认计算器。
+            </summary>
+        </member>
+    </members>
+</doc>

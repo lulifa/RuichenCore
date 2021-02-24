@@ -1,0 +1,1435 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Aoborsoft.Collections.CircularBuffer`1">
+            <summary>
+            循环缓冲器。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Collections.CircularBuffer`1.m_Buffer">
+            <summary>
+            存储元素的数组。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Collections.CircularBuffer`1.m_Start">
+            <summary>
+            指向第一个元素地址。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Collections.CircularBuffer`1.m_End">
+            <summary>
+            指向最后一个元素的下一个地址。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Collections.CircularBuffer`1.m_Count">
+            <summary>
+            元素数量。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.CircularBuffer`1.#ctor(System.Int32)">
+            <summary>
+            初始化一个实例。该实例为空并且具有指定的容量。
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">当Capacity小于等于0时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.CircularBuffer`1.Push(`0)">
+            <summary>
+            插入一个对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.CircularBuffer`1.PopStart">
+            <summary>
+            移除并返回位于起点的对象。
+            </summary>
+            <exception cref="T:System.InvalidOperationException">当循环缓冲器为空时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.CircularBuffer`1.PeekStart">
+            <summary>
+            返回位于起点的对象，但不将其移除。
+            </summary>
+            <exception cref="T:System.InvalidOperationException">当循环缓冲器为空时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.CircularBuffer`1.PopEnd">
+            <summary>
+            移除并返回位于终点的对象。
+            </summary>
+            <exception cref="T:System.InvalidOperationException">当循环缓冲器为空时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.CircularBuffer`1.PeekEnd">
+            <summary>
+            返回位于终点的对象，但不将其移除。
+            </summary>
+            <exception cref="T:System.InvalidOperationException">当循环缓冲器为空时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.CircularBuffer`1.Clear">
+            <summary>
+            清空所有对象。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Collections.CircularBuffer`1.Count">
+            <summary>
+            获取实际包含的元素数。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Collections.CircularBuffer`1.Capacity">
+            <summary>
+            获取或设置能够容纳的元素总数。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.CircularBuffer`1.GetElementsFromStartToEnd">
+            <summary>
+            以从起点到终点的顺序返回所有元素。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.CircularBuffer`1.GetElementsFromEndToStart">
+            <summary>
+            以从终点到起点的顺序返回所有元素。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.CircularBuffer`1.GetEnumerator">
+            <summary>
+            返回一个枚举器。以从起点到终点的顺序进行枚举。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.CircularBuffer`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            返回一个枚举器。以从起点到终点的顺序进行枚举。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Collections.ComparerFactory`1">
+            <summary>
+            Comparer工厂。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.ComparerFactory`1.Create``1(System.Func{`0,``0})">
+            <summary>
+            创建一个通过给出的键选择器作为判断依据的Comparer。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.ComparerFactory`1.Create``1(System.Func{`0,``0},System.Collections.Generic.IComparer{``0})">
+            <summary>
+            创建一个通过给出的键选择器作为判断依据的Comparer。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Aoborsoft.Collections.EqualityComparerFactory`1">
+            <summary>
+            EqualityComparer工厂。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.EqualityComparerFactory`1.Create``1(System.Func{`0,``0})">
+            <summary>
+            创建一个通过给出的键选择器作为判断依据的EqualityComparer。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.EqualityComparerFactory`1.Create``1(System.Func{`0,``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            创建一个通过给出的键选择器作为判断依据的EqualityComparer。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Aoborsoft.Collections.FixedQueue`1">
+            <summary>
+            容量大小固定的队列。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedQueue`1.#ctor(System.Int32)">
+            <summary>
+            初始化一个实例。该实例为空并且具有指定的容量。
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">当Capacity小于等于0时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedQueue`1.Enqueue(`0)">
+            <summary>
+            将对象添加到队列的结尾处。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedQueue`1.Dequeue">
+            <summary>
+            移除并返回位于队列开始处的对象。 
+            </summary>
+            <exception cref="T:System.InvalidOperationException">当队列为空时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedQueue`1.Peek">
+            <summary>
+            返回位于队列开始处的对象但不将其移除。 
+            </summary>
+            <exception cref="T:System.InvalidOperationException">当队列为空时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedQueue`1.Clear">
+            <summary>
+            从队列中移除所有对象。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Collections.FixedQueue`1.Count">
+            <summary>
+            获取实际包含的元素数。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Collections.FixedQueue`1.Capacity">
+            <summary>
+            获取或设置能够容纳的元素总数。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedQueue`1.GetEnumerator">
+            <summary>
+            返回一个枚举器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedQueue`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            返回一个枚举器。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Collections.FixedStack`1">
+            <summary>
+            容量大小固定的栈。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedStack`1.#ctor(System.Int32)">
+            <summary>
+            初始化一个实例。该实例为空并且具有指定的容量。
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">当Capacity小于等于0时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedStack`1.Push(`0)">
+            <summary>
+            将对象插入栈的顶部。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedStack`1.Pop">
+            <summary>
+            移除并返回位于栈顶部的对象。
+            </summary>
+            <exception cref="T:System.InvalidOperationException">当栈为空时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedStack`1.Peek">
+            <summary>
+            返回位于栈顶部的对象但不将其移除。
+            </summary>
+            <exception cref="T:System.InvalidOperationException">当栈为空时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedStack`1.Clear">
+            <summary>
+            从栈中移除所有对象。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Collections.FixedStack`1.Count">
+            <summary>
+            获取实际包含的元素数。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Collections.FixedStack`1.Capacity">
+            <summary>
+            获取或设置能够容纳的元素总数。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedStack`1.GetEnumerator">
+            <summary>
+            返回一个枚举器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.FixedStack`1.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            返回一个枚举器。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Collections.IndexComparer`1">
+            <summary>
+            根据对象在指定列表中的先后顺序来决定大小的比较器。
+            <para>如果两个对象都在列表中，以在列表中的先后顺序确定大小。</para>
+            <para>如果只有一个对象在列表中，认为在列表中的对象小于不在列表中的对象。</para>
+            <para>如果两个对象都不在列表中，使用默认比较器进行比较。</para>
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Collections.IndexComparer`1.#ctor(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            初始化一个实例，并指定用来确定对象顺序的列表。
+            </summary>
+            <exception cref="T:System.ArgumentNullException">当List为null时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.IndexComparer`1.#ctor(`0[])">
+            <summary>
+            初始化一个实例，并指定用来确定对象顺序的列表。
+            </summary>
+            <exception cref="T:System.ArgumentNullException">当List为null时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.Collections.IndexComparer`1.Compare(`0,`0)">
+            <summary>
+            比较两个对象。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Dynamic.DynamicDictionary">
+            <summary>
+            动态字典。与ExpandoObject的差别在于，当获取的Key不存在时，不是抛出异常，而是返回null。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Dynamic.DynamicDictionary.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+            <summary>
+            获取成员的值。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Dynamic.DynamicDictionary.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+            <summary>
+            设置成员的值。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Dynamic.DynamicDictionary.GetDynamicMemberNames">
+            <summary>
+            返回动态成员名称序列。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Trees.ITreeNode`1">
+            <summary>
+            表示树节点。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Trees.ITreeNode`1.Parent">
+            <summary>
+            获取父亲。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Trees.ITreeNode`1.Children">
+            <summary>
+            获取孩子序列。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Trees.TreeNodeExtensions">
+            <summary>
+            为ITreeNode&lt;T&gt;提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetLevel``1(``0)">
+            <summary>
+            获取层次，根层次为0。时间复杂度为O(n)。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetRoot``1(``0)">
+            <summary>
+            获取根，若自身即是根，则返回自身。时间复杂度为O(n)。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetAncestors``1(``0)">
+            <summary>
+            获取所有祖先。不包括自身。
+            <para>以往根走的顺序返回。</para>
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetAncestorsAndSelf``1(``0)">
+            <summary>
+            获取自身以及所有祖先。
+            <para>以往根走的顺序返回。</para>
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetDescendants``1(``0)">
+            <summary>
+            获取所有后代。不包括自身。
+            <para>以先根遍历方式返回。</para>
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetDescendants``2(``0,System.Func{``0,``1},System.Collections.Generic.IComparer{``1},System.Boolean)">
+            <summary>
+            获取所有后代。不包括自身。
+            <para>以先根遍历方式返回。</para>
+            <para>可以通过给出一个键选择器先对孩子进行排序。</para>
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetDescendantsAndSelf``1(``0)">
+            <summary>
+            获取自身以及所有后代。
+            <para>以先根遍历方式返回。</para>
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetDescendantsAndSelf``2(``0,System.Func{``0,``1},System.Collections.Generic.IComparer{``1},System.Boolean)">
+            <summary>
+            获取自身以及所有后代。
+            <para>以先根遍历方式返回。</para>
+            <para>可以通过给出一个键选择器先对孩子进行排序。</para>
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetLevelOrderDescendants``1(``0)">
+            <summary>
+            以层级遍历方式获取所有后代。不包括自身。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetLevelOrderDescendants``2(``0,System.Func{``0,``1},System.Collections.Generic.IComparer{``1},System.Boolean)">
+            <summary>
+            以层级遍历方式获取所有后代。不包括自身。
+            <para>可以通过给出一个键选择器先对孩子进行排序。</para>
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetLevelOrderDescendantsAndSelf``1(``0)">
+            <summary>
+            以层级遍历方式获取自身以及所有后代。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.GetLevelOrderDescendantsAndSelf``2(``0,System.Func{``0,``1},System.Collections.Generic.IComparer{``1},System.Boolean)">
+            <summary>
+            以层级遍历方式获取自身以及所有后代。
+            <para>可以通过给出一个键选择器先对孩子进行排序。</para>
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.IsDescendantOf``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            判断是否是指定节点的后代。时间复杂度O(n)。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.IsDescendantOrSelfOf``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            判断是否是指定节点的后代或者自身。时间复杂度O(n)。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.IsAncestorOf``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            判断是否是指定节点的祖先。时间复杂度O(n)。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.IsAncestorOrSelfOf``1(``0,``0,System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            判断是否是指定节点的祖先或者自身。时间复杂度O(n)。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.SkipAncestors``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            跳过序列中的是其他任一元素祖先的元素，返回不是其他任一元素祖先的元素。时间复杂度O(n*n*n)。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Trees.TreeNodeExtensions.SkipDescendants``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            跳过序列中的是其他任一元素后代的元素，返回不是其他任一元素后代的元素。时间复杂度O(n*n*n)。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.BinarySerializeStringConverter`1">
+            <summary>
+            以二进制序列化的方式进行类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.BinarySerializeStringConverter`1.TryConvertFrom(System.String,`0@)">
+            <summary>
+            尝试将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.BinarySerializeStringConverter`1.TryConvertTo(`0,System.String@)">
+            <summary>
+            尝试将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.BooleanStringConverter">
+            <summary>
+            Boolean类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.BooleanStringConverter.TryConvertFrom(System.String,System.Boolean@)">
+            <summary>
+            尝试将指定文本转换为Boolean。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.BooleanStringConverter.TryConvertTo(System.Boolean,System.String@)">
+            <summary>
+            尝试将指定Boolean转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.ByteStringConverter">
+            <summary>
+            Byte类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.ByteStringConverter.TryConvertFrom(System.String,System.Byte@)">
+            <summary>
+            尝试将指定文本转换为Byte。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.ByteStringConverter.TryConvertTo(System.Byte,System.String@)">
+            <summary>
+            尝试将指定Byte转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.DateTimeOffsetStringConverter">
+            <summary>
+            DateTimeOffset类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.DateTimeOffsetStringConverter.TryConvertFrom(System.String,System.DateTimeOffset@)">
+            <summary>
+            尝试将指定文本转换为DateTimeOffset。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.DateTimeOffsetStringConverter.TryConvertTo(System.DateTimeOffset,System.String@)">
+            <summary>
+            尝试将指定DateTimeOffset转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.DateTimeStringConverter">
+            <summary>
+            DateTime类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.DateTimeStringConverter.TryConvertFrom(System.String,System.DateTime@)">
+            <summary>
+            尝试将指定文本转换为DateTime。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.DateTimeStringConverter.TryConvertTo(System.DateTime,System.String@)">
+            <summary>
+            尝试将指定DateTime转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.DecimalStringConverter">
+            <summary>
+            Decimal类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.DecimalStringConverter.TryConvertFrom(System.String,System.Decimal@)">
+            <summary>
+            尝试将指定文本转换为Decimal。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.DecimalStringConverter.TryConvertTo(System.Decimal,System.String@)">
+            <summary>
+            尝试将指定Decimal转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.DoubleStringConverter">
+            <summary>
+            Double类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.DoubleStringConverter.TryConvertFrom(System.String,System.Double@)">
+            <summary>
+            尝试将指定文本转换为Double。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.DoubleStringConverter.TryConvertTo(System.Double,System.String@)">
+            <summary>
+            尝试将指定Double转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.EnumStringConverter`1">
+            <summary>
+            Enum类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.EnumStringConverter`1.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+            <exception cref="T:System.InvalidOperationException">当指定类型不是枚举类型时抛出。</exception>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.EnumStringConverter`1.TryConvertFrom(System.String,`0@)">
+            <summary>
+            尝试将指定文本转换为Enum。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.EnumStringConverter`1.TryConvertTo(`0,System.String@)">
+            <summary>
+            尝试将指定Enum转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.GuidStringConverter">
+            <summary>
+            Guid类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.GuidStringConverter.TryConvertFrom(System.String,System.Guid@)">
+            <summary>
+            尝试将指定文本转换为Guid。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.GuidStringConverter.TryConvertTo(System.Guid,System.String@)">
+            <summary>
+            尝试将指定Guid转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.Int16StringConverter">
+            <summary>
+            Int16类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.Int16StringConverter.TryConvertFrom(System.String,System.Int16@)">
+            <summary>
+            尝试将指定文本转换为Int16。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.Int16StringConverter.TryConvertTo(System.Int16,System.String@)">
+            <summary>
+            尝试将指定Int16转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.Int32StringConverter">
+            <summary>
+            Int32类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.Int32StringConverter.TryConvertFrom(System.String,System.Int32@)">
+            <summary>
+            尝试将指定文本转换为Int32。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.Int32StringConverter.TryConvertTo(System.Int32,System.String@)">
+            <summary>
+            尝试将指定Int32转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.Int64StringConverter">
+            <summary>
+            Int64类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.Int64StringConverter.TryConvertFrom(System.String,System.Int64@)">
+            <summary>
+            尝试将指定文本转换为Int64。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.Int64StringConverter.TryConvertTo(System.Int64,System.String@)">
+            <summary>
+            尝试将指定Int64转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.IStringConverter">
+            <summary>
+            对象与文本相互转换的转换器接口。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.IStringConverter.ConvertFrom(System.String)">
+            <summary>
+            将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.IStringConverter.TryConvertFrom(System.String,System.Object@)">
+            <summary>
+            尝试将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.IStringConverter.ConvertTo(System.Object)">
+            <summary>
+            将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.IStringConverter.TryConvertTo(System.Object,System.String@)">
+            <summary>
+            尝试将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.IStringConverter`1">
+            <summary>
+            特定类型对象与文本相互转换的转换器接口。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.IStringConverter`1.ConvertFrom(System.String)">
+            <summary>
+            将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.IStringConverter`1.TryConvertFrom(System.String,`0@)">
+            <summary>
+            尝试将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.IStringConverter`1.ConvertTo(`0)">
+            <summary>
+            将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.IStringConverter`1.TryConvertTo(`0,System.String@)">
+            <summary>
+            尝试将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.JsonSerializeStringConverter`1">
+            <summary>
+            以Json序列化的方式进行类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.TypeConversion.JsonSerializeStringConverter`1.Indented">
+            <summary>
+            获取或设置Json格式是否缩进。默认值为false。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.JsonSerializeStringConverter`1.TryConvertFrom(System.String,`0@)">
+            <summary>
+            尝试将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.JsonSerializeStringConverter`1.TryConvertTo(`0,System.String@)">
+            <summary>
+            尝试将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.NullableStringConverter`1">
+            <summary>
+            可空类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.NullableStringConverter`1.#ctor(Aoborsoft.TypeConversion.IStringConverter{`0})">
+            <summary>
+            构造方法。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.NullableStringConverter`1.TryConvertFrom(System.String,System.Nullable{`0}@)">
+            <summary>
+            尝试将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.NullableStringConverter`1.TryConvertTo(System.Nullable{`0},System.String@)">
+            <summary>
+            尝试将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.SingleStringConverter">
+            <summary>
+            Single类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.SingleStringConverter.TryConvertFrom(System.String,System.Single@)">
+            <summary>
+            尝试将指定文本转换为Single。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.SingleStringConverter.TryConvertTo(System.Single,System.String@)">
+            <summary>
+            尝试将指定Single转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.StringConverter`1">
+            <summary>
+            特定类型对象与文本相互转换的转换器抽象类。一般情况下，可通过继承此类来实现转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverter`1.ConvertFrom(System.String)">
+            <summary>
+            将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverter`1.TryConvertFrom(System.String,`0@)">
+            <summary>
+            尝试将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverter`1.ConvertTo(`0)">
+            <summary>
+            将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverter`1.TryConvertTo(`0,System.String@)">
+            <summary>
+            尝试将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverter`1.Aoborsoft#TypeConversion#IStringConverter#ConvertFrom(System.String)">
+            <summary>
+            将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverter`1.Aoborsoft#TypeConversion#IStringConverter#TryConvertFrom(System.String,System.Object@)">
+            <summary>
+            尝试将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverter`1.Aoborsoft#TypeConversion#IStringConverter#ConvertTo(System.Object)">
+            <summary>
+            将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverter`1.Aoborsoft#TypeConversion#IStringConverter#TryConvertTo(System.Object,System.String@)">
+            <summary>
+            尝试将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.StringConverterCollection`1">
+            <summary>
+            特定类型对象与文本相互转换的转换器集合。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterCollection`1.ConvertFrom(System.String)">
+            <summary>
+            将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterCollection`1.TryConvertFrom(System.String,`0@)">
+            <summary>
+            尝试将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterCollection`1.ConvertTo(`0)">
+            <summary>
+            将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterCollection`1.TryConvertTo(`0,System.String@)">
+            <summary>
+            尝试将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterCollection`1.Aoborsoft#TypeConversion#IStringConverter#ConvertFrom(System.String)">
+            <summary>
+            将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterCollection`1.Aoborsoft#TypeConversion#IStringConverter#TryConvertFrom(System.String,System.Object@)">
+            <summary>
+            尝试将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterCollection`1.Aoborsoft#TypeConversion#IStringConverter#ConvertTo(System.Object)">
+            <summary>
+            将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterCollection`1.Aoborsoft#TypeConversion#IStringConverter#TryConvertTo(System.Object,System.String@)">
+            <summary>
+            尝试将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.StringConverterRegistry">
+            <summary>
+            StringConverter注册表。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.Register``1(Aoborsoft.TypeConversion.IStringConverter{``0})">
+            <summary>
+            注册指定类型的StringConverter。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.Unregister``1">
+            <summary>
+            移除注册指定类型的StringConverter。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.ClearRegistrations">
+            <summary>
+            清空所有注册信息。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.GetConverter``1(System.Boolean)">
+            <summary>
+            获取指定类型的StringConverter。根据参数决定不存在时是否抛出异常。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.GetConverter(System.Type,System.Boolean)">
+            <summary>
+            获取指定类型的StringConverter。根据参数决定不存在时是否抛出异常。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.ConvertFrom``1(System.String)">
+            <summary>
+            将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.TryConvertFrom``1(System.String,``0@)">
+            <summary>
+            尝试将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.ConvertTo``1(``0)">
+            <summary>
+            将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.TryConvertTo``1(``0,System.String@)">
+            <summary>
+            尝试将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.ConvertFrom(System.Type,System.String)">
+            <summary>
+            将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.TryConvertFrom(System.Type,System.String,System.Object@)">
+            <summary>
+            尝试将指定文本转换为对象。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.ConvertTo(System.Type,System.Object)">
+            <summary>
+            将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.StringConverterRegistry.TryConvertTo(System.Type,System.Object,System.String@)">
+            <summary>
+            尝试将指定对象转换为文本。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.TypeConversion.StringConverterRegistry.Default">
+            <summary>
+            获取默认注册表。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.TypeConversion.TimeSpanStringConverter">
+            <summary>
+            TimeSpan类型与文本相互转换的转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.TimeSpanStringConverter.TryConvertFrom(System.String,System.TimeSpan@)">
+            <summary>
+            尝试将指定文本转换为TimeSpan。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.TypeConversion.TimeSpanStringConverter.TryConvertTo(System.TimeSpan,System.String@)">
+            <summary>
+            尝试将指定TimeSpan转换为文本。
+            </summary>
+        </member>
+        <member name="T:System.Collections.Generic.CollectionExtensions">
+            <summary>
+            为ICollection&lt;T&gt;提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.CollectionExtensions.AddRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            添加多个对象。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.CollectionExtensions.RemoveRange``1(System.Collections.Generic.ICollection{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            移除多个对象。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.CollectionExtensions.RemoveAll``1(System.Collections.Generic.ICollection{``0},System.Predicate{``0})">
+            <summary>
+            移除所有满足条件的项。
+            </summary>
+        </member>
+        <member name="T:System.Collections.Generic.DictionaryExtensions">
+            <summary>
+            为IDictionary&lt;TKey, TValue&gt;提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetOrAdd``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)">
+            <summary>
+            获取指定的键关联的值。如果该键不存在，则将键值对添加到字典中。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.DictionaryExtensions.GetOrAdd``2(System.Collections.Generic.IDictionary{``0,``1},``0,System.Func{``0,``1})">
+            <summary>
+            获取指定的键关联的值。如果该键不存在，则通过使用指定的函数将键值对添加到字典中。
+            </summary>
+        </member>
+        <member name="T:System.Collections.Generic.EnumerableExtensions">
+            <summary>
+            为IEnumerable&lt;T&gt;提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.MinItem``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            返回序列中键值最小的元素。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.MinItem``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
+            <summary>
+            返回序列中键值最小的元素。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.MinItemOrDefault``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            返回序列中键值最小的元素；如果序列中不包含任何元素，则返回默认值。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.MinItemOrDefault``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
+            <summary>
+            返回序列中键值最小的元素；如果序列中不包含任何元素，则返回默认值。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.MaxItem``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            返回序列中键值最大的元素。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.MaxItem``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
+            <summary>
+            返回序列中键值最大的元素。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.MaxItemOrDefault``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            返回序列中键值最大的元素；如果序列中不包含任何元素，则返回默认值。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.MaxItemOrDefault``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IComparer{``1})">
+            <summary>
+            返回序列中键值最大的元素；如果序列中不包含任何元素，则返回默认值。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0)">
+            <summary>
+            确定序列中的第一个匹配项的从零开始的索引。若不存在匹配项，返回-1。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.IndexOf``1(System.Collections.Generic.IEnumerable{``0},``0,System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            确定序列中的第一个匹配项的从零开始的索引。若不存在匹配项，返回-1。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.DistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            通过使用指定的键选择器对值进行比较从序列返回非重复元素。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.DistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>
+            通过使用指定的键选择器对值进行比较从序列返回非重复元素。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Concat``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>
+            连接两个序列。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Union``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>
+            通过使用默认的相等比较器生成两个序列的并集。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Intersect``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>
+            通过使用默认的相等比较器生成两个序列的交集。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Except``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>
+            通过使用默认的相等比较器生成两个序列的差集。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.ContainsAll``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            判断是否包含指定序列中的所有元素。若指定序列为空序列，认为是包含所有元素，返回true。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.ContainsAll``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            判断是否包含指定序列中的所有元素。若指定序列为空序列，认为是包含所有元素，返回true。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.ContainsAny``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            判断是否包含指定序列中的任一元素。若指定序列为空序列，认为不包含任一元素，返回false。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.ContainsAny``1(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEqualityComparer{``0})">
+            <summary>
+            判断是否包含指定序列中的任一元素。若指定序列为空序列，认为不包含任一元素，返回false。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Sum(System.Collections.Generic.IEnumerable{System.TimeSpan})">
+            <summary>
+            计算TimeSpan值序列之和。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Sum(System.Collections.Generic.IEnumerable{System.Nullable{System.TimeSpan}})">
+            <summary>
+            计算可以为null的TimeSpan值序列之和。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.TimeSpan})">
+            <summary>
+            计算TimeSpan值序列之和，这些值是通过对输入序列中的每个元素调用转换函数得来的。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Sum``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Nullable{System.TimeSpan}})">
+            <summary>
+            计算可以为null的TimeSpan值序列之和，这些值是通过对输入序列中的每个元素调用转换函数得来的。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            对序列中的每个元素执行指定操作。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})">
+            <summary>
+            对序列中的每个元素执行指定操作。Action的第二个参数表示元素在源系列中的从0开始的索引。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Partition``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            将序列按指定大小分区成多个序列。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Classify``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}})">
+            <summary>
+            根据指定的键序列选择器函数，创建一个Lookup。
+            <para>与ToLookup的区别是，每个元素可以有多个Key，该元素将被包含在多个Group中。</para>
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Classify``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>
+            根据指定的键序列选择器函数和键比较器，创建一个Lookup。
+            <para>与ToLookup的区别是，每个元素可以有多个Key，该元素将被包含在多个Group中。</para>
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Classify``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}},System.Func{``0,``2})">
+            <summary>
+            根据指定的键序列选择器函数和元素选择器函数，创建一个Lookup。
+            <para>与ToLookup的区别是，每个元素可以有多个Key，该元素将被包含在多个Group中。</para>
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Classify``3(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Collections.Generic.IEnumerable{``1}},System.Func{``0,``2},System.Collections.Generic.IEqualityComparer{``1})">
+            <summary>
+            根据指定的键序列选择器函数、键比较器和元素选择器函数，创建一个Lookup。
+            <para>与ToLookup的区别是，每个元素可以有多个Key，该元素将被包含在多个Group中。</para>
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Cartesian``3(System.Collections.Generic.IEnumerable{``0},System.Collections.Generic.IEnumerable{``1},System.Func{``0,``1,``2})">
+            <summary>
+            对两个序列进行笛卡尔积计算，并对每一对创建一个结果值。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Pad``1(System.Collections.Generic.IEnumerable{``0},System.Int32)">
+            <summary>
+            当序列元素数量小于指定的数量时，使用默认值填充序列，使达到指定的数量。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Pad``1(System.Collections.Generic.IEnumerable{``0},System.Int32,``0)">
+            <summary>
+            当序列元素数量小于指定的数量时，使用指定值填充序列，使达到指定的数量。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.EnumerableExtensions.Pad``1(System.Collections.Generic.IEnumerable{``0},System.Int32,System.Func{System.Int32,``0})">
+            <summary>
+            当序列元素数量小于指定的数量时，使用计算值填充序列，使达到指定的数量。PaddingSelector的第一个参数表示从0开始的索引。
+            </summary>
+        </member>
+        <member name="T:System.Collections.Generic.ListExtensions">
+            <summary>
+            为IList&lt;T&gt;提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.MoveUpAt``1(System.Collections.Generic.IList{``0},System.Int32)">
+            <summary>
+            将指定索引所在元素上移一位。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.MoveDownAt``1(System.Collections.Generic.IList{``0},System.Int32)">
+            <summary>
+            将指定索引所在元素下移一位。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.MoveToTopAt``1(System.Collections.Generic.IList{``0},System.Int32)">
+            <summary>
+            将指定索引所在元素上移至顶。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.MoveToBottomAt``1(System.Collections.Generic.IList{``0},System.Int32)">
+            <summary>
+            将指定索引所在元素下移至底。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.MoveToAt``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)">
+            <summary>
+            将指定索引所在元素移动到新索引处。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.SwapAt``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)">
+            <summary>
+            交换两个索引所在元素的位置。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.MoveUp``1(System.Collections.Generic.IList{``0},``0)">
+            <summary>
+            将指定元素上移一位。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.MoveDown``1(System.Collections.Generic.IList{``0},``0)">
+            <summary>
+            将指定元素下移一位。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.MoveToTop``1(System.Collections.Generic.IList{``0},``0)">
+            <summary>
+            将指定元素上移至顶。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.MoveToBottom``1(System.Collections.Generic.IList{``0},``0)">
+            <summary>
+            将指定元素下移至底。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.MoveTo``1(System.Collections.Generic.IList{``0},``0,System.Int32)">
+            <summary>
+            将指定元素移动到新索引处。
+            </summary>
+        </member>
+        <member name="M:System.Collections.Generic.ListExtensions.Swap``1(System.Collections.Generic.IList{``0},``0,``0)">
+            <summary>
+            交换两个元素的位置。
+            </summary>
+        </member>
+        <member name="T:System.Security.Cryptography.CryptographyExtensions">
+            <summary>
+            提供密码学有关的扩展方法。
+            </summary>
+        </member>
+        <member name="M:System.Security.Cryptography.CryptographyExtensions.Encrypt(System.Security.Cryptography.SymmetricAlgorithm,System.Byte[])">
+            <summary>
+            加密字节数组。
+            </summary>
+        </member>
+        <member name="M:System.Security.Cryptography.CryptographyExtensions.Decrypt(System.Security.Cryptography.SymmetricAlgorithm,System.Byte[])">
+            <summary>
+            解密字节数组。
+            </summary>
+        </member>
+        <member name="T:System.DateTimeExtensions">
+            <summary>
+            为DateTime提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetYearFirstDay(System.DateTime)">
+            <summary>
+            获取指定日期所在年的第一天的日期。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetYearLastDay(System.DateTime)">
+            <summary>
+            获取指定日期所在年的最后一天的日期。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetYearDays(System.DateTime)">
+            <summary>
+            获取指定日期所在年的日期序列。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetQuarterFirstDay(System.DateTime)">
+            <summary>
+            获取指定日期所在季的第一天的日期。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetQuarterLastDay(System.DateTime)">
+            <summary>
+            获取指定日期所在季的最后一天的日期。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetQuarterDays(System.DateTime)">
+            <summary>
+            获取指定日期所在季的日期序列。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetMonthFirstDay(System.DateTime)">
+            <summary>
+            获取指定日期所在月的第一天的日期。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetMonthLastDay(System.DateTime)">
+            <summary>
+            获取指定日期所在月的最后一天的日期。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetMonthDays(System.DateTime)">
+            <summary>
+            获取指定日期所在月的日期序列。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetWeekFirstDay(System.DateTime,System.DayOfWeek)">
+            <summary>
+            获取指定日期所在周的第一天的日期。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetWeekLastDay(System.DateTime,System.DayOfWeek)">
+            <summary>
+            获取指定日期所在周的最后一天的日期。
+            </summary>
+        </member>
+        <member name="M:System.DateTimeExtensions.GetWeekDays(System.DateTime,System.DayOfWeek)">
+            <summary>
+            获取指定日期所在周的日期列表。
+            </summary>
+        </member>
+        <member name="T:System.Linq.Expressions.PredicateBuilder">
+            <summary>
+            谓词构建者。用于拼接谓词，或对谓词求“非”。
+            </summary>
+        </member>
+        <member name="M:System.Linq.Expressions.PredicateBuilder.True``1">
+            <summary>
+            获取一个恒为“True”的谓词。通常用于用“与”的方式拼接谓词的起点。
+            </summary>
+        </member>
+        <member name="M:System.Linq.Expressions.PredicateBuilder.False``1">
+            <summary>
+            获取一个恒为“False”的谓词。通常用于用“或”的方式拼接谓词的起点。
+            </summary>
+        </member>
+        <member name="M:System.Linq.Expressions.PredicateBuilder.And``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            将两个谓词用“与”的方式拼接为一个新谓词。
+            </summary>
+        </member>
+        <member name="M:System.Linq.Expressions.PredicateBuilder.Or``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            将两个谓词用“或”的方式拼接为一个新谓词。
+            </summary>
+        </member>
+        <member name="M:System.Linq.Expressions.PredicateBuilder.Not``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            对指定谓词取“非”。
+            </summary>
+        </member>
+        <member name="T:System.StringExtensions">
+            <summary>
+            为String提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.Reverse(System.String)">
+            <summary>
+            反转字符串。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.Repeat(System.String,System.Int32)">
+            <summary>
+            将字符串重复连接数次。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.GetBefore(System.String,System.String)">
+            <summary>
+            获取第一个匹配项之前的字符串。若没有匹配项，返回string.Empty。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.GetBefore(System.String,System.String,System.StringComparison)">
+            <summary>
+            获取第一个匹配项之前的字符串。若没有匹配项，返回string.Empty。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.GetLastBefore(System.String,System.String)">
+            <summary>
+            获取最后一个匹配项之前的字符串。若没有匹配项，返回string.Empty。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.GetLastBefore(System.String,System.String,System.StringComparison)">
+            <summary>
+            获取最后一个匹配项之前的字符串。若没有匹配项，返回string.Empty。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.GetAfter(System.String,System.String)">
+            <summary>
+            获取第一个匹配项之后的字符串。若没有匹配项，返回string.Empty。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.GetAfter(System.String,System.String,System.StringComparison)">
+            <summary>
+            获取第一个匹配项之后的字符串。若没有匹配项，返回string.Empty。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.GetLastAfter(System.String,System.String)">
+            <summary>
+            获取最后一个匹配项之后的字符串。若没有匹配项，返回string.Empty。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.GetLastAfter(System.String,System.String,System.StringComparison)">
+            <summary>
+            获取最后一个匹配项之后的字符串。若没有匹配项，返回string.Empty。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.GetBetween(System.String,System.String,System.String)">
+            <summary>
+            获取两个字符串之间的字符串。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.GetBetween(System.String,System.String,System.String,System.StringComparison)">
+            <summary>
+            获取两个字符串之间的字符串。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.EnsureStartsWith(System.String,System.String)">
+            <summary>
+            确保字符串存在指定的前缀。
+            </summary>
+        </member>
+        <member name="M:System.StringExtensions.EnsureEndsWith(System.String,System.String)">
+            <summary>
+            确保字符串存在指定的后缀。
+            </summary>
+        </member>
+        <member name="T:System.TypeExtensions">
+            <summary>
+            为Type提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:System.TypeExtensions.GetDefaultValue(System.Type)">
+            <summary>
+            获取类型的默认值。
+            </summary>
+        </member>
+        <member name="T:System.Reflection.ObjectExtensions">
+            <summary>
+            为Object提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:System.Reflection.ObjectExtensions.GetPropertyValue(System.Object,System.String)">
+            <summary>
+            获取公共实例属性值。
+            </summary>
+        </member>
+        <member name="M:System.Reflection.ObjectExtensions.GetPropertyValue(System.Object,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            获取指定绑定约束属性值。
+            </summary>
+        </member>
+        <member name="M:System.Reflection.ObjectExtensions.GetPropertyValue``1(System.Object,System.String)">
+            <summary>
+            获取公共实例属性值。
+            </summary>
+        </member>
+        <member name="M:System.Reflection.ObjectExtensions.GetPropertyValue``1(System.Object,System.String,System.Reflection.BindingFlags)">
+            <summary>
+            获取指定绑定约束属性值。
+            </summary>
+        </member>
+        <member name="M:System.Reflection.ObjectExtensions.SetPropertyValue(System.Object,System.String,System.Object)">
+            <summary>
+            设置公共实例属性值。
+            </summary>
+        </member>
+        <member name="M:System.Reflection.ObjectExtensions.SetPropertyValue(System.Object,System.String,System.Reflection.BindingFlags,System.Object)">
+            <summary>
+            设置指定绑定约束属性值。
+            </summary>
+        </member>
+        <member name="M:System.Reflection.ObjectExtensions.InvokeMethod(System.Object,System.String,System.Object[])">
+            <summary>
+            执行公共实例方法。
+            </summary>
+        </member>
+        <member name="M:System.Reflection.ObjectExtensions.InvokeMethod(System.Object,System.String,System.Reflection.BindingFlags,System.Object[])">
+            <summary>
+            执行指定绑定约束方法。
+            </summary>
+        </member>
+        <member name="M:System.Reflection.ObjectExtensions.InvokeMethod``1(System.Object,System.String,System.Object[])">
+            <summary>
+            执行公共实例方法。
+            </summary>
+        </member>
+        <member name="M:System.Reflection.ObjectExtensions.InvokeMethod``1(System.Object,System.String,System.Reflection.BindingFlags,System.Object[])">
+            <summary>
+            执行指定绑定约束方法。
+            </summary>
+        </member>
+    </members>
+</doc>

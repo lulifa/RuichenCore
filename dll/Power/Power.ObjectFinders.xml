@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.ObjectFinders</name>
+    </assembly>
+    <members>
+        <member name="M:Power.ObjectFinders.Core.ExpressionBuilder.CreateContainsPredicate``2(System.Collections.Generic.IEnumerable{``1},System.String)">
+            <summary>
+            通过主键集合传递构造Contains表达式树。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.Core.ExpressionBuilder.CreateContainsPredicate``2(System.Collections.Generic.IEnumerable{``1},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            通过表达式传递构造Contains表达式树。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.Core.ExpressionBuilder.CreateSelectorPredicate``2">
+            <summary>
+            通过指定模型构造Select表达式树。
+            </summary>
+        </member>
+        <member name="T:Power.ObjectFinders.MiniObjectFinder">
+            <summary>
+            MiniObject获取器。
+            </summary>
+        </member>
+        <member name="P:Power.ObjectFinders.MiniObjectFinder.RegisteredKeys">
+            <summary>
+            获取所有已注册类型。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.MiniObjectFinder.Register(Power.ObjectFinders.IMiniObjectDeclare[])">
+            <summary>
+            注册MiniObject实体。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.MiniObjectFinder.Get(System.String)">
+            <summary>
+            获取实体注册声明。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.MiniObjectFinder.GetObjects``1">
+            <summary>
+            获取MiniObject查询。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.MiniObjectFinder.GetObjects(System.String)">
+            <summary>
+            获取MiniObject查询。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.MiniObjectFinder.GetObjects(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取MiniObject列表，有序。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.MiniObjectFinder.GetObjects``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取MiniObject列表，有序。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.MiniObjectFinder.GetObjectsAsync(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取MiniObject列表，有序。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.MiniObjectFinder.GetObjectsAsync``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取MiniObject列表，有序。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Register(System.String[])">
+            <summary>
+            注册检测范围（程序集关键字）。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Import(System.Reflection.Assembly[])">
+            <summary>
+            注入需要检测的程序集。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Find``1(System.Object[])">
+            <summary>
+            通过泛型类型和对象ID查找具体对象。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Find(System.Type,System.Object[])">
+            <summary>
+            通过实体类型和实体ID查找具体对象。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Find(System.String,System.Object[])">
+            <summary>
+            通过实体类型全称和实体ID查找具体对象。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.FindAsync``1(System.Object[])">
+            <summary>
+            通过泛型类型和对象ID查找具体对象。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.FindAsync(System.Type,System.Object[])">
+            <summary>
+            通过实体类型和实体ID查找具体对象。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.FindAsync(System.String,System.Object[])">
+            <summary>
+            通过实体类型全称和实体ID查找具体对象。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Query``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            通过指定Expression进行查询。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Query``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过指定主键集合构造Contains表达式树进行查询。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Query(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过指定主键集合构造Contains表达式树进行查询。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Query(System.Type,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过指定主键集合构造Contains表达式树进行查询。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Select``2">
+            <summary>
+            通过指定的局部模型动态查询指定类型数据。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Select``1(System.String,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            通过指定的局部模型动态查询指定类型数据。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Select``1(System.Type,System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            通过指定的局部模型动态查询指定类型数据。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.Convert(System.String,System.Boolean)">
+            <summary>
+            通过实体类型全称转化为对象类型。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectFinders.ObjectFinder.GetDbContext(System.Type)">
+            <summary>
+            通过具体类型匹配所属DbContext。
+            </summary>
+        </member>
+    </members>
+</doc>

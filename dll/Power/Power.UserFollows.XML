@@ -1,0 +1,303 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.UserFollows</name>
+    </assembly>
+    <members>
+        <member name="T:Power.UserFollows.UserFollow">
+            <summary>
+            表示一条关注记录。
+            </summary>
+        </member>
+        <member name="T:Power.UserFollows.UserFollowServices">
+            <summary>
+            对象关注服务。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByObject(System.String,System.Guid)">
+            <summary>
+            清除指定对象的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByObject``1(System.Guid)">
+            <summary>
+            清除指定对象的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByObjectAsync(System.String,System.Guid)">
+            <summary>
+            异步清除指定对象的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByObjectAsync``1(System.Guid)">
+            <summary>
+            异步清除指定对象的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByObjects(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            清除指定对象序列的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByObjects``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            清除指定对象序列的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByObjectsAsync(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步清除指定对象序列的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByObjectsAsync``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步清除指定对象序列的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByUser(System.String)">
+            <summary>
+            清除指定用户的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByUserAsync(System.String)">
+            <summary>
+            异步清除指定用户的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByUsers(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            清除指定用户序列的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByUsersAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            异步清除指定用户序列的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByPredicate(System.Linq.Expressions.Expression{System.Func{Power.UserFollows.UserFollow,System.Boolean}})">
+            <summary>
+            清除满足指定条件表达式的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.ClearByPredicateAsync(System.Linq.Expressions.Expression{System.Func{Power.UserFollows.UserFollow,System.Boolean}})">
+            <summary>
+            异步清除满足指定条件表达式的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.SetFollowed(System.String,System.String,System.Guid)">
+            <summary>
+            设置为已关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.SetFollowed``1(System.String,System.Guid)">
+            <summary>
+            设置为已关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.SetFollowedAsync(System.String,System.String,System.Guid)">
+            <summary>
+            异步设置为已关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.SetFollowedAsync``1(System.String,System.Guid)">
+            <summary>
+            异步设置为已关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.SetNotFollowed(System.String,System.String,System.Guid)">
+            <summary>
+            设置为未关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.SetNotFollowed``1(System.String,System.Guid)">
+            <summary>
+            设置为未关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.SetNotFollowedAsync(System.String,System.String,System.Guid)">
+            <summary>
+            异步设置为未关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.SetNotFollowedAsync``1(System.String,System.Guid)">
+            <summary>
+            异步设置为未关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.HasFollowed(System.String,System.String,System.Guid)">
+            <summary>
+            判断是否已关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.HasFollowed``1(System.String,System.Guid)">
+            <summary>
+            判断是否已关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.HasFollowedAsync(System.String,System.String,System.Guid)">
+            <summary>
+            异步判断是否已关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.HasFollowedAsync``1(System.String,System.Guid)">
+            <summary>
+            异步判断是否已关注。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedObjectIds(System.String,System.String)">
+            <summary>
+            获取指定用户已关注的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedObjectIds``1(System.String)">
+            <summary>
+            获取指定用户已关注的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedObjectIdsAsync(System.String,System.String)">
+            <summary>
+            异步获取指定用户已关注的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedObjectIdsAsync``1(System.String)">
+            <summary>
+            异步获取指定用户已关注的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedObjectIds(System.String,System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取指定ObjectId序列中，被指定用户已关注的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedObjectIds``1(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取指定ObjectId序列中，被指定用户已关注的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedObjectIdsAsync(System.String,System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步获取指定ObjectId序列中，被指定用户已关注的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedObjectIdsAsync``1(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步获取指定ObjectId序列中，被指定用户已关注的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedUserIds(System.String,System.Guid)">
+            <summary>
+            获取已关注的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedUserIds``1(System.Guid)">
+            <summary>
+            获取已关注的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedUserIdsAsync(System.String,System.Guid)">
+            <summary>
+            异步获取已关注的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedUserIdsAsync``1(System.Guid)">
+            <summary>
+            异步获取已关注的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedUserIds(System.String,System.Guid,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取指定UserId序列中，已关注的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedUserIds``1(System.Guid,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取指定UserId序列中，已关注的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedUserIdsAsync(System.String,System.Guid,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            异步获取指定UserId序列中，已关注的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetFollowedUserIdsAsync``1(System.Guid,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            异步获取指定UserId序列中，已关注的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByObject(System.String,System.Guid)">
+            <summary>
+            获取指定对象的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByObject``1(System.Guid)">
+            <summary>
+            获取指定对象的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByObjectAsync(System.String,System.Guid)">
+            <summary>
+            异步获取指定对象的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByObjectAsync``1(System.Guid)">
+            <summary>
+            异步获取指定对象的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByObjects(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取指定对象序列的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByObjects``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取指定对象序列的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByObjectsAsync(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步获取指定对象序列的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByObjectsAsync``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步获取指定对象序列的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByUser(System.String,System.String)">
+            <summary>
+            获取指定用户指定对象类型的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByUser``1(System.String)">
+            <summary>
+            获取指定用户指定对象类型的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByUserAsync(System.String,System.String)">
+            <summary>
+            异步获取指定用户指定对象类型的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByUserAsync``1(System.String)">
+            <summary>
+            异步获取指定用户指定对象类型的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByPredicate(System.Linq.Expressions.Expression{System.Func{Power.UserFollows.UserFollow,System.Boolean}})">
+            <summary>
+            获取满足指定条件表达式的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetByPredicateAsync(System.Linq.Expressions.Expression{System.Func{Power.UserFollows.UserFollow,System.Boolean}})">
+            <summary>
+            异步获取满足指定条件表达式的所有关注记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserFollows.UserFollowServices.GetQueryable">
+            <summary>
+            获取返回所有关注记录的查询。
+            </summary>
+        </member>
+    </members>
+</doc>

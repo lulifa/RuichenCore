@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.UserProfiles</name>
+    </assembly>
+    <members>
+        <member name="T:Power.UserProfiles.UserProfile">
+            <summary>
+            表示用户的所有个性化数据。本类线程安全。
+            </summary>
+        </member>
+        <member name="M:Power.UserProfiles.UserProfile.GetValue``1(System.String,``0)">
+            <summary>
+            获取Profile属性值。若不存在，返回默认值。
+            </summary>
+        </member>
+        <member name="M:Power.UserProfiles.UserProfile.SetValue``1(System.String,``0)">
+            <summary>
+            设置Profile属性值。
+            </summary>
+        </member>
+        <member name="T:Power.UserProfiles.UserProfileManager">
+            <summary>
+            UserProfile管理者。
+            </summary>
+        </member>
+        <member name="P:Power.UserProfiles.UserProfileManager.SlidingExpiration">
+            <summary>
+            获取或设置滑动期限。该值表示某个缓存项在多久时间未被访问时将被移出缓存。默认值：20分钟。
+            </summary>
+        </member>
+        <member name="M:Power.UserProfiles.UserProfileManager.GetUserProfile(System.String)">
+            <summary>
+            获取指定用户的UserProfile。保证不会返回null。
+            </summary>
+        </member>
+        <member name="M:Power.UserProfiles.UserProfileManager.SaveUserProfile(System.String,Power.UserProfiles.UserProfile)">
+            <summary>
+            保存指定用户的UserProfile。
+            </summary>
+        </member>
+        <member name="M:Power.UserProfiles.UserProfileManager.DeleteUserProfile(System.String)">
+            <summary>
+            删除指定用户的UserProfile。
+            </summary>
+        </member>
+        <member name="T:Power.UserProfiles.UserProfileVisitorBase">
+            <summary>
+            UserProfile访问器。
+            </summary>
+        </member>
+        <member name="P:Power.UserProfiles.UserProfileVisitorBase.UserProfile">
+            <summary>
+            获取UserProfile。
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,345 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Visibilities</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Visibilities.Repositories.IVisibilityRepository">
+            <summary>
+            Visibility仓储。对某类型的Visibility进行管理。
+            </summary>
+        </member>
+        <member name="P:Power.Visibilities.Repositories.IVisibilityRepository.Type">
+            <summary>
+            获取要对其进行Visibility管理的对象类型。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.Add(Power.Visibilities.Visibility)">
+            <summary>
+            添加Visibility。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.AddRange(System.Collections.Generic.IEnumerable{Power.Visibilities.Visibility})">
+            <summary>
+            添加Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.Remove(Power.Visibilities.Visibility)">
+            <summary>
+            移除Visibility。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.RemoveRange(System.Collections.Generic.IEnumerable{Power.Visibilities.Visibility})">
+            <summary>
+            移除Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.Update(Power.Visibilities.Visibility)">
+            <summary>
+            更新Visibility。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.UpdateRange(System.Collections.Generic.IEnumerable{Power.Visibilities.Visibility})">
+            <summary>
+            更新Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.Clear">
+            <summary>
+            清空所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.Clear``1">
+            <summary>
+            清空所有Visibility具体子类序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.Clear(System.Linq.Expressions.Expression{System.Func{Power.Visibilities.Visibility,System.Boolean}})">
+            <summary>
+            清空满足条件的所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.Clear``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            清空满足条件的所有Visibility具体子类序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.GetById(System.Guid)">
+            <summary>
+            通过Id获取Visibility。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.GetByIds(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过Id序列获取Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.GetSingle(System.Linq.Expressions.Expression{System.Func{Power.Visibilities.Visibility,System.Boolean}})">
+            <summary>
+            获取满足条件的第一个Visibility。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.GetSingle``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            获取满足条件的第一个Visibility具体子类。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.GetMultiple(System.Linq.Expressions.Expression{System.Func{Power.Visibilities.Visibility,System.Boolean}})">
+            <summary>
+            获取满足条件的所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.GetMultiple``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            获取满足条件的所有Visibility具体子类序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.GetAll">
+            <summary>
+            获取所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.IVisibilityRepository.GetAll``1">
+            <summary>
+            获取所有Visibility具体子类序列。
+            </summary>
+        </member>
+        <member name="T:Power.Visibilities.Repositories.IVisibilityRepository`1">
+            <summary>
+            IVisibilityRepository接口的泛型版本。对指定类型的Visibility进行管理。
+            </summary>
+        </member>
+        <member name="T:Power.Visibilities.Repositories.VisibilityRepository`1">
+            <summary>
+            IVisibilityRepository&lt;T&gt;的基本实现类，将数据保存至数据库的Visibilities表。
+            </summary>
+        </member>
+        <member name="P:Power.Visibilities.Repositories.VisibilityRepository`1.Power#Visibilities#Repositories#IVisibilityRepository#Type">
+            <summary>
+            获取要对其进行Visibility管理的对象类型。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.Add(Power.Visibilities.Visibility)">
+            <summary>
+            添加Visibility。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.AddRange(System.Collections.Generic.IEnumerable{Power.Visibilities.Visibility})">
+            <summary>
+            添加Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.Remove(Power.Visibilities.Visibility)">
+            <summary>
+            移除Visibility。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.RemoveRange(System.Collections.Generic.IEnumerable{Power.Visibilities.Visibility})">
+            <summary>
+            移除Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.Update(Power.Visibilities.Visibility)">
+            <summary>
+            更新Visibility。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.UpdateRange(System.Collections.Generic.IEnumerable{Power.Visibilities.Visibility})">
+            <summary>
+            更新Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.Clear">
+            <summary>
+            清空所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.Clear``1">
+            <summary>
+            清空所有Visibility具体子类序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.Clear(System.Linq.Expressions.Expression{System.Func{Power.Visibilities.Visibility,System.Boolean}})">
+            <summary>
+            清空满足条件的所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.Clear``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            清空满足条件的所有Visibility具体子类序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.GetById(System.Guid)">
+            <summary>
+            通过Id获取Visibility。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.GetByIds(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过Id序列获取Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.GetSingle(System.Linq.Expressions.Expression{System.Func{Power.Visibilities.Visibility,System.Boolean}})">
+            <summary>
+            获取满足条件的第一个Visibility。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.GetSingle``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            获取满足条件的第一个Visibility具体子类。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.GetMultiple(System.Linq.Expressions.Expression{System.Func{Power.Visibilities.Visibility,System.Boolean}})">
+            <summary>
+            获取满足条件的所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.GetMultiple``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            获取满足条件的所有Visibility具体子类序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.GetAll">
+            <summary>
+            获取本对象类型的所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.Repositories.VisibilityRepository`1.GetAll``1">
+            <summary>
+            获取所有Visibility具体子类序列。
+            </summary>
+        </member>
+        <member name="T:Power.Visibilities.Visibility">
+            <summary>
+            表示一条可见性配置。
+            </summary>
+        </member>
+        <member name="T:Power.Visibilities.VisibilityClient`1">
+            <summary>
+            Visibility客户端。针对指定对象类型的Visibility增删改查，以及获取可见对象等操作的入口。
+            </summary>
+        </member>
+        <member name="P:Power.Visibilities.VisibilityClient`1.Repository">
+            <summary>
+            获取对Visibility进行增删改查的仓储。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.GetVisibilities(System.String)">
+            <summary>
+            获取当前日期适用于指定用户的所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.GetVisibilities(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取当前日期适用于指定用户序列的所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.GetVisibilities``1(System.String)">
+            <summary>
+            获取当前日期适用于指定用户的所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.GetVisibilities``1(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取当前日期适用于指定用户序列的所有Visibility序列。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.GetVisibleExpression(System.String)">
+            <summary>
+            获取当前日期指定用户的可见对象的查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.GetVisibleExpression(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取当前日期指定用户序列的可见对象的查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.GetVisibleObjects(System.String,Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            获取当前日期指定用户的可见对象。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.GetVisibleObjects(System.Collections.Generic.IEnumerable{System.String},Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            获取当前日期指定用户序列的可见对象。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.IsVisible(`0,System.String)">
+            <summary>
+            判断当前日期指定对象是否针对指定用户可见。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.IsVisible(`0,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            判断当前日期指定对象是否针对指定用户序列中的任一用户可见。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.TranslateToExpression(System.Collections.Generic.IEnumerable{Power.Visibilities.Visibility})">
+            <summary>
+            将指定Visibility序列转化为查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityClient`1.ContainsObject(System.Collections.Generic.IEnumerable{Power.Visibilities.Visibility},`0)">
+            <summary>
+            判断指定Visibility序列是否包含指定对象。
+            </summary>
+        </member>
+        <member name="T:Power.Visibilities.VisibilityForAll">
+            <summary>
+            针对指定类型的所有对象的可见性配置。
+            </summary>
+        </member>
+        <member name="T:Power.Visibilities.VisibilityForObject">
+            <summary>
+            针对某一个具体的个体对象的可见性配置。
+            </summary>
+        </member>
+        <member name="T:Power.Visibilities.VisibilityForQuery">
+            <summary>
+            针对满足指定查询的所有对象的可见性配置。
+            </summary>
+        </member>
+        <member name="T:Power.Visibilities.VisibilityRegister">
+            <summary>
+            Visibility注册器。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityRegister.Register``1">
+            <summary>
+            注册一个类型，注册后，即可对该类型进行Visibility管理。
+            <para>框架将使用默认Repository来对该类型的Visibility进行管理，默认Repository为VisibilityRepository&lt;T&gt;。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityRegister.AddRepository``1(Power.Visibilities.Repositories.IVisibilityRepository{``0})">
+            <summary>
+            添加自定义Repository，同一类型只允许添加一次。
+            <para>框架将使用该自定义Repository而非默认Repository对该类型的Visibility进行管理。</para>
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityRepositoryManager.Get``1(System.Boolean)">
+            <summary>
+            获取Repository。根据参数决定不存在时是否抛出异常。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityRepositoryManager.GetOrAdd``1">
+            <summary>
+            获取Repository。若不存在，则添加默认仓储。
+            </summary>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityRepositoryManager.Add``1(Power.Visibilities.Repositories.IVisibilityRepository{``0})">
+            <summary>
+            添加Repository。同一类型只允许添加一次。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Visibilities.VisibilityRepositoryManager.GetAll">
+            <summary>
+            获取所有Repository序列。
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -26,6 +26,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Aoborsoft.Core">
+      <HintPath>..\dll\Aoborsoft\Aoborsoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Utility.Core">
+      <HintPath>..\dll\Utility\Utility.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="appsettings.Development.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

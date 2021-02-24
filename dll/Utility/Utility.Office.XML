@@ -1,0 +1,420 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Utility.Office</name>
+    </assembly>
+    <members>
+        <member name="T:Utility.Office.ExcelReader`1">
+            <summary>
+            Excel数据读取器。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelReader`1.Map``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.String,System.Boolean)">
+            <summary>
+            映射模型某属性到指定名称的Excel列，并指定该列是否必须存在。
+            </summary>
+            <param name="property">模型属性。从Excel读取的值将设置到该属性。</param>
+            <param name="columnName">Excel列名。若不指定，表示与模型属性同名。</param>
+            <param name="columnReqiured">Excel列是否必须存在。</param>
+        </member>
+        <member name="M:Utility.Office.ExcelReader`1.Map``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Int32)">
+            <summary>
+            映射模型某属性到指定索引的Excel列。
+            </summary>
+            <param name="property">模型属性。从Excel读取的值将设置到该属性。</param>
+            <param name="columnIndex">Excel列索引。该索引是基于0开始的。</param>
+        </member>
+        <member name="M:Utility.Office.ExcelReader`1.MapCustom``1(System.Action{`0,``0},System.String,System.Boolean)">
+            <summary>
+            映射指定名称的Excel列，并指定该列是否必须存在。
+            </summary>
+            <param name="setValueAction">设置值方法。从Excel读取的值将通过该方法设置到模型。</param>
+            <param name="columnName">Excel列名。</param>
+            <param name="columnRequired">Excel列是否必须存在。</param>
+        </member>
+        <member name="M:Utility.Office.ExcelReader`1.MapCustom``1(System.Action{`0,``0},System.Int32)">
+            <summary>
+            映射指定索引的Excel列。
+            </summary>
+            <param name="setValueAction">设置值方法。从Excel读取的值将通过该方法设置到模型。</param>
+            <param name="columnIndex">Excel列索引。该索引是基于0开始的。</param>
+        </member>
+        <member name="M:Utility.Office.ExcelReader`1.MapCustom(System.Type,System.Action{`0,System.Object},System.String,System.Boolean)">
+            <summary>
+            映射指定名称的Excel列，并指定该列是否必须存在。
+            </summary>
+            <param name="valueType">值类型。从Excel读取的值将转化为该类型。</param>
+            <param name="setValueAction">设置值方法。从Excel读取的值将通过该方法设置到模型。</param>
+            <param name="columnName">Excel列名。</param>
+            <param name="columnRequired">Excel列是否必须存在。</param>
+        </member>
+        <member name="M:Utility.Office.ExcelReader`1.MapCustom(System.Type,System.Action{`0,System.Object},System.Int32)">
+            <summary>
+            映射指定索引的Excel列。
+            </summary>
+            <param name="valueType">值类型。从Excel读取的值将转化为该类型。</param>
+            <param name="setValueAction">设置值方法。从Excel读取的值将通过该方法设置到模型。</param>
+            <param name="columnIndex">Excel列索引。该索引是基于0开始的。</param>
+        </member>
+        <member name="M:Utility.Office.ExcelReader`1.AutoMap(System.Boolean)">
+            <summary>
+            自动映射模型中所有公有的可读可写的属性到同名的Excel列，并指定这些列是否必须存在。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelReader`1.Ignore``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            忽略模型某属性。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelReader`1.HeaderRowIndex">
+            <summary>
+            获取或设置表头行索引。该索引是基于0开始的。默认值为0。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelReader`1.SheetIndex">
+            <summary>
+            获取或设置工作表索引。该索引是基于0开始的。默认值为0。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelReader`1.IgnoreHiddenRows">
+            <summary>
+            获取或设置是否忽略隐藏行。默认值为false。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelReader`1.ValidateOnRead">
+            <summary>
+            获取或设置是否在读取的时候验证模型。默认值为true。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelReader`1.ValidationContextItems">
+            <summary>
+            获取验证上下文数据字典。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelReader`1.Read(System.String)">
+            <summary>
+            读取指定路径的文件。读取过程中会汇总所有的数据异常，以AggregateException的形式抛出。
+            </summary>
+            <exception cref="T:System.AggregateException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Utility.Office.ExcelReader`1.Read(System.IO.Stream)">
+            <summary>
+            读取指定的流。读取过程中会汇总所有的数据异常，以AggregateException的形式抛出。
+            </summary>
+            <exception cref="T:System.AggregateException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:Utility.Office.ExcelReadMap`1">
+            <summary>
+            描述模型与Excel列的映射关系。
+            </summary>
+        </member>
+        <member name="T:Utility.Office.ExcelReadMapConfigurator`2">
+            <summary>
+            配置Excel列映射信息。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelReadMapConfigurator`2.ValueFunc(System.Func{Aspose.Cells.Cell,`1})">
+            <summary>
+            配置值获取方法，配置后，将调用该方法从单元格中获取值。可以配置为null，表示按默认方式获取。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelReadMapConfigurator`2.ValueAutoTrim(System.Boolean)">
+            <summary>
+            配置值是否自动移除所有前导空白字符和尾部空白字符。默认值为true。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelReadMapConfigurator`2.Validate(System.Func{`1,System.Boolean},System.String)">
+            <summary>
+            配置值验证方法，配置后，将调用该方法对值进行验证。可以调用多次，表示进行多次验证。
+            </summary>
+        </member>
+        <member name="T:Utility.Office.ExcelWriteColumn`1">
+            <summary>
+            写Excel时描述列的配置信息。
+            </summary>
+        </member>
+        <member name="T:Utility.Office.ExcelWriteColumnConfigurator`2">
+            <summary>
+            配置Excel列信息。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.HeaderStyle(System.Action{Aspose.Cells.Style,System.String})">
+            <summary>
+            配置表头样式。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.HeaderStyle(System.Action{Aspose.Cells.Style})">
+            <summary>
+            配置表头样式。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.ResetHeaderStyle">
+            <summary>
+            重置表头样式。重置后，相当于没有对表头样式做过额外配置。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.BodyStyle(System.Action{Aspose.Cells.Style,`0,`1})">
+            <summary>
+            配置主体样式。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.BodyStyle(System.Action{Aspose.Cells.Style})">
+            <summary>
+            配置主体样式。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.ResetBodyStyle">
+            <summary>
+            重置主体样式。重置后，相当于没有对主体样式做过额外配置。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.HeaderHorizontalAlignment(Aspose.Cells.TextAlignmentType)">
+            <summary>
+            配置表头文本水平对齐方式。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.HeaderVerticalAlignment(Aspose.Cells.TextAlignmentType)">
+            <summary>
+            配置表头文本垂直对齐方式。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.HeaderFontName(System.String)">
+            <summary>
+            配置表头文本字体。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.HeaderFontSize(System.Int32)">
+            <summary>
+            配置表头文本字号。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.HeaderFontColor(System.Drawing.Color)">
+            <summary>
+            配置表头文本颜色。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.HeaderTextWrapped(System.Boolean)">
+            <summary>
+            配置表头文本是否自动换行。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.BodyHorizontalAlignment(Aspose.Cells.TextAlignmentType)">
+            <summary>
+            配置主体文本水平对齐方式。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.BodyVerticalAlignment(Aspose.Cells.TextAlignmentType)">
+            <summary>
+            配置主体文本垂直对齐方式。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.BodyFontName(System.String)">
+            <summary>
+            配置主体文本字体。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.BodyFontSize(System.Int32)">
+            <summary>
+            配置主体文本字号。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.BodyFontColor(System.Drawing.Color)">
+            <summary>
+            配置主体文本颜色。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.BodyTextWrapped(System.Boolean)">
+            <summary>
+            配置主体文本是否自动换行。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.BodyCustom(System.String)">
+            <summary>
+            配置主体文本自定义显示格式。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.HeaderComment(System.Action{Aspose.Cells.Comment})">
+            <summary>
+            配置表头批注。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.ResetHeaderComment">
+            <summary>
+            重置表头批注。重置后，相当于没有对表头批注做过额外配置。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.HeaderCommentNote(System.String)">
+            <summary>
+            配置表头批注文本。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.Validation(System.Action{Aspose.Cells.Validation})">
+            <summary>
+            配置数据验证。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.ResetValidation">
+            <summary>
+            重置数据验证。重置后，相当于没有配置数据验证。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.ValidationList(System.Collections.Generic.IEnumerable{`1},System.String)">
+            <summary>
+            配置数据验证为列表。
+            <para>注意：列表用逗号分隔后的文本长度不能超过255，否则Excel不支持。如果超过255，本方法选择忽略列表。</para>
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.ValidationRange(`1,`1,System.String)">
+            <summary>
+            配置数据验证为区间。MinValue与MaxValue，可以有一个为null，表示某侧不限制，但不可全为null。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.ValidationTextLength(System.Nullable{System.Int32},System.Nullable{System.Int32},System.String)">
+            <summary>
+            配置数据验证为文本长度。MinValue与MaxValue，可以有一个为null，表示某侧不限制，但不可全为null。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.AutoMerge(System.Boolean)">
+            <summary>
+            配置单元格是否自动合并。默认值为false。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.AsMergeReference(System.Boolean)">
+            <summary>
+            配置是否作为其他列合并的参照列，只有参照列是合并的，其他列才可能合并，可以有多个参照列。默认值为false。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.Width(System.Nullable{System.Double})">
+            <summary>
+            配置列宽度，单位字符数，一个汉字占用两个英文字符宽度。值必须在0到255之间，null表示不进行特别配置。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.WidthPixel(System.Nullable{System.Int32})">
+            <summary>
+            配置列宽度，单位像素。null表示不进行特别配置。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriteColumnConfigurator`2.WidthInch(System.Nullable{System.Double})">
+            <summary>
+            配置列宽度，单位英寸。null表示不进行特别配置。
+            </summary>
+        </member>
+        <member name="T:Utility.Office.ExcelWriter`1">
+            <summary>
+            Excel数据写入器。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelWriter`1.DefaultHeaderStyle">
+            <summary>
+            获取默认表头样式。该样式首先复制自ExcelWriterConfig.DefaultHeaderStyle，然后可对该样式做修改，形成当前ExcelWriter的默认表头样式。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelWriter`1.DefaultBodyStyle">
+            <summary>
+            获取默认主体样式。该样式首先复制自ExcelWriterConfig.DefaultBodyStyle，然后可对该样式做修改，形成当前ExcelWriter的默认表头样式。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelWriter`1.AutoMergeHeader">
+            <summary>
+            获取或设置是否自动合并表头。默认值为true。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelWriter`1.AutoFitColumns">
+            <summary>
+            获取或设置是否自适应所有列。默认值为true。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelWriter`1.FreezeColumnCount">
+            <summary>
+            获取或设置冻结的列数量。0表示不冻结。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriter`1.AddColumn``1(System.String,System.Func{`0,``0})">
+            <summary>
+            添加列。添加后，可对列信息做进一步配置。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriter`1.AddColumn``1(System.String,System.Func{`0,System.Int32,``0})">
+            <summary>
+            添加列。添加后，可对列信息做进一步配置。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriter`1.AddColumn``1(System.Collections.Generic.IList{System.String},System.Func{`0,``0})">
+            <summary>
+            添加列。添加后，可对列信息做进一步配置。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriter`1.AddColumn``1(System.Collections.Generic.IList{System.String},System.Func{`0,System.Int32,``0})">
+            <summary>
+            添加列。添加后，可对列信息做进一步配置。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelWriter`1.HeaderRowCount">
+            <summary>
+            获取表头行数量。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriter`1.Write(System.Collections.Generic.IEnumerable{`0},System.String)">
+            <summary>
+            根据当前配置，用指定的数据源生成Excel，并保存到指定路径。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriter`1.Write(System.Collections.Generic.IEnumerable{`0},System.String,Aspose.Cells.SaveFormat)">
+            <summary>
+            根据当前配置，用指定的数据源生成Excel，并保存到指定路径。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriter`1.Write(System.Collections.Generic.IEnumerable{`0},System.IO.Stream)">
+            <summary>
+            根据当前配置，用指定的数据源生成Excel，并写入到指定流。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriter`1.Write(System.Collections.Generic.IEnumerable{`0},System.IO.Stream,Aspose.Cells.SaveFormat)">
+            <summary>
+            根据当前配置，用指定的数据源生成Excel，并写入到指定流。
+            </summary>
+        </member>
+        <member name="M:Utility.Office.ExcelWriter`1.Write(System.Collections.Generic.IEnumerable{`0},Aspose.Cells.Worksheet)">
+            <summary>
+            根据当前配置，用指定的数据源生成Excel，并写入到指定Worksheet。
+            </summary>
+        </member>
+        <member name="E:Utility.Office.ExcelWriter`1.WorksheetWriting">
+            <summary>
+            当Worksheet即将写入时激发。
+            </summary>
+        </member>
+        <member name="E:Utility.Office.ExcelWriter`1.WorksheetWritten">
+            <summary>
+            当Worksheet完成写入时激发。
+            </summary>
+        </member>
+        <member name="T:Utility.Office.WorksheetWritingEventArgs">
+            <summary>
+            为WorksheetWriting事件提供数据。
+            </summary>
+        </member>
+        <member name="T:Utility.Office.WorksheetWrittenEventArgs">
+            <summary>
+            为WorksheetWritten事件提供数据。
+            </summary>
+        </member>
+        <member name="T:Utility.Office.ExcelWriterConfig">
+            <summary>
+            ExcelWriter配置。该配置影响所有ExcelWriter。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelWriterConfig.DefaultHeaderStyle">
+            <summary>
+            获取默认表头样式。可对该样式做配置，所有ExcelWriter将继承此默认样式。
+            </summary>
+        </member>
+        <member name="P:Utility.Office.ExcelWriterConfig.DefaultBodyStyle">
+            <summary>
+            获取默认主体样式。可对该样式做配置，所有ExcelWriter将继承此默认样式。
+            </summary>
+        </member>
+    </members>
+</doc>

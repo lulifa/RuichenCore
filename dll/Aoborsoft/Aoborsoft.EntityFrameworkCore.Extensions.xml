@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.EntityFrameworkCore.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.EntityFrameworkCore.DbContextExtensions">
+            <summary>
+            为DbContext提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DbContextExtensions.EnsureCollectionLoaded``4(``0,System.Collections.Generic.IEnumerable{``1},System.Linq.Expressions.Expression{System.Func{``1,System.Collections.Generic.IEnumerable{``2}}},System.Func{``1,``3},System.Linq.Expressions.Expression{System.Func{``2,``3}})">
+            <summary>
+            保证主对象序列的集合导航属性已经被加载。
+            该方法只进行一次数据库交互，对尚未加载集合导航属性的主对象序列加载集合导航属性。
+            如果主对象序列的集合导航属性均已加载，则本方法不会进行数据库交互。
+            </summary>
+            <param name="dbContext">主对象、导航对象所属的DbContext。</param>
+            <param name="owners">要加载集合导航属性的主对象序列。</param>
+            <param name="navigationProperty">要加载的集合导航属性。</param>
+            <param name="ownerKey">主对象的主键。</param>
+            <param name="navForeignKey">导航对象的外键。</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DbContextExtensions.EnsureCollectionLoadedAsync``4(``0,System.Collections.Generic.IEnumerable{``1},System.Linq.Expressions.Expression{System.Func{``1,System.Collections.Generic.IEnumerable{``2}}},System.Func{``1,``3},System.Linq.Expressions.Expression{System.Func{``2,``3}})">
+            <summary>
+            异步保证主对象序列的集合导航属性已经被加载。
+            该方法只进行一次数据库交互，对尚未加载集合导航属性的主对象序列加载集合导航属性。
+            如果主对象序列的集合导航属性均已加载，则本方法不会进行数据库交互。
+            </summary>
+            <param name="dbContext">主对象、导航对象所属的DbContext。</param>
+            <param name="owners">要加载集合导航属性的主对象序列。</param>
+            <param name="navigationProperty">要加载的集合导航属性。</param>
+            <param name="ownerKey">主对象的主键。</param>
+            <param name="navForeignKey">导航对象的外键。</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DbContextExtensions.EnsureReferenceLoaded``4(``0,System.Collections.Generic.IEnumerable{``1},System.Linq.Expressions.Expression{System.Func{``1,``2}},System.Func{``1,``3},System.Linq.Expressions.Expression{System.Func{``2,``3}})">
+            <summary>
+            保证主对象序列的引用导航属性已经被加载。
+            该方法只进行一次数据库交互，对尚未加载引用导航属性的主对象序列加载引用导航属性。
+            如果主对象序列的引用导航属性均已加载，则本方法不会进行数据库交互。
+            </summary>
+            <param name="dbContext">主对象、导航对象所属的DbContext。</param>
+            <param name="owners">要加载引用导航属性的主对象序列。</param>
+            <param name="navigationProperty">要加载的引用导航属性。</param>
+            <param name="ownerForeignKey">主对象的外键。</param>
+            <param name="referenceKey">引用对象的主键。</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DbContextExtensions.EnsureReferenceLoadedAsync``4(``0,System.Collections.Generic.IEnumerable{``1},System.Linq.Expressions.Expression{System.Func{``1,``2}},System.Func{``1,``3},System.Linq.Expressions.Expression{System.Func{``2,``3}})">
+            <summary>
+            保证主对象序列的引用导航属性已经被加载。
+            该方法只进行一次数据库交互，对尚未加载引用导航属性的主对象序列加载引用导航属性。
+            如果主对象序列的引用导航属性均已加载，则本方法不会进行数据库交互。
+            </summary>
+            <param name="dbContext">主对象、导航对象所属的DbContext。</param>
+            <param name="owners">要加载引用导航属性的主对象序列。</param>
+            <param name="navigationProperty">要加载的引用导航属性。</param>
+            <param name="ownerForeignKey">主对象的外键。</param>
+            <param name="referenceKey">引用对象的主键。</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DbContextExtensions.EnsureDescendantsLoaded``3(``0,System.Collections.Generic.IEnumerable{``1},System.Linq.Expressions.Expression{System.Func{``1,System.Collections.Generic.IEnumerable{``1}}},System.Func{``1,``2},System.Linq.Expressions.Expression{System.Func{``1,``2}})">
+            <summary>
+            保证对象序列的所有后代已经被加载。
+            该方法按层次进行数据库交互，每一层次对该层次尚未加载Children的对象序列加载Children。
+            如果对象序列的所有后代均已加载，则本方法不会进行数据库交互。
+            </summary>
+            <param name="dbContext">对象所属的DbContext。</param>
+            <param name="owners">要加载后代的对象序列。</param>
+            <param name="childrenProperty">要加载的Children导航属性。</param>
+            <param name="ownerKey">对象的主键。</param>
+            <param name="parentKey">对象的Parent外键。</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DbContextExtensions.EnsureDescendantsLoadedAsync``3(``0,System.Collections.Generic.IEnumerable{``1},System.Linq.Expressions.Expression{System.Func{``1,System.Collections.Generic.IEnumerable{``1}}},System.Func{``1,``2},System.Linq.Expressions.Expression{System.Func{``1,``2}})">
+            <summary>
+            异步保证对象序列的所有后代已经被加载。
+            该方法按层次进行数据库交互，每一层次对该层次尚未加载Children的对象序列加载Children。
+            如果对象序列的所有后代均已加载，则本方法不会进行数据库交互。
+            </summary>
+            <param name="dbContext">对象所属的DbContext。</param>
+            <param name="owners">要加载后代的对象序列。</param>
+            <param name="childrenProperty">要加载的Children导航属性。</param>
+            <param name="ownerKey">对象的主键。</param>
+            <param name="parentKey">对象的Parent外键。</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DbContextExtensions.EnsureDescendantsLoaded``3(``0,``1,System.Linq.Expressions.Expression{System.Func{``1,System.Collections.Generic.IEnumerable{``1}}},System.Func{``1,``2},System.Linq.Expressions.Expression{System.Func{``1,``2}})">
+            <summary>
+            保证对象的所有后代已经被加载。
+            该方法按层次进行数据库交互，每一层次对该层次尚未加载Children的对象序列加载Children。
+            如果对象的所有后代均已加载，则本方法不会进行数据库交互。
+            </summary>
+            <param name="dbContext">对象所属的DbContext。</param>
+            <param name="owner">要加载后代的对象。</param>
+            <param name="childrenProperty">要加载的Children导航属性。</param>
+            <param name="ownerKey">对象的主键。</param>
+            <param name="parentKey">对象的Parent外键。</param>
+        </member>
+        <member name="M:Microsoft.EntityFrameworkCore.DbContextExtensions.EnsureDescendantsLoadedAsync``3(``0,``1,System.Linq.Expressions.Expression{System.Func{``1,System.Collections.Generic.IEnumerable{``1}}},System.Func{``1,``2},System.Linq.Expressions.Expression{System.Func{``1,``2}})">
+            <summary>
+            异步保证对象的所有后代已经被加载。
+            该方法按层次进行数据库交互，每一层次对该层次尚未加载Children的对象序列加载Children。
+            如果对象的所有后代均已加载，则本方法不会进行数据库交互。
+            </summary>
+            <param name="dbContext">对象所属的DbContext。</param>
+            <param name="owner">要加载后代的对象。</param>
+            <param name="childrenProperty">要加载的Children导航属性。</param>
+            <param name="ownerKey">对象的主键。</param>
+            <param name="parentKey">对象的Parent外键。</param>
+        </member>
+    </members>
+</doc>

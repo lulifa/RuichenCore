@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Roles</name>
+    </assembly>
+    <members>
+        <member name="M:Power.Roles.Role.AddMember(System.String)">
+            <summary>
+            添加Member。若该Member已经存在，则忽略。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.Role.AddMembers(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            添加Member序列。若某Member已经存在，则忽略该Member。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.Role.RemoveMember(System.String)">
+            <summary>
+            移除Member。若该Member不存在，则忽略。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.Role.RemoveMembers(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            移除Member序列。若某Member不存在，则忽略该Member。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.Role.ClearMembers">
+            <summary>
+            清空所有Member。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.Role.GetMemberIds">
+            <summary>
+            获取所有Member的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.Role.GetMembers">
+            <summary>
+            获取所有Member序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.Role.IsMember(System.String)">
+            <summary>
+            判断是否是Member。
+            </summary>
+        </member>
+        <member name="T:Power.Roles.RoleManager">
+            <summary>
+            Role管理者，对Role进行增删改查的入口。
+            </summary>
+        </member>
+        <member name="P:Power.Roles.RoleManager.VersionCache">
+            <summary>
+            获取或设置分布式缓存，该缓存用于存放最新数据版本时间。
+            </summary>
+        </member>
+        <member name="P:Power.Roles.RoleManager.UnknownRoleResolver">
+            <summary>
+            获取或设置UnknownRoleResolver。
+            <para>当调用GetById、GetByIds方法时，若指定Id的Role不存在，同时ApplyResolverWhenNotExists参数为true且UnknownRoleResolver不为null，返回UnknownRoleResolver解析的Role，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RoleManager.GetById(System.Guid,System.Boolean)">
+            <summary>
+            通过Id获取Role。
+            <para>若指定Id的Role不存在，同时ApplyResolverWhenNotExists参数为true且UnknownRoleResolver不为null，返回UnknownRoleResolver解析的Role，否则返回null。</para>
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Role不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Roles.RoleManager.GetByIds(System.Collections.Generic.IEnumerable{System.Guid},System.Boolean)">
+            <summary>
+            通过Id序列获取Role序列。返回序列的顺序与输入序列的顺序相同。
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Role不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Roles.RoleManager.GetSingle(System.Func{Power.Roles.Role,System.Boolean})">
+            <summary>
+            获取满足条件的第一个Role。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RoleManager.GetMultiple(System.Func{Power.Roles.Role,System.Boolean})">
+            <summary>
+            获取满足条件的所有Role序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RoleManager.GetAll">
+            <summary>
+            获取所有Role序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RoleManager.GetByType(System.String)">
+            <summary>
+            通过Type获取Role序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RoleManager.ExistsId(System.Guid)">
+            <summary>
+            判断是否存在指定Id的Role。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RoleManager.Add(Power.Roles.Role)">
+            <summary>
+            添加Role。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RoleManager.AddRange(System.Collections.Generic.IEnumerable{Power.Roles.Role})">
+            <summary>
+            添加Role序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RoleManager.Remove(Power.Roles.Role)">
+            <summary>
+            移除Role。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RoleManager.RemoveRange(System.Collections.Generic.IEnumerable{Power.Roles.Role})">
+            <summary>
+            移除Role序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RoleManager.SaveChanges">
+            <summary>
+            保存所有变更。
+            </summary>
+        </member>
+        <member name="T:Power.Roles.RolesExtensions">
+            <summary>
+            为IEnumerable&lt;Role&gt;提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RolesExtensions.GetMemberIds(System.Collections.Generic.IEnumerable{Power.Roles.Role})">
+            <summary>
+            获取所有Member的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RolesExtensions.GetMembers(System.Collections.Generic.IEnumerable{Power.Roles.Role})">
+            <summary>
+            获取所有Member序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.RolesExtensions.IsMember(System.Collections.Generic.IEnumerable{Power.Roles.Role},System.String)">
+            <summary>
+            判断是否是其中任何一个Role的Member。
+            </summary>
+        </member>
+        <member name="T:Power.Roles.RoleVisitorBase">
+            <summary>
+            Role访问器。
+            </summary>
+        </member>
+        <member name="P:Power.Roles.RoleVisitorBase.Role">
+            <summary>
+            获取Role。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.UserExtensions.GetRoles(Power.Users.User)">
+            <summary>
+            获取所有的Role序列。
+            </summary>
+        </member>
+        <member name="T:Power.Roles.UsersProviders.UsersProviderOfRole">
+            <summary>
+            表示指定角色的所有人员的UsersProvider。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.UsersProviders.UsersProviderOfRole.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.UsersProviders.UsersProviderOfRole.#ctor(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            构造方法，并指定RoleId序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Roles.UsersProviders.UsersProviderOfRole.#ctor(System.Guid[])">
+            <summary>
+            构造方法，并指定RoleId序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Power.Roles.UsersProviders.UsersProviderOfRole.RoleIds">
+            <summary>
+            获取指定的RoleId集。
+            </summary>
+        </member>
+        <member name="P:Power.Roles.UsersProviders.UsersProviderOfRole.Roles">
+            <summary>
+            获取指定的Role序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.UsersProviders.UsersProviderOfRole.GetUserIds(System.Object)">
+            <summary>
+            获取UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.UsersProviders.UsersProviderOfRole.Contains(System.String,System.Object)">
+            <summary>
+            判断是否包含指定User。
+            </summary>
+        </member>
+        <member name="T:Power.Roles.UsersProviders.UsersProviderOfRoleName">
+            <summary>
+            表示指定角色名称的所有人员的UsersProvider。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.UsersProviders.UsersProviderOfRoleName.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.UsersProviders.UsersProviderOfRoleName.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            构造方法，并指定RoleName序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Roles.UsersProviders.UsersProviderOfRoleName.#ctor(System.String[])">
+            <summary>
+            构造方法，并指定RoleName序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Power.Roles.UsersProviders.UsersProviderOfRoleName.RoleNames">
+            <summary>
+            获取指定的RoleName集。
+            </summary>
+        </member>
+        <member name="P:Power.Roles.UsersProviders.UsersProviderOfRoleName.Roles">
+            <summary>
+            获取指定的Role序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.UsersProviders.UsersProviderOfRoleName.GetUserIds(System.Object)">
+            <summary>
+            获取UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Roles.UsersProviders.UsersProviderOfRoleName.Contains(System.String,System.Object)">
+            <summary>
+            判断是否包含指定User。
+            </summary>
+        </member>
+    </members>
+</doc>

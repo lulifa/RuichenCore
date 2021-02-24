@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Categories</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Categories.Category">
+            <summary>
+            表示分类。
+            </summary>
+        </member>
+        <member name="T:Power.Categories.CategoryManager">
+            <summary>
+            Category管理者，对Category进行增删改查的入口。
+            </summary>
+        </member>
+        <member name="P:Power.Categories.CategoryManager.VersionCache">
+            <summary>
+            获取或设置分布式缓存，该缓存用于存放最新数据版本时间。
+            </summary>
+        </member>
+        <member name="P:Power.Categories.CategoryManager.UnknownCategoryResolver">
+            <summary>
+            获取或设置UnknownCategoryResolver。
+            <para>当调用GetById、GetByIds方法时，若指定Id的Category不存在，同时ApplyResolverWhenNotExists参数为true且UnknownCategoryResolver不为null，返回UnknownCategoryResolver解析的Category，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.GetById(System.Guid,System.Boolean)">
+            <summary>
+            通过Id获取Category。
+            <para>若指定Id的Category不存在，同时ApplyResolverWhenNotExists参数为true且UnknownCategoryResolver不为null，返回UnknownCategoryResolver解析的Category，否则返回null。</para>
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Category不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.GetByIds(System.Collections.Generic.IEnumerable{System.Guid},System.Boolean)">
+            <summary>
+            通过Id序列获取Category序列。返回序列的顺序与输入序列的顺序相同。
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Category不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.GetByType(System.String)">
+            <summary>
+            通过Type获取Category序列。
+            </summary>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.GetSingle(System.Func{Power.Categories.Category,System.Boolean})">
+            <summary>
+            获取满足条件的第一个Category。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.GetMultiple(System.Func{Power.Categories.Category,System.Boolean})">
+            <summary>
+            获取满足条件的所有Category序列。
+            </summary>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.GetAll">
+            <summary>
+            获取所有Category序列。
+            </summary>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.ExistsId(System.Guid)">
+            <summary>
+            判断是否存在指定Id的Category。
+            </summary>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.Add(Power.Categories.Category)">
+            <summary>
+            添加Category。
+            </summary>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.AddRange(System.Collections.Generic.IEnumerable{Power.Categories.Category})">
+            <summary>
+            添加Category序列。
+            </summary>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.Remove(Power.Categories.Category)">
+            <summary>
+            移除Category。
+            </summary>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.RemoveRange(System.Collections.Generic.IEnumerable{Power.Categories.Category})">
+            <summary>
+            移除Category序列。
+            </summary>
+        </member>
+        <member name="M:Power.Categories.CategoryManager.SaveChanges">
+            <summary>
+            保存所有变更。
+            </summary>
+        </member>
+        <member name="T:Power.Categories.CategoryVisitorBase">
+            <summary>
+            Category访问器。
+            </summary>
+        </member>
+        <member name="P:Power.Categories.CategoryVisitorBase.Category">
+            <summary>
+            获取Category。
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.WeChat</name>
+    </assembly>
+    <members>
+        <member name="T:Aoborsoft.WeChat.WeChatResponse">
+            <summary>
+            WeChat响应。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.WeChat.WeChatUtility">
+            <summary>
+            提供微信的一些实用工具方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.WeChat.WeChatUtility.GetAccessToken(System.String,System.String)">
+            <summary>
+            获取AccessToken。
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Users.Synchronization</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Users.Synchronization.ISourceDepartment">
+            <summary>
+            源部门。
+            </summary>
+        </member>
+        <member name="T:Power.Users.Synchronization.ISourceUser">
+            <summary>
+            源用户。
+            </summary>
+        </member>
+        <member name="T:Power.Users.Synchronization.ReadDepartmentsResult`1">
+            <summary>
+            表示读取到的一批源部门，并标识后面是否还有未读取的数据。
+            </summary>
+        </member>
+        <member name="T:Power.Users.Synchronization.ReadUsersResult`1">
+            <summary>
+            表示读取到的一批源用户，并标识后面是否还有未读取的数据。
+            </summary>
+        </member>
+        <member name="T:Power.Users.Synchronization.ReadDepartmentLeadersResult">
+            <summary>
+            表示读取到的一批部门领导，并标识后面是否还有未读取的数据。
+            </summary>
+        </member>
+        <member name="T:Power.Users.Synchronization.Synchronizer`2">
+            <summary>
+            组织架构同步。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.Synchronizer`2.Logger">
+            <summary>
+            获取Logger。可能为null。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.Synchronizer`2.NotReturnedDepartmentIsInactive">
+            <summary>
+            未返回的Department是否认为是非活动的。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.Synchronizer`2.NotReturnedUserIsInactive">
+            <summary>
+            未返回的User是否认为是非活动的。
+            </summary>
+        </member>
+        <member name="F:Power.Users.Synchronization.Synchronizer`2.m_DepartmentSyncIdToIdDict">
+            <summary>
+            记录所有同步的Department的SyncId与Id的对应关系。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.Synchronize">
+            <summary>
+            组织架构同步。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.BeforeSynchronize">
+            <summary>
+            在开始组织架构同步前被调用，用于进行一些初始化工作等。基类的实现不做任何事情。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.AfterSynchronize">
+            <summary>
+            在完成组织架构同步后被调用，用于进行一些收尾工作等。基类的实现不做任何事情。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.SynchronizeDepartments">
+            <summary>
+            同步所有Department。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.BeforeSynchronizeDepartments">
+            <summary>
+            在开始Department同步前被调用，用于进行一些初始化工作等。基类的实现不做任何事情。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.AfterSynchronizeDepartments">
+            <summary>
+            在完成Department同步后被调用，用于进行一些收尾工作等。基类的实现不做任何事情。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.SynchronizeDepartmentsCore">
+            <summary>
+            Department同步核心方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.ReadSourceDepartments">
+            <summary>
+            读取数据源，并标识后面是否还有未读取的数据。
+            <para>可以分批次进行读取，每调用一次本方法，返回部分数据，并标识后面是否还有未读取的数据。子类需自行维护相关的状态，比如分页读取的话，子类需维护好当前读取的页码。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.SynchronizeDepartmentProperties(Power.Users.Department,`0,System.Boolean)">
+            <summary>
+            对除了Id、ParentId、SyncId之外的Department基本属性进行赋值。
+            </summary>
+            <param name="department">需要设置相关属性的目标Department。</param>
+            <param name="sourceDepartment">需要读取相关属性的源Department。</param>
+            <param name="isNew">是否是之前未同步过的新Department。</param>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.SynchronizeUsers">
+            <summary>
+            同步所有User。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.BeforeSynchronizeUsers">
+            <summary>
+            在开始User同步前被调用，用于进行一些初始化工作等。基类的实现不做任何事情。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.AfterSynchronizeUsers">
+            <summary>
+            在完成User同步后被调用，用于进行一些收尾工作等。基类的实现不做任何事情。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.SynchronizeUsersCore">
+            <summary>
+            User同步核心方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.ReadSourceUsers">
+            <summary>
+            读取数据源，并标识后面是否还有未读取的数据。
+            <para>可以分批次进行读取，每调用一次本方法，返回部分数据，并标识后面是否还有未读取的数据。子类需自行维护相关的状态，比如分页读取的话，子类需维护好当前读取的页码。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.SynchronizeUserProperties(Power.Users.User,`1,System.Boolean)">
+            <summary>
+            对除了Id之外的User基本属性进行赋值。
+            </summary>
+            <param name="user">需要设置相关属性的目标User。</param>
+            <param name="sourceUser">需要读取相关属性的源User。</param>
+            <param name="isNew">是否是之前未同步过的新User。</param>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.SynchronizeDepartmentLeaders">
+            <summary>
+            同步所有DepartmentLeader。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.BeforeSynchronizeDepartmentLeaders">
+            <summary>
+            在开始DepartmentLeader同步前被调用，用于进行一些初始化工作等。基类的实现不做任何事情。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.AfterSynchronizeDepartmentLeaders">
+            <summary>
+            在完成DepartmentLeader同步后被调用，用于进行一些收尾工作等。基类的实现不做任何事情。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.SynchronizeDepartmentLeadersCore">
+            <summary>
+            DepartmentLeader同步核心方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Synchronization.Synchronizer`2.ReadDepartmentLeaders">
+            <summary>
+            读取数据源，并标识后面是否还有未读取的数据。
+            <para>可以分批次进行读取，每调用一次本方法，返回部分数据，并标识后面是否还有未读取的数据。子类需自行维护相关的状态，比如分页读取的话，子类需维护好当前读取的页码。</para>
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,451 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Relations</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Relations.Relation`2">
+            <summary>
+            表示TFrom与TTo之间的一个关联。
+            </summary>
+        </member>
+        <member name="P:Power.Relations.Relation`2.FromId">
+            <summary>
+            获取或设置FromId。
+            </summary>
+        </member>
+        <member name="P:Power.Relations.Relation`2.ToId">
+            <summary>
+            获取或设置ToId。
+            </summary>
+        </member>
+        <member name="T:Power.Relations.RelationInfoAsFrom`2">
+            <summary>
+            TFrom与TTo的关联之间，针对指定的FromId序列，查询每个FromId分别关联的ToId序列或To序列的信息类。
+            </summary>
+        </member>
+        <member name="P:Power.Relations.RelationInfoAsFrom`2.FromIds">
+            <summary>
+            获取FromId只读集合。
+            </summary>
+        </member>
+        <member name="P:Power.Relations.RelationInfoAsFrom`2.Relations">
+            <summary>
+            获取Relation序列。
+            </summary>
+        </member>
+        <member name="P:Power.Relations.RelationInfoAsFrom`2.ToDbContext">
+            <summary>
+            获取或设置可对TTo对象进行查询的DbContext实例。
+            <para>在获取关联的对象之前，需要先设置本属性，关联的对象将通过本DbContext进行查询。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsFrom`2.GetTos(System.Guid)">
+            <summary>
+            获取指定FromId关联的To序列。
+            <para>如果一个From有可能关联多个To，则适合调用本方法；如果一个From最多只可能关联一个To，则适合调用GetTo方法。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsFrom`2.GetTo(System.Guid)">
+            <summary>
+            获取指定FromId关联的To。
+            <para>如果一个From最多只可能关联一个To，则适合调用本方法；如果一个From有可能关联多个To，则适合调用GetTos方法。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsFrom`2.GetAllTos">
+            <summary>
+            获取关联的所有To序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsFrom`2.GetToIds(System.Guid)">
+            <summary>
+            获取指定FromId关联的ToId序列。
+            <para>如果一个From有可能关联多个To，则适合调用本方法；如果一个From最多只可能关联一个To，则适合调用GetToId方法。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsFrom`2.GetToId(System.Guid)">
+            <summary>
+            获取指定FromId关联的ToId。
+            <para>如果一个From最多只可能关联一个To，则适合调用本方法；如果一个From有可能关联多个To，则适合调用GetToIds方法。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsFrom`2.GetAllToIds">
+            <summary>
+            获取关联的所有ToId序列。
+            </summary>
+        </member>
+        <member name="T:Power.Relations.RelationInfoAsTo`2">
+            <summary>
+            TFrom与TTo的关联之间，针对指定的ToId序列，查询每个ToId分别关联的FromId序列或From序列的信息类。
+            </summary>
+        </member>
+        <member name="P:Power.Relations.RelationInfoAsTo`2.ToIds">
+            <summary>
+            获取ToId只读集合。
+            </summary>
+        </member>
+        <member name="P:Power.Relations.RelationInfoAsTo`2.Relations">
+            <summary>
+            获取Relation序列。
+            </summary>
+        </member>
+        <member name="P:Power.Relations.RelationInfoAsTo`2.FromDbContext">
+            <summary>
+            获取或设置可对TFrom对象进行查询的DbContext实例。
+            <para>在获取关联的对象之前，需要先设置本属性，关联的对象将通过本DbContext进行查询。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsTo`2.GetFroms(System.Guid)">
+            <summary>
+            获取指定ToId关联的From序列。
+            <para>如果一个To有可能关联多个From，则适合调用本方法；如果一个To最多只可能关联一个From，则适合调用GetFrom方法。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsTo`2.GetFrom(System.Guid)">
+            <summary>
+            获取指定ToId关联的From。
+            <para>如果一个To最多只可能关联一个From，则适合调用本方法；如果一个To有可能关联多个From，则适合调用GetFroms方法。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsTo`2.GetAllFroms">
+            <summary>
+            获取关联的所有From序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsTo`2.GetFromIds(System.Guid)">
+            <summary>
+            获取指定ToId关联的FromId序列。
+            <para>如果一个To有可能关联多个From，则适合调用本方法；如果一个To最多只可能关联一个From，则适合调用GetFromId方法。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsTo`2.GetFromId(System.Guid)">
+            <summary>
+            获取指定ToId关联的FromId。
+            <para>如果一个To最多只可能关联一个From，则适合调用本方法；如果一个To有可能关联多个From，则适合调用GetFromIds方法。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationInfoAsTo`2.GetAllFromIds">
+            <summary>
+            获取关联的所有FromId序列。
+            </summary>
+        </member>
+        <member name="T:Power.Relations.RelationManager">
+            <summary>
+            关系管理者。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.Register``2(Power.Relations.Relationship,System.Boolean)">
+            <summary>
+            注册两个对象之间的关系。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRegistration``2">
+            <summary>
+            获取Registration。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.AddRelation``2(``0,``1,System.Action{Power.Relations.Relation{``0,``1}})">
+            <summary>
+            添加From与To之间的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.AddRelation``2(System.Guid,System.Guid,System.Action{Power.Relations.Relation{``0,``1}})">
+            <summary>
+            添加From与To之间的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.RemoveRelation``2(``0,``1)">
+            <summary>
+            移除From与To之间的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.RemoveRelation``2(System.Guid,System.Guid)">
+            <summary>
+            移除From与To之间的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.RemoveRelationsAsFrom``2(``0)">
+            <summary>
+            移除指定From与To之间的所有关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.RemoveRelationsAsFrom``2(System.Guid)">
+            <summary>
+            移除指定From与To之间的所有关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.RemoveRelationsAsTo``2(``1)">
+            <summary>
+            移除指定To与From之间的所有关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.RemoveRelationsAsTo``2(System.Guid)">
+            <summary>
+            移除指定To与From之间的所有关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.AddOrUpdateRelation``2(Power.Relations.Relation{``0,``1})">
+            <summary>
+            添加或更新指定的Relation。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.RemoveRelation``2(Power.Relations.Relation{``0,``1})">
+            <summary>
+            删除指定的Relation。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.RemoveRelations``2(System.Collections.Generic.IEnumerable{Power.Relations.Relation{``0,``1}})">
+            <summary>
+            删除指定的Relation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelationsAsFrom``1(``0)">
+            <summary>
+            清空指定对象的所有作为From的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelationsAsFrom``1(System.Guid)">
+            <summary>
+            清空指定对象的所有作为From的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelationsAsFrom``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            清空指定对象的所有作为From的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelationsAsFrom``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            清空指定对象的所有作为From的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelationsAsTo``1(``0)">
+            <summary>
+            清空指定对象的所有作为To的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelationsAsTo``1(System.Guid)">
+            <summary>
+            清空指定对象的所有作为To的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelationsAsTo``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            清空指定对象的所有作为To的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelationsAsTo``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            清空指定对象的所有作为To的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelations``1(``0)">
+            <summary>
+            清空指定对象的所有关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelations``1(System.Guid)">
+            <summary>
+            清空指定对象的所有关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelations``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            清空指定对象的所有关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.ClearRelations``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            清空指定对象的所有关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetToIds``2(``0)">
+            <summary>
+            获取与From对象关联的所有To对象Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetToIds``2(System.Guid)">
+            <summary>
+            获取与From对象关联的所有To对象Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetFromIds``2(``1)">
+            <summary>
+            获取与To对象关联的所有From对象Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetFromIds``2(System.Guid)">
+            <summary>
+            获取与To对象关联的所有From对象Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetToId``2(``0)">
+            <summary>
+            获取与From对象关联的To对象Id。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetToId``2(System.Guid)">
+            <summary>
+            获取与From对象关联的To对象Id。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetFromId``2(``1)">
+            <summary>
+            获取与To对象关联的From对象Id。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetFromId``2(System.Guid)">
+            <summary>
+            获取与To对象关联的From对象Id。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetToIds``2(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            获取与From对象关联的所有To对象Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetToIds``2(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取与From对象关联的所有To对象Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetFromIds``2(System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            获取与To对象关联的所有From对象Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetFromIds``2(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取与To对象关联的所有From对象Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelation``2(``0,``1)">
+            <summary>
+            获取From与To之间的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelation``2(System.Guid,System.Guid)">
+            <summary>
+            获取From与To之间的关联。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationsAsFrom``2(``0)">
+            <summary>
+            获取与From对象关联的所有Relation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationsAsFrom``2(System.Guid)">
+            <summary>
+            获取与From对象关联的所有Relation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationsAsTo``2(``1)">
+            <summary>
+            获取与To对象关联的所有Relation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationsAsTo``2(System.Guid)">
+            <summary>
+            获取与To对象关联的所有Relation序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationAsFrom``2(``0)">
+            <summary>
+            获取与From对象关联的Relation。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationAsFrom``2(System.Guid)">
+            <summary>
+            获取与From对象关联的Relation。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationAsTo``2(``1)">
+            <summary>
+            获取与To对象关联的Relation。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationAsTo``2(System.Guid)">
+            <summary>
+            获取与To对象关联的Relation。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelations``2">
+            <summary>
+            获取类型TFrom与类型TTo之间的所有关联序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationsAsFrom``2(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            获取类型TFrom与类型TTo之间的与指定From对象序列相关的所有关联序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationsAsFrom``2(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取类型TFrom与类型TTo之间的与指定From对象序列相关的所有关联序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationsAsTo``2(System.Collections.Generic.IEnumerable{``1})">
+            <summary>
+            获取类型TFrom与类型TTo之间的与指定To对象序列相关的所有关联序列。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationManager.GetRelationsAsTo``2(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取类型TFrom与类型TTo之间的与指定To对象序列相关的所有关联序列。
+            </summary>
+        </member>
+        <member name="T:Power.Relations.RelationRegistration`2">
+            <summary>
+            关系的注册信息。
+            </summary>
+        </member>
+        <member name="P:Power.Relations.RelationRegistration`2.Relationship">
+            <summary>
+            获取关联关系。
+            </summary>
+        </member>
+        <member name="P:Power.Relations.RelationRegistration`2.HasOtherInfos">
+            <summary>
+            获取是否存在OtherInfos数据。
+            </summary>
+        </member>
+        <member name="T:Power.Relations.Relationship">
+            <summary>
+            关系类型。
+            </summary>
+        </member>
+        <member name="T:Power.Relations.RelationRegistrationManager">
+            <summary>
+            RelationRegistration管理者。该类线程安全。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationRegistrationManager.Get``2(System.Boolean)">
+            <summary>
+            获取Registration。根据参数决定不存在时是否抛出异常。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Relations.RelationRegistrationManager.GetOrAdd``2">
+            <summary>
+            获取Registration。若不存在，则添加默认注册信息。
+            </summary>
+        </member>
+        <member name="M:Power.Relations.RelationRegistrationManager.Add``2(Power.Relations.RelationRegistration{``0,``1})">
+            <summary>
+            添加Registration。同一对类型只允许添加一次。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:Power.Relations.RelationVisitor`2">
+            <summary>
+            Relation访问器。
+            </summary>
+        </member>
+        <member name="P:Power.Relations.RelationVisitor`2.Relation">
+            <summary>
+            获取Relation。
+            </summary>
+        </member>
+    </members>
+</doc>

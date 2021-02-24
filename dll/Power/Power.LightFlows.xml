@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.LightFlows</name>
+    </assembly>
+    <members>
+        <member name="T:Power.LightFlows.CountersignStrategies.LightFlowAllCountersignStrategy">
+            <summary>
+            要求所有处理者都通过的会签策略。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.CountersignStrategies.LightFlowAllCountersignStrategy.WillPass(Power.LightFlows.LightFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="T:Power.LightFlows.CountersignStrategies.LightFlowHalfCountersignStrategy">
+            <summary>
+            要求一半以上处理者通过的会签策略。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.CountersignStrategies.LightFlowHalfCountersignStrategy.WillPass(Power.LightFlows.LightFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="T:Power.LightFlows.CountersignStrategies.LightFlowPercentCountersignStrategy">
+            <summary>
+            要求指定百分比以上处理者通过的会签策略。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.CountersignStrategies.LightFlowPercentCountersignStrategy.#ctor(System.Int32)">
+            <summary>
+            构造方法，并指定百分比。
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">当百分比不在0与100之间时抛出。</exception>
+        </member>
+        <member name="P:Power.LightFlows.CountersignStrategies.LightFlowPercentCountersignStrategy.Percent">
+            <summary>
+            获取百分比。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.CountersignStrategies.LightFlowPercentCountersignStrategy.WillPass(Power.LightFlows.LightFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.FlowExtensions.IsDraft(Power.LightFlows.LightFlow)">
+            <summary>
+            是否草稿状态。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.FlowExtensions.IsCurrentHandler``1(Power.LightFlows.LightFlow,System.String,System.Nullable{Power.LightFlows.LightFlowHandleType},``0)">
+            <summary>
+            是否当前处理人。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.FlowExtensions.IsCurrentHandlerAsync``1(Power.LightFlows.LightFlow,System.String,System.Nullable{Power.LightFlows.LightFlowHandleType},``0)">
+            <summary>
+            是否当前处理人。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.FlowExtensions.AllowRollback(Power.LightFlows.LightFlow,System.String)">
+            <summary>
+            是否允许回滚操作。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.AsQuery``2(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},``1)">
+            <summary>
+            构造指定谓词表达式的查询。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsCreator``1(Power.Users.User)">
+            <summary>
+            获取我作为Creator的LightFlow序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsCreator``1(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取我作为Creator的LightFlow序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsReader``1(Power.Users.User)">
+            <summary>
+            获取我作为Reader的LightFlow序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsReader``1(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取我作为Reader的LightFlow序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsReader``1(Power.Users.User,Power.LightFlows.LightFlowReadType)">
+            <summary>
+            获取我作为Reader的LightFlow序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsReader``1(System.Collections.Generic.IEnumerable{Power.Users.User},Power.LightFlows.LightFlowReadType)">
+            <summary>
+            获取我作为Reader的LightFlow序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsHandler``2(Power.Users.User)">
+            <summary>
+            获取我作为Handler的LightFlow序列的谓词表达式（高性能）。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsHandler``2(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取我作为Handler的LightFlow序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsHandler``2(Power.Users.User,Power.LightFlows.LightFlowHandleType)">
+            <summary>
+            获取我作为Handler的LightFlow序列的谓词表达式（高性能）。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsHandler``2(System.Collections.Generic.IEnumerable{Power.Users.User},Power.LightFlows.LightFlowHandleType)">
+            <summary>
+            获取我作为Handler的LightFlow序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsHandler``2(Power.Users.User,Power.LightFlows.LightFlowContext,System.Nullable{Power.LightFlows.LightFlowHandleType})">
+            <summary>
+            获取我作为Handler的LightFlow序列的谓词表达式（高性能）。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.UserExtensions.LightFlowsAsHandler``2(System.Collections.Generic.IEnumerable{Power.Users.User},Power.LightFlows.LightFlowContext,System.Nullable{Power.LightFlows.LightFlowHandleType})">
+            <summary>
+            获取我作为Handler的LightFlow序列的谓词表达式（高性能）。
+            </summary>
+        </member>
+        <member name="T:Power.LightFlows.FlowProperty">
+            <summary>
+            轻量流程扩展属性。
+            </summary>
+        </member>
+        <member name="T:Power.LightFlows.FlowReader">
+            <summary>
+            轻量流程待阅人。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.FlowReader.SetLightFlow``1(System.Guid)">
+            <summary>
+            设置关联流程。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStep.StepInUser">
+            <summary>
+            获取StepInUser。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStep.StepOutUser">
+            <summary>
+            获取StepOutUser。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStep.NormalHandlers">
+            <summary>
+            获取普通的（即正常待办、正常已办，排除已经转办的）Handler序列。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStepHandler.UserId">
+            <summary>处理人Id。</summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStepHandler.HandleType">
+            <summary>处理类型。</summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStepHandler.HandleTime">
+            <summary>处理时间。</summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStepHandler.HandleComment">
+            <summary>处理意见。</summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStepHandler.IsAutoHandle">
+            <summary>是否自动处理。</summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStepHandler.TransformId">
+            <summary>迁移操作的TransitionId。只对Transform操作有意义。</summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStepHandler.TransformName">
+            <summary>迁移操作的TransitionName。只对Transform操作有意义。</summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStepHandler.HandoverUserId">
+            <summary>转办操作的转办人Id。只对Handover操作有意义。</summary>
+        </member>
+        <member name="P:Power.LightFlows.FlowStepHandler.User">
+            <summary>
+            获取用户。
+            </summary>
+        </member>
+        <member name="T:Power.LightFlows.LightFlow">
+            <summary>
+            轻量级流程
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.Title">
+            <summary>
+            标题。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.Code">
+            <summary>
+            编号。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.FlowDefinitionId">
+            <summary>
+            流程定义。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.FlowChartVersion">
+            <summary>
+            流程版本。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.ActivityId">
+            <summary>
+            流程状态ID。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.ActivityName">
+            <summary>
+            流程状态名称。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.ActivityState">
+            <summary>
+            流程活动状态。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.HandlerIds">
+            <summary>
+            当前处理人ID。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.LastHandlerId">
+            <summary>
+            最后处理人ID。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.LastHandleTime">
+            <summary>
+            最后处理时间。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.CreatorId">
+            <summary>
+            创建人ID。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.CreateTime">
+            <summary>
+            创建时间。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.Creator">
+            <summary>
+            创建人。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.LastHandler">
+            <summary>
+            最后处理人。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow.Handlers">
+            <summary>
+            当前处理人。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.GetDisplayName">
+            <summary>
+            获取业务名称。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.GetPropertyValue``1(System.String)">
+            <summary>
+            获取扩展属性值。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.SetPropertyValue``1(System.String,``0,System.Boolean)">
+            <summary>
+            设置扩展属性值。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.AddReaders``1(System.String,System.String)">
+            <summary>
+            添加待阅人员。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.AddReaders``1(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            批量添加待阅人员。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.GetReaderIds">
+            <summary>
+            获取所有Reader的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.GetReaders">
+            <summary>
+            获取所有Reader序列。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.GetReaderIds(Power.LightFlows.LightFlowReadType)">
+            <summary>
+            获取指定类型的Reader的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.GetReaders(Power.LightFlows.LightFlowReadType)">
+            <summary>
+            获取指定类型的Reader序列。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.IsReader(System.String)">
+            <summary>
+            判断是否是Reader。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.IsReader(System.String,Power.LightFlows.LightFlowReadType)">
+            <summary>
+            判断是否是指定类型的Reader。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow.DoRead(System.String,System.String)">
+            <summary>
+            阅读流程。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow`2.FlowDefinitions">
+            <summary>
+            获取流程定义列表。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow`2.IsFlowDefinitionDesigned">
+            <summary>
+            获取流程定义是否已设计。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow`2.DefaultFlowDefinitionId">
+            <summary>
+            获取或设置默认流程定义ID。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow`2.DefaultFlowDefinition">
+            <summary>
+            获取默认流程定义。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow`2.DefaultFlowChart">
+            <summary>
+            获取默认流程图FlowChart。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow`2.ActivityNames">
+            <summary>
+            获取所有Activity的名称序列。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow`2.OngoingActivityNames">
+            <summary>
+            获取Ongoing的Activity的名称序列。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow`2.PassedActivityNames">
+            <summary>
+            获取Passed的Activity的名称序列。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlow`2.RejectedActivityNames">
+            <summary>
+            获取Rejected的Activity的名称序列。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow`2.RemoveFlowDefinition(Aoborsoft.Flows.FlowDefinition)">
+            <summary>
+            删除相关流程定义。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow`2.AddOrUpdateFlowDefinition(Aoborsoft.Flows.FlowDefinition,System.Boolean)">
+            <summary>
+            添加或更新相关流程定义。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow`2.IsFlowDefinitionEnabled(Aoborsoft.Flows.FlowDefinition,System.String@)">
+            <summary>
+            判断流程定义是否可用。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow`2.IsDefaultFlowDefinitionEnabled(System.String@)">
+            <summary>
+            判断默认流程定义是否可用。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow`2.Aoborsoft#Flows#ICustomTransformFlow#Transform(Aoborsoft.Flows.TransformContext)">
+            <summary>
+            迁移流程。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow`2.Transform(Aoborsoft.Flows.TransformContext)">
+            <summary>
+            迁移流程。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow`2.Aoborsoft#Flows#ICustomHandoverFlow#Handover(Aoborsoft.Flows.HandoverContext)">
+            <summary>
+            转办流程。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow`2.Handover(Aoborsoft.Flows.HandoverContext)">
+            <summary>
+            转办流程。
+            </summary>
+        </member>
+        <member name="E:Power.LightFlows.LightFlow`2.Rollbacked">
+            <summary>
+            当流程回滚后发生。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow`2.Rollback">
+            <summary>
+            回滚流程。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow`2.RollbackAll">
+            <summary>
+            回滚流程到开始状态。
+            </summary>
+        </member>
+        <member name="M:Power.LightFlows.LightFlow`2.RefreshLastHandleInfo">
+            <summary>
+            刷回滚后的最后处理人。
+            </summary>
+        </member>
+        <member name="T:Power.LightFlows.LightFlowRollbackedEventArgs`2">
+            <summary>
+            为Rollbacked事件提供数据。
+            </summary>
+        </member>
+        <member name="T:Power.LightFlows.LightFlowOptions">
+            <summary>
+            轻量流程选项，可以在DoQuery、DoTransform时设置一些选项，对处理过程施加影响。
+            </summary>
+        </member>
+        <member name="P:Power.LightFlows.LightFlowOptions.IgnoreIsCurrentHandler">
+            <summary>
+            忽略是否是当前用户。如果忽略，则DoQuery、DoTransform的时候，不判断当前用户是否是工作流的当前待处理人。
+            </summary>
+        </member>
+        <member name="T:Power.LightFlows.LightFlowVisitorBase`1">
+            <summary>
+            轻量流程扩展属性访问器。
+            </summary>
+        </member>
+    </members>
+</doc>

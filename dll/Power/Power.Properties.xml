@@ -1,0 +1,617 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Properties</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Properties.ConnectionInfo">
+            <summary>
+            连接字符串信息。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.IDbBinder">
+            <summary>
+            数据库绑定器。实现各个数据库在参数关键字、转义字符、字段类型等差异方面的数据。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.DbDefinition">
+            <summary>
+            IDbDefinition的基本实现。实现与Sql语句的差异无关的逻辑。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.IDbDefinition">
+            <summary>
+            动态表结构定义器。负责对动态表结构进行创建修改删除等操作。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.CreateTable">
+            <summary>
+            创建表结构。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.CreateTableAsync">
+            <summary>
+            异步创建表结构。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.DropTable">
+            <summary>
+            删除表结构。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.DropTableAsync">
+            <summary>
+            异步删除表结构。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.IsTableExists">
+            <summary>
+            判断表是否存在。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.IsTableExistsAsync">
+            <summary>
+            异步判断表是否存在。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.EnsureTableCreated">
+            <summary>
+            保证表结构创建。若表结构已经存在，则不做任何操作；若不存在，则创建表结构。
+            <para>注意：当表结构已经存在时，本方法不会检测是否与IPropertySource一致，如果需要保证表结构一致，请调用EnsureConsistency方法。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.EnsureTableCreatedAsync">
+            <summary>
+            异步保证表结构创建。若表结构已经存在，则不做任何操作；若不存在，则创建表结构。
+            <para>注意：当表结构已经存在时，本方法不会检测是否与IPropertySource一致，如果需要保证表结构一致，请调用EnsureConsistencyAsync方法。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.EnsureTableDroped">
+            <summary>
+            保证表结构删除。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.EnsureTableDropedAsync">
+            <summary>
+            异步保证表结构删除。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.AddColumns(Power.Properties.IProperty[])">
+            <summary>
+            添加列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.AddColumnsAsync(Power.Properties.IProperty[])">
+            <summary>
+            异步添加列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.DropColumns(System.String[])">
+            <summary>
+            删除列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.DropColumnsAsync(System.String[])">
+            <summary>
+            异步删除列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.AlterColumns(Power.Properties.IProperty[])">
+            <summary>
+            修改列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.AlterColumnsAsync(Power.Properties.IProperty[])">
+            <summary>
+            异步修改列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.EnsureConsistency">
+            <summary>
+            保证表结构一致性。如果尚未创建表结构，则创建表结构；如果已经存在表结构，则与IPropertySource进行比较，对列进行相应的新增与删除。
+            <para>注意：当前不会检测列的数据类型是否一致，仅检测是否存在该列。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbDefinition.EnsureConsistencyAsync">
+            <summary>
+            异步保证表结构一致性。如果尚未创建表结构，则创建表结构；如果已经存在表结构，则与IPropertySource进行比较，对列进行相应的新增与删除。
+            <para>注意：当前不会检测列的数据类型是否一致，仅检测是否存在该列。</para>
+            </summary>
+        </member>
+        <member name="T:Power.Properties.DbManipulation">
+            <summary>
+            IDbManipulation的基本实现。实现与Sql语句的差异无关的逻辑。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.IDbManipulation">
+            <summary>
+            动态表记录操作器。负责对记录进行增删改查等操作。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.AddRecord(Power.Properties.IRecord)">
+            <summary>
+            插入记录。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.AddRecordAsync(Power.Properties.IRecord)">
+            <summary>
+            异步插入记录。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.AddRecords(System.Collections.Generic.IEnumerable{Power.Properties.IRecord})">
+            <summary>
+            插入多条记录。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.AddRecordsAsync(System.Collections.Generic.IEnumerable{Power.Properties.IRecord})">
+            <summary>
+            异步插入多条记录。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.UpdateRecord(Power.Properties.IRecord)">
+            <summary>
+            更新记录。更新时，仅更新Record.Values中存在Key的数据，若Key不存在，则该列数据不受影响。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.UpdateRecordAsync(Power.Properties.IRecord)">
+            <summary>
+            异步更新记录。更新时，仅更新Record.Values中存在Key的数据，若Key不存在，则该列数据不受影响。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.UpdateRecords(System.Collections.Generic.IEnumerable{Power.Properties.IRecord})">
+            <summary>
+            更新多条记录。更新时，仅更新Record.Values中存在Key的数据，若Key不存在，则该列数据不受影响。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.UpdateRecordsAsync(System.Collections.Generic.IEnumerable{Power.Properties.IRecord})">
+            <summary>
+            异步更新多条记录。更新时，仅更新Record.Values中存在Key的数据，若Key不存在，则该列数据不受影响。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.AddOrUpdateRecord(Power.Properties.IRecord)">
+            <summary>
+            插入或更新记录。更新时，仅更新Record.Values中存在Key的数据，若Key不存在，则该列数据不受影响。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.AddOrUpdateRecordAsync(Power.Properties.IRecord)">
+            <summary>
+            异步插入或更新记录。更新时，仅更新Record.Values中存在Key的数据，若Key不存在，则该列数据不受影响。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.AddOrUpdateRecords(System.Collections.Generic.IEnumerable{Power.Properties.IRecord})">
+            <summary>
+            插入或更新多条记录。更新时，仅更新Record.Values中存在Key的数据，若Key不存在，则该列数据不受影响。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.AddOrUpdateRecordsAsync(System.Collections.Generic.IEnumerable{Power.Properties.IRecord})">
+            <summary>
+            异步插入或更新多条记录。更新时，仅更新Record.Values中存在Key的数据，若Key不存在，则该列数据不受影响。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.DeleteRecord(System.Guid)">
+            <summary>
+            删除记录。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.DeleteRecordAsync(System.Guid)">
+            <summary>
+            异步删除记录。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.DeleteRecords(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            删除多条记录。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.DeleteRecordsAsync(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步删除多条记录。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.ReadRecord(System.Guid)">
+            <summary>
+            读取记录。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.ReadRecordAsync(System.Guid)">
+            <summary>
+            异步读取记录。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.ReadRecords(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            读取多条记录。返回值中仅包含存在的记录。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.ReadRecordsAsync(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步读取多条记录。返回值中仅包含存在的记录。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.ReadRecord``1(System.Guid)">
+            <summary>
+            读取记录。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.ReadRecordAsync``1(System.Guid)">
+            <summary>
+            异步读取记录。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.ReadRecords``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            读取多条记录。返回值中仅包含存在的记录。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbManipulation.ReadRecordsAsync``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步读取多条记录。返回值中仅包含存在的记录。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.StandardManipulation">
+            <summary>
+            IDbManipulation的标准实现。实现标准的Sql语句。
+            如果某具体数据库的Sql语句遵从标准，则可直接继承本类。
+            如果大部分遵从标准，也可继承本类，然后覆盖某些不符合标准的方法。
+            如果不遵从标准，则可直接继承DbManipulation进行实现。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.AndCondition">
+            <summary>
+            对两个查询条件取“与”的查询条件。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.Condition">
+            <summary>
+            表示一个查询基本单元的查询条件。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.ConditionCompareType">
+            <summary>
+            查询条件比较类型。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.ICondition">
+            <summary>
+            查询条件。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.NotCondition">
+            <summary>
+            对某个查询条件取“非”的查询条件。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.OrCondition">
+            <summary>
+            对两个查询条件取“或”的查询条件。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.DbQuery">
+            <summary>
+            IDbQuery的基本实现。实现与Sql语句的差异无关的逻辑。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.IDbQuery">
+            <summary>
+            动态表记录查询器。负责对记录进行按条件查询等操作。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbQuery.QueryOwnerIds(Power.Properties.ICondition)">
+            <summary>
+            查询满足条件的OwnerId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbQuery.QueryOwnerIdsAsync(Power.Properties.ICondition)">
+            <summary>
+            异步查询满足条件的OwnerId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbQuery.QueryRecords(Power.Properties.ICondition)">
+            <summary>
+            查询满足条件的Record序列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbQuery.QueryRecordsAsync(Power.Properties.ICondition)">
+            <summary>
+            异步查询满足条件的Record序列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbQuery.QueryRecords``1(Power.Properties.ICondition)">
+            <summary>
+            查询满足条件的Record序列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IDbQuery.QueryRecordsAsync``1(Power.Properties.ICondition)">
+            <summary>
+            异步查询满足条件的Record序列。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.StandardQuery">
+            <summary>
+            IDbQuery的标准实现。实现标准的Sql语句。
+            如果某具体数据库的Sql语句遵从标准，则可直接继承本类。
+            如果大部分遵从标准，也可继承本类，然后覆盖某些不符合标准的方法。
+            如果不遵从标准，则可直接继承DbQuery进行实现。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.DbTableClient">
+            <summary>
+            动态表客户端。对动态表结构进行创建修改删除，对记录进行增删改查，对记录进行按条件查询等操作的入口。
+            <para>可由DbTableClientFactory创建，一个Client针对一个IPropertySource进行操作，不同的IPropertySource要创建不同的Client实例来操作。</para>
+            </summary>
+        </member>
+        <member name="P:Power.Properties.DbTableClient.DbDefinition">
+            <summary>
+            动态表结构定义器。负责对动态表结构进行创建修改删除等操作。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.DbTableClient.DbManipulation">
+            <summary>
+            动态表记录操作器。负责对记录进行增删改查等操作。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.DbTableClient.DbQuery">
+            <summary>
+            动态表记录查询器。负责对记录进行按条件查询等操作。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.DbTableClient.CreateRecord">
+            <summary>
+            创建动态属性值记录，该记录填充上数据后，可再插入到动态表结构中。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.DbTableClientFactory">
+            <summary>
+            DbTableClient工厂，负责创建DbTableClient。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.DbTableClientFactory.Create(Power.Properties.IPropertySource)">
+            <summary>
+            针对指定的IPropertySource创建一个DbTableClient。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.DbTableClientFactory.Create(System.Collections.Generic.IEnumerable{Power.Properties.IPropertySource})">
+            <summary>
+            针对指定的IPropertySource序列创建一个DbTableClient。指定的IPropertySource序列会被组合为CompositePropertySource。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.DbTableClientFactory.Create(Power.Properties.IPropertySource[])">
+            <summary>
+            针对指定的IPropertySource序列创建一个DbTableClient。指定的IPropertySource序列会被组合为CompositePropertySource。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.DbTableClientFactory.CreateByOwner(System.String)">
+            <summary>
+            获取指定OwnerType的所有的IPropertySource序列，并针对获取的IPropertySource序列创建一个DbTableClient。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.DbTableClientFactory.CreateByOwner``1">
+            <summary>
+            获取指定OwnerType的所有的IPropertySource序列，并针对获取的IPropertySource序列创建一个DbTableClient。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.CompositePropertySource">
+            <summary>
+            复合属性数据源。由多个属性数据源联合组成的数据源。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.CompositePropertySource.OwnerType">
+            <summary>
+            隶属对象类型。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.CompositePropertySource.Sources">
+            <summary>
+            属性数据源集合。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.CompositePropertySource.Properties">
+            <summary>
+            所有数据源提供的所有属性序列。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.IProperty">
+            <summary>
+            属性定义。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.IProperty.FieldName">
+            <summary>字段名称。</summary>
+        </member>
+        <member name="P:Power.Properties.IProperty.DbType">
+            <summary>数据类型。</summary>
+        </member>
+        <member name="P:Power.Properties.IProperty.MaxLength">
+            <summary>字符串类型字段长度。</summary>
+        </member>
+        <member name="P:Power.Properties.IProperty.IsRequired">
+            <summary>是否必填。</summary>
+        </member>
+        <member name="P:Power.Properties.IProperty.DisplayName">
+            <summary>显示名称。</summary>
+        </member>
+        <member name="P:Power.Properties.IProperty.DisplayUnit">
+            <summary>显示单位。</summary>
+        </member>
+        <member name="P:Power.Properties.IProperty.Order">
+            <summary>序号。</summary>
+        </member>
+        <member name="M:Power.Properties.IProperty.GetMetadata``1(System.String,``0)">
+            <summary>获取元数据。</summary>
+        </member>
+        <member name="M:Power.Properties.IProperty.SetMetadata``1(System.String,``0)">
+            <summary>设置元数据。</summary>
+        </member>
+        <member name="T:Power.Properties.IPropertySource">
+            <summary>
+            属性数据源。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.IPropertySource.OwnerType">
+            <summary>
+            隶属对象类型。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.IPropertySource.Properties">
+            <summary>
+            数据源提供的属性序列。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.PropertyMetadataVisitor">
+            <summary>
+            IProperty的元数据访问器。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.PropertyMetadataVisitor.Property">
+            <summary>
+            获取Property。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.PropertySource">
+            <summary>
+            属性数据源。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.PropertySourceManager">
+            <summary>
+            IPropertySource管理者。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.PropertySourceManager.Register(System.Func{System.String,Power.Properties.IPropertySource})">
+            <summary>
+            注册一个IPropertySource工厂。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.PropertySourceManager.Register(Power.Properties.IPropertySource)">
+            <summary>
+            注册一个IPropertySource实例。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.PropertySourceManager.Get(System.String)">
+            <summary>
+            获取指定OwnerType的IPropertySource序列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.PropertySourceManager.Get``1">
+            <summary>
+            获取指定OwnerType的IPropertySource序列。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.SimpleProperty">
+            <summary>
+            简单属性定义。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.SimpleProperty.FieldName">
+            <summary>字段名称。</summary>
+        </member>
+        <member name="P:Power.Properties.SimpleProperty.DbType">
+            <summary>数据类型。</summary>
+        </member>
+        <member name="P:Power.Properties.SimpleProperty.MaxLength">
+            <summary>字符串类型字段长度。</summary>
+        </member>
+        <member name="P:Power.Properties.SimpleProperty.IsRequired">
+            <summary>是否必填。</summary>
+        </member>
+        <member name="P:Power.Properties.SimpleProperty.Order">
+            <summary>序号。</summary>
+        </member>
+        <member name="P:Power.Properties.SimpleProperty.DefaultDisplayName">
+            <summary>默认显示名称。</summary>
+        </member>
+        <member name="P:Power.Properties.SimpleProperty.DefaultDisplayUnit">
+            <summary>默认显示单位。</summary>
+        </member>
+        <member name="P:Power.Properties.SimpleProperty.LocalizedDisplayNames">
+            <summary>
+            本地化显示名称字典。Key为“zh-CN”这样的全球语言标准编码。大小写不敏感。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.SimpleProperty.LocalizedDisplayUnits">
+            <summary>
+            本地化显示单位字典。Key为“zh-CN”这样的全球语言标准编码。大小写不敏感。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.SimpleProperty.DisplayName">
+            <summary>
+            显示名称。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.SimpleProperty.DisplayUnit">
+            <summary>
+            显示单位。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.SimpleProperty.GetMetadata``1(System.String,``0)">
+            <summary>
+            获取元数据。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.SimpleProperty.SetMetadata``1(System.String,``0)">
+            <summary>
+            设置元数据。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.MySqlConnectionInfoExtensions.IsMySql(Power.Properties.ConnectionInfo)">
+            <summary>
+            判断是否是MySql。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.SqlServerConnectionInfoExtensions.IsSqlServer(Power.Properties.ConnectionInfo)">
+            <summary>
+            判断是否是SqlServer。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.DictionaryRecord">
+            <summary>
+            基于字典的Record。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.IRecord">
+            <summary>
+            表示某对象的所有动态属性值记录。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.IRecord.OwnerId">
+            <summary>
+            隶属对象Id。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IRecord.GetValues">
+            <summary>
+            获取隶属对象的所有动态属性值。包括OwnerId在内。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IRecord.TryGetValue(System.String,System.Object@)">
+            <summary>
+            尝试获取值。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.IRecord.SetValue(System.String,System.Object)">
+            <summary>
+            设置值。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.ObjectRecord">
+            <summary>
+            基于对象的Record。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.RecordExtensions.GetValue``1(Power.Properties.IRecord,System.String,``0)">
+            <summary>
+            获取值。若不存在，返回默认值。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.StorageProviderFactories">
+            <summary>
+            StorageProviderFactory集合，负责注册可用的StorageProviderFactory。
+            </summary>
+        </member>
+        <member name="T:Power.Properties.StorageProviderFactory">
+            <summary>
+            存储提供者工厂，负责创建具体的DbDefinition、DbManipulation、DbQuery、Record。
+            </summary>
+        </member>
+    </members>
+</doc>

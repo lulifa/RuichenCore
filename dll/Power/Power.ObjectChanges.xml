@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.ObjectChanges</name>
+    </assembly>
+    <members>
+        <member name="T:Power.ObjectChanges.ObjectChange">
+            <summary>
+            表示对象的一条变更记录，主要用于数据分析，比如获取历史上某个时刻，对象在某属性上的值。
+            </summary>
+        </member>
+        <member name="T:Power.ObjectChanges.ObjectChangeRegister">
+            <summary>
+            对象属性变更注册器，经过注册的属性，会自动记录该属性的完整变更记录。
+            <para>本类依赖于Aoborsoft.EntityFrameworkCore.Triggers实现，实体所在的DbContext必须继承自DbContextWithTriggers。</para>
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeRegister.Register``3(System.Linq.Expressions.Expression{System.Func{``1,``2}})">
+            <summary>
+            注册指定DbContext下的指定实体的指定属性。经注册后，会自动记录该属性的完整变更记录。
+            </summary>
+        </member>
+        <member name="T:Power.ObjectChanges.ObjectChangeServices">
+            <summary>
+            对象变更记录服务。
+            </summary>
+        </member>
+        <member name="P:Power.ObjectChanges.ObjectChangeServices.OperatorIdCaptor">
+            <summary>
+            获取或设置OperatorId捕获器。当调用Add方法的不显式设置OperatorId版本时，将使用本捕获器捕获OperatorId。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Add``2(System.Guid,System.String,``1,``1)">
+            <summary>
+            添加一条变更记录。OperatorId将通过OperatorIdCaptor捕获，OperateTime为当前时间。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Add``2(System.Guid,System.String,``1,``1,System.String,System.DateTime)">
+            <summary>
+            添加一条变更记录。显示指定OperatorId、OperateTime。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Add``2(System.Guid,System.Linq.Expressions.Expression{System.Func{``0,``1}},``1,``1)">
+            <summary>
+            添加一条变更记录。OperatorId将通过OperatorIdCaptor捕获，OperateTime为当前时间。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Add``2(System.Guid,System.Linq.Expressions.Expression{System.Func{``0,``1}},``1,``1,System.String,System.DateTime)">
+            <summary>
+            添加一条变更记录。显示指定OperatorId、OperateTime。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Add``2(``0,System.String,``1,``1)">
+            <summary>
+            添加一条变更记录。OperatorId将通过OperatorIdCaptor捕获，OperateTime为当前时间。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Add``2(``0,System.String,``1,``1,System.String,System.DateTime)">
+            <summary>
+            添加一条变更记录。显示指定OperatorId、OperateTime。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Add``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},``1,``1)">
+            <summary>
+            添加一条变更记录。OperatorId将通过OperatorIdCaptor捕获，OperateTime为当前时间。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Add``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},``1,``1,System.String,System.DateTime)">
+            <summary>
+            添加一条变更记录。显示指定OperatorId、OperateTime。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.StartBatchAdd">
+            <summary>
+            开始批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.CancelBatchAdd">
+            <summary>
+            取消批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.FinishBatchAdd">
+            <summary>
+            完成批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.FinishBatchAddAsync">
+            <summary>
+            异步完成批量添加。
+            </summary>
+        </member>
+        <member name="E:Power.ObjectChanges.ObjectChangeServices.ObjectChangesAdded">
+            <summary>
+            当变更记录添加后发生。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Remove(Power.ObjectChanges.ObjectChange)">
+            <summary>
+            移除一条变更记录。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.StartBatchRemove">
+            <summary>
+            开始批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.CancelBatchRemove">
+            <summary>
+            取消批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.FinishBatchRemove">
+            <summary>
+            完成批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.FinishBatchRemoveAsync">
+            <summary>
+            异步完成批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Clear(System.Linq.Expressions.Expression{System.Func{Power.ObjectChanges.ObjectChange,System.Boolean}})">
+            <summary>
+            清空满足指定条件的所有变更记录。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Clear``1(System.Guid)">
+            <summary>
+            清空指定对象的所有变更记录。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Clear``1(``0)">
+            <summary>
+            清空指定对象的所有变更记录。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Clear``2(System.Guid,System.String)">
+            <summary>
+            清空指定对象指定属性的所有变更记录。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Clear``2(System.Guid,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            清空指定对象指定属性的所有变更记录。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Clear``2(``0,System.String)">
+            <summary>
+            清空指定对象指定属性的所有变更记录。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.Clear``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            清空指定对象指定属性的所有变更记录。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.StartBatchClear">
+            <summary>
+            开始批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.CancelBatchClear">
+            <summary>
+            取消批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.FinishBatchClear">
+            <summary>
+            完成批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.FinishBatchClearAsync">
+            <summary>
+            异步完成批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetById(System.Guid)">
+            <summary>
+            通过Id获取变更记录。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetByIds(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过Id序列获取变更记录序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetByObject``1(System.Guid)">
+            <summary>
+            获取指定对象的所有变更记录。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetByObject``1(``0)">
+            <summary>
+            获取指定对象的所有变更记录。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetByObject``2(System.Guid,System.String)">
+            <summary>
+            获取指定对象指定属性的所有变更记录。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetByObject``2(``0,System.String)">
+            <summary>
+            获取指定对象指定属性的所有变更记录。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetByObject``2(System.Guid,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            获取指定对象指定属性的所有变更记录。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetByObject``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            获取指定对象指定属性的所有变更记录。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetObjectChanges(System.Linq.Expressions.Expression{System.Func{Power.ObjectChanges.ObjectChange,System.Boolean}})">
+            <summary>
+            获取满足指定条件表达式的所有变更记录。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetQueryable">
+            <summary>
+            获取返回所有变更记录的查询。
+            </summary>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetHistoryValue``2(System.Guid,System.String,System.DateTime)">
+            <summary>
+            获取指定对象指定属性在历史上某一时刻的值。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetHistoryValue``2(System.Guid,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.DateTime)">
+            <summary>
+            获取指定对象指定属性在历史上某一时刻的值。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetHistoryValue``2(``0,System.String,System.DateTime)">
+            <summary>
+            获取指定对象指定属性在历史上某一时刻的值。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetHistoryValue``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}},System.DateTime)">
+            <summary>
+            获取指定对象指定属性在历史上某一时刻的值。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetRecentValue``2(System.Guid,System.String)">
+            <summary>
+            获取指定对象指定属性最近的值，即最后一次修改的原始值。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetRecentValue``2(System.Guid,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            获取指定对象指定属性最近的值，即最后一次修改的原始值。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetRecentValue``2(``0,System.String)">
+            <summary>
+            获取指定对象指定属性最近的值，即最后一次修改的原始值。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.ObjectChanges.ObjectChangeServices.GetRecentValue``2(``0,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            获取指定对象指定属性最近的值，即最后一次修改的原始值。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+    </members>
+</doc>

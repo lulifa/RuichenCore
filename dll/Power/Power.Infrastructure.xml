@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Infrastructure</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Infrastructure.BasicManager`3">
+            <summary>
+            将指定Entity数据整体缓存，并对Entity进行增删改查的入口。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.#ctor(System.Func{`0,`1},System.Action{`2})">
+            <summary>
+            构造方法。
+            </summary>
+            <param name="keyExpression">指定Entity的主键。</param>
+            <param name="dbContextInitLoadAction">DbContext初始Load方法，该方法将被调用，以初始加载数据并进行缓存。</param>
+        </member>
+        <member name="P:Power.Infrastructure.BasicManager`3.UnknownEntityResolver">
+            <summary>
+            获取或设置UnknownEntityResolver。
+            <para>当调用GetById、GetByIds方法时，若指定Id的Entity不存在，同时ApplyResolverWhenNotExists参数为true且UnknownEntityResolver不为null，返回UnknownEntityResolver解析的Entity，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.GetById(`1,System.Boolean)">
+            <summary>
+            通过Id获取Entity。
+            <para>若指定Id的Entity不存在，同时ApplyResolverWhenNotExists参数为true且UnknownEntityResolver不为null，返回UnknownEntityResolver解析的Entity，否则返回null。</para>
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Entity不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean)">
+            <summary>
+            通过Id序列获取Entity序列。返回序列的顺序与输入序列的顺序相同。
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Entity不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.GetSingle(System.Func{`0,System.Boolean})">
+            <summary>
+            获取满足条件的第一个Entity。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.GetMultiple(System.Func{`0,System.Boolean})">
+            <summary>
+            获取满足条件的所有Entity序列。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.GetAll">
+            <summary>
+            获取所有Entity序列。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.ExistsId(`1)">
+            <summary>
+            判断是否存在指定Id的Entity。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.Add(`0)">
+            <summary>
+            添加Entity。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            添加Entity序列。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.Remove(`0)">
+            <summary>
+            移除Entity。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            移除Entity序列。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.Clear(System.Func{`0,System.Boolean})">
+            <summary>
+            清空满足条件的所有Entity。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.Clear">
+            <summary>
+            清空所有Entity。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.HasChanges">
+            <summary>
+            检测是否存在变更。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManager`3.SaveChanges">
+            <summary>
+            保存所有变更。
+            </summary>
+        </member>
+        <member name="T:Power.Infrastructure.BasicManagerWithVersion`3">
+            <summary>
+            在BasicManager基础上添加版本控制的BasicManager。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.#ctor(System.Func{`0,`1},System.Action{`2},System.String)">
+            <summary>
+            构造方法。
+            </summary>
+            <param name="keyExpression">指定Entity的主键。</param>
+            <param name="dbContextInitLoadAction">DbContext初始Load方法，该方法将被调用，以初始加载数据并进行缓存。</param>
+            <param name="versionCacheKey">在分布式缓存上存放最新数据版本时间的Key。</param>
+        </member>
+        <member name="P:Power.Infrastructure.BasicManagerWithVersion`3.VersionCache">
+            <summary>
+            获取或设置分布式缓存，该缓存用于存放最新数据版本时间。
+            </summary>
+        </member>
+        <member name="P:Power.Infrastructure.BasicManagerWithVersion`3.UnknownEntityResolver">
+            <summary>
+            获取或设置UnknownEntityResolver。
+            <para>当调用GetById、GetByIds方法时，若指定Id的Entity不存在，同时ApplyResolverWhenNotExists参数为true且UnknownEntityResolver不为null，返回UnknownEntityResolver解析的Entity，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.GetById(`1,System.Boolean)">
+            <summary>
+            通过Id获取Entity。
+            <para>若指定Id的Entity不存在，同时ApplyResolverWhenNotExists参数为true且UnknownEntityResolver不为null，返回UnknownEntityResolver解析的Entity，否则返回null。</para>
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Entity不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.GetByIds(System.Collections.Generic.IEnumerable{`1},System.Boolean)">
+            <summary>
+            通过Id序列获取Entity序列。返回序列的顺序与输入序列的顺序相同。
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Entity不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.GetSingle(System.Func{`0,System.Boolean})">
+            <summary>
+            获取满足条件的第一个Entity。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.GetMultiple(System.Func{`0,System.Boolean})">
+            <summary>
+            获取满足条件的所有Entity序列。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.GetAll">
+            <summary>
+            获取所有Entity序列。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.ExistsId(`1)">
+            <summary>
+            判断是否存在指定Id的Entity。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.Add(`0)">
+            <summary>
+            添加Entity。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            添加Entity序列。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.Remove(`0)">
+            <summary>
+            移除Entity。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            移除Entity序列。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.Clear(System.Func{`0,System.Boolean})">
+            <summary>
+            清空满足条件的所有Entity。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.Clear">
+            <summary>
+            清空所有Entity。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicManagerWithVersion`3.SaveChanges">
+            <summary>
+            保存所有变更。
+            </summary>
+        </member>
+        <member name="T:Power.Infrastructure.BasicServices`2">
+            <summary>
+            提供对某类型实体的添加、移除、清空的基本服务。
+            <para>Add、Remove、Clear三块互相独立。各块在不涉及到批量操作的情况下，线程安全。</para>
+            </summary>
+        </member>
+        <member name="F:Power.Infrastructure.BasicServices`2.m_AddBuffer">
+            <summary>
+            缓存需要批量添加的实体。当该字段为null时，表示当前未处于批量添加状态。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.Add(`0)">
+            <summary>
+            添加一个实体。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            添加多个实体。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.StartBatchAdd">
+            <summary>
+            开始批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.CancelBatchAdd">
+            <summary>
+            取消批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.FinishBatchAdd">
+            <summary>
+            完成批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.FinishBatchAddAsync">
+            <summary>
+            异步完成批量添加。
+            </summary>
+        </member>
+        <member name="E:Power.Infrastructure.BasicServices`2.EntitiesAdded">
+            <summary>
+            当实体添加后发生。
+            </summary>
+        </member>
+        <member name="F:Power.Infrastructure.BasicServices`2.m_RemoveBuffer">
+            <summary>
+            缓存需要批量移除的实体。当该字段为null时，表示当前未处于批量移除状态。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.Remove(`0)">
+            <summary>
+            移除一个实体。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            移除多个实体。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.StartBatchRemove">
+            <summary>
+            开始批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.CancelBatchRemove">
+            <summary>
+            取消批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.FinishBatchRemove">
+            <summary>
+            完成批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.FinishBatchRemoveAsync">
+            <summary>
+            异步完成批量移除。
+            </summary>
+        </member>
+        <member name="F:Power.Infrastructure.BasicServices`2.m_ClearBuffer">
+            <summary>
+            缓存需要批量清空的实体的条件表达式。当该字段为null时，表示当前未处于批量清空状态。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.Clear(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            清空满足指定条件的所有实体。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.StartBatchClear">
+            <summary>
+            开始批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.CancelBatchClear">
+            <summary>
+            取消批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.FinishBatchClear">
+            <summary>
+            完成批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.Infrastructure.BasicServices`2.FinishBatchClearAsync">
+            <summary>
+            异步完成批量清空。
+            </summary>
+        </member>
+    </members>
+</doc>

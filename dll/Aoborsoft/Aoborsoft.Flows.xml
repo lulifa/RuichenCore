@@ -1,0 +1,1715 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.Flows</name>
+    </assembly>
+    <members>
+        <member name="T:Aoborsoft.Flows.CountersignStrategies.AnyCountersignStrategy">
+            <summary>
+            任一处理者通过即通过的会签策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.CountersignStrategies.AnyCountersignStrategy.WillPass(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.CountersignStrategies.ConditionalCountersignStrategy">
+            <summary>
+            根据不同条件决定不同会签策略的会签策略。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.CountersignStrategies.ConditionalCountersignStrategy.Entries">
+            <summary>
+            根据不同条件设置不同会签策略的条目列表。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.CountersignStrategies.ConditionalCountersignStrategy.DefaultStrategy">
+            <summary>
+            当所有条件都不满足时所使用的默认会签策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.CountersignStrategies.ConditionalCountersignStrategy.WillPass(Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            <para>首先从列表中找到第一个满足条件的会签策略；若所有条件都不满足，则使用默认会签策略；如果没设置默认策略，返回false。</para>
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.Engine">
+            <summary>
+            流程的执行引擎。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.Engine.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.Engine.Init">
+            <summary>
+            在添加并初始化所有模块之后执行自定义初始化代码。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Engine.Modules">
+            <summary>
+            获取当前引擎的模块集合。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.Engine.DoQuery(Aoborsoft.Flows.IFlow,System.Security.Principal.IPrincipal,Aoborsoft.Flows.FlowOptions)">
+            <summary>
+            针对某Flow查询能进行的所有迁移。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:Aoborsoft.Flows.FlowException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.Engine.DoTransform(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.FlowTransform,System.Security.Principal.IPrincipal,Aoborsoft.Flows.FlowOptions)">
+            <summary>
+            对Flow进行迁移。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:Aoborsoft.Flows.FlowException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.Engine.DoHandover(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.FlowHandover,System.Security.Principal.IPrincipal,Aoborsoft.Flows.FlowOptions)">
+            <summary>
+            对Flow进行转办。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:Aoborsoft.Flows.FlowException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.Engine.ProcessRequest(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            处理请求。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.BeginRequest">
+            <summary>
+            在引擎处理请求时作为管线链中的第一个事件发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.AuthenticateRequest">
+            <summary>
+            在引擎建立用户标识时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.PostAuthenticateRequest">
+            <summary>
+            在引擎处理完AuthenticateRequest事件时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.FlowOptionsRequest">
+            <summary>
+            在引擎建立流程选项时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.PostFlowOptionsRequest">
+            <summary>
+            在引擎处理完FlowOptionsRequest事件时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.EndRequest">
+            <summary>
+            在引擎处理请求时作为管线链中的最后一个事件发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.Query">
+            <summary>
+            在引擎查询能对某Flow进行的所有转换时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.PostQuery">
+            <summary>
+            在引擎处理完Query事件时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.FindTransition">
+            <summary>
+            在引擎需要确定当前合适的活动迁移时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.PostFindTransition">
+            <summary>
+            在引擎处理完FindTransition事件时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.PreTransform">
+            <summary>
+            在引擎即将处理Transform事件时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.Transform">
+            <summary>
+            在引擎处理Flow的迁移活动时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.PostTransform">
+            <summary>
+            在引擎处理完Transform事件时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.PreHandover">
+            <summary>
+            在引擎即将处理Handover事件时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.Handover">
+            <summary>
+            在引擎处理Flow的转办活动时发生。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.Flows.Engine.PostHandover">
+            <summary>
+            在引擎处理完Handover事件时发生。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineContext">
+            <summary>
+            引擎上下文，表示引擎在每一次处理过程中的上下文信息。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.EngineContext.Flow">
+            <summary>
+            获取或设置Flow。
+            该值表示进行所有操作时待操作的源。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.EngineContext.OriginalActivity">
+            <summary>
+            获取或设置OriginalActivity。
+            该值表示对Flow进行操作时Flow的原始活动。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.EngineContext.User">
+            <summary>
+            获取或设置用户标识。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.EngineContext.FlowOptions">
+            <summary>
+            获取或设置流程选项。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.EngineContext.CompleteProcess">
+            <summary>
+            获取或设置是否终止处理。若设置为true，则除了BeginRequest、EndRequest外，其他未执行的过程将不再执行。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.EngineContext.Properties">
+            <summary>
+            获取可用于在请求过程中在各个模块之间组织和共享的动态数据。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.QueryContext">
+            <summary>
+            查询上下文，表示引擎在处理DoQuery过程中的上下文信息。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.QueryContext.TransitionResults">
+            <summary>
+            获取TransitionResult列表。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.TransformContext">
+            <summary>
+            迁移上下文，表示引擎在处理DoTransform过程中的上下文信息。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransformContext.FlowTransform">
+            <summary>
+            获取或设置FlowTransform，该值表示流程的迁移处理。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransformContext.InitialTransitionResult">
+            <summary>
+            获取或设置最初的TransitionResult。
+            该值表示在不考虑分支等情况下，最初的TransitionResult。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransformContext.BranchTransitionResults">
+            <summary>
+            获取分支TransitionResult序列。
+            该值表示当最初的TransitionResult通过，且目标活动是分支活动时，将要走的分支TransitionResult序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransformContext.SuppressTransform">
+            <summary>
+            获取或设置是否抑制Transform过程。如果在Transform过程之前将该值设置为true，那么Transform过程将不再执行。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransformContext.FinalTransitionResult">
+            <summary>
+            获取最终的TransitionResult。
+            该值表示综合考虑分支等情况下，最终指向NormalActivity的TransitionResult。可能为null，比如没有分支满足条件时。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.HandoverContext">
+            <summary>
+            转办上下文，表示引擎在处理DoHandover过程中的上下文信息。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.HandoverContext.FlowHandover">
+            <summary>
+            获取或设置FlowHandover，该值表示流程的转办处理。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.HandoverContext.SuppressHandover">
+            <summary>
+            获取或设置是否抑制Handover过程。如果在Handover过程之前将该值设置为true，那么Handover过程将不再执行。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineEventArgs">
+            <summary>
+            为引擎事件提供数据。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.EngineEventArgs.#ctor(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            构造方法。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Aoborsoft.Flows.EngineEventArgs.Context">
+            <summary>
+            获取引擎上下文。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineFactory">
+            <summary>
+            引擎工厂。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.EngineFactory.ConfigFilePath">
+            <summary>
+            获取或设置配置文件路径。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.EngineFactory.GetEngine">
+            <summary>
+            获取引擎实例。
+            </summary>
+            <exception cref="T:Aoborsoft.Flows.EngineCreateException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.EngineFactory.CreateEngine">
+            <summary>
+            创建引擎实例。
+            </summary>
+            <exception cref="T:Aoborsoft.Flows.EngineCreateException"></exception>
+        </member>
+        <member name="E:Aoborsoft.Flows.EngineFactory.EngineCreated">
+            <summary>
+            当创建了一个新的Engine实例时发生。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineCreatedEventArgs">
+            <summary>
+            为EngineCreated事件提供数据。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.EngineCreatedEventArgs.#ctor(Aoborsoft.Flows.Engine)">
+            <summary>
+            构造方法。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Aoborsoft.Flows.EngineCreatedEventArgs.Engine">
+            <summary>
+            获取创建的Engine。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineCreateException">
+            <summary>
+            当引擎创建失败时引发的异常。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineModuleCollection">
+            <summary>
+            引擎模块集合。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.EngineModuleCollection.AddModule(System.String,Aoborsoft.Flows.IEngineModule)">
+            <summary>
+            添加模块。
+            </summary>
+            <exception cref="T:System.ArgumentException"></exception>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.EngineModuleCollection.Get(System.Int32)">
+            <summary>
+            获取指定索引处的模块。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.EngineModuleCollection.Get(System.String)">
+            <summary>
+            获取指定名称的模块。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.EngineModuleCollection.Item(System.Int32)">
+            <summary>
+            获取指定索引处的模块。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.EngineModuleCollection.Item(System.String)">
+            <summary>
+            获取指定名称的模块。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineModules.DynamicInvokeModule">
+            <summary>
+            负责处理动态调用的模块。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineModules.FindTransitionModule">
+            <summary>
+            负责根据当前活动及给定的迁移动作，找寻合适的活动迁移。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineModules.HandoverModule">
+            <summary>
+            负责对流程进行转办的模块。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineModules.InterceptionModule">
+            <summary>
+            负责处理Interception的模块。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineModules.QueryModule">
+            <summary>
+            负责查询给定流程当前所能进行的所有活动转移，以及活动迁移相关数据的模块。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineModules.TransformModule">
+            <summary>
+            负责对流程进行迁移的模块。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowConditions.AndCondition">
+            <summary>
+            同时满足多条Condition才满足的Condition。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.AndCondition.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.AndCondition.#ctor(System.Collections.Generic.IEnumerable{Aoborsoft.Flows.IFlowCondition})">
+            <summary>
+            构造方法，并指定IFlowCondition序列。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.AndCondition.#ctor(Aoborsoft.Flows.IFlowCondition[])">
+            <summary>
+            构造方法，并指定IFlowCondition序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowConditions.AndCondition.Conditions">
+            <summary>
+            获取IFlowCondition集合。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.AndCondition.CheckSatisfy(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断是否满足该条件。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowConditions.FalseCondition">
+            <summary>
+            对任何Flow都不满足的Condition。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.FalseCondition.CheckSatisfy(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断是否满足该条件。本方法返回false。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowConditions.NotCondition">
+            <summary>
+            在指定Condition基础上取非的Condition。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.NotCondition.#ctor(Aoborsoft.Flows.IFlowCondition)">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowConditions.NotCondition.InnerCondition">
+            <summary>
+            获取内部的IFlowCondition。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.NotCondition.CheckSatisfy(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断是否满足该条件。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowConditions.OrCondition">
+            <summary>
+            满足其中任何一条Condition就算满足的Condition。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.OrCondition.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.OrCondition.#ctor(System.Collections.Generic.IEnumerable{Aoborsoft.Flows.IFlowCondition})">
+            <summary>
+            构造方法，并指定IFlowCondition序列。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.OrCondition.#ctor(Aoborsoft.Flows.IFlowCondition[])">
+            <summary>
+            构造方法，并指定IFlowCondition序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowConditions.OrCondition.Conditions">
+            <summary>
+            获取IFlowCondition集合。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.OrCondition.CheckSatisfy(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断是否满足该条件。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowConditions.TrueCondition">
+            <summary>
+            对任何Flow都满足的Condition。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowConditions.TrueCondition.CheckSatisfy(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断是否满足该条件。本方法返回true。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.Activity">
+            <summary>
+            表示流程图中的一个活动。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.Activity.#ctor(System.Int32)">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Activity.Id">
+            <summary>
+            获取Id。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Activity.FlowChart">
+            <summary>
+            获取或设置所属的流程图。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Activity.Name">
+            <summary>
+            获取或设置名称。
+            </summary>
+            <exception cref="T:System.ArgumentNullException">当value为null时抛出。</exception>
+        </member>
+        <member name="P:Aoborsoft.Flows.Activity.Notes">
+            <summary>
+            获取或设置备注。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Activity.Transitions">
+            <summary>
+            获取活动迁移序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Activity.Properties">
+            <summary>
+            获取动态属性。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Activity.TransitionsCore">
+            <summary>
+            获取活动迁移集合。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.BranchActivity">
+            <summary>
+            表示流程图中的一个分支活动。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.BranchActivity.#ctor(System.Int32)">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.BranchActivity.BranchSelectMode">
+            <summary>
+            获取或设置分支选择模式。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.BranchSelectMode">
+            <summary>
+            分支选择模式。指如果有多个分支满足条件，该如何处理的模式。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.BranchSelectMode.ReportError">
+            <summary>
+            如果有多个分支满足条件，则报告错误。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.BranchSelectMode.SelectFirst">
+            <summary>
+            如果有多个分支满足条件，则选择第一个分支。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.NormalActivity">
+            <summary>
+            表示流程图中的一个普通活动。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.NormalActivity.#ctor(System.Int32)">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.NormalActivity.State">
+            <summary>
+            获取或设置状态。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.NormalActivity.ExpectHandleDays">
+            <summary>
+            预期处理天数。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.NormalActivity.AllowHandover">
+            <summary>
+            获取或设置是否允许转办。默认值：false。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ActivityState">
+            <summary>
+            表示活动的状态。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.ActivityState.Start">
+            <summary>
+            开始。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.ActivityState.Ongoing">
+            <summary>
+            进行中。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.ActivityState.Passed">
+            <summary>
+            已通过。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.ActivityState.Rejected">
+            <summary>
+            被拒绝。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.CountersignStrategy">
+            <summary>
+            会签策略。本类是抽象类，要实现具体的会签策略，一般可继承本类。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.CountersignStrategy.WillPass(Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.CountersignStrategy.WillPass(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.CountersignStrategy`1">
+            <summary>
+            特定流程类型的会签策略。本类是抽象类，要实现具体的会签策略，一般可继承本类。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.CountersignStrategy`1.WillPass(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.CountersignStrategy`1.WillPass(`0,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowChart">
+            <summary>
+            表示流程图。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.FlowDefinition">
+            <summary>
+            获取或设置所属的流程定义。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.Version">
+            <summary>
+            获取或设置版本。当尚未隶属于任何流程定义的时候，才可以设置版本。
+            </summary>
+            <exception cref="T:System.InvalidOperationException">当流程图已经隶属于某流程定义，再去修改版本时抛出。</exception>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.IsPublished">
+            <summary>
+            获取或设置是否发布标识。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.Image">
+            <summary>
+            获取或设置图像。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.Notes">
+            <summary>
+            获取或设置备注。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.Activities">
+            <summary>
+            获取Activity序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.NormalActivities">
+            <summary>
+            获取NormalActivity序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.BranchActivities">
+            <summary>
+            获取BranchActivity序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.StartActivity">
+            <summary>
+            获取Start的Activity。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.OngoingActivities">
+            <summary>
+            获取Ongoing的Activity序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.PassedActivities">
+            <summary>
+            获取Passed的Activity序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.RejectedActivities">
+            <summary>
+            获取Rejected的Activity序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.OngoingActivityNames">
+            <summary>
+            获取Ongoing的Activity的名称序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.PassedActivityNames">
+            <summary>
+            获取Passed的Activity的名称序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.RejectedActivityNames">
+            <summary>
+            获取Rejected的Activity的名称序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowChart.Properties">
+            <summary>
+            获取动态属性。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowChart.AddActivity(Aoborsoft.Flows.Activity)">
+            <summary>
+            添加活动。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowChart.RemoveActivity(Aoborsoft.Flows.Activity)">
+            <summary>
+            移除图状态。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowChart.AddTransition(Aoborsoft.Flows.Activity,Aoborsoft.Flows.Transition)">
+            <summary>
+            添加活动迁移。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowChart.RemoveTransition(Aoborsoft.Flows.Activity,Aoborsoft.Flows.Transition)">
+            <summary>
+            移除活动迁移。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowChart.ValidateActivityIsIndependent(Aoborsoft.Flows.Activity)">
+            <summary>
+            验证Activity是独立的。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowChart.ValidateActivityIsMine(Aoborsoft.Flows.Activity)">
+            <summary>
+            验证Activity是属于当前FlowChart的。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowChart.ValidateTransitionTargetIsMine(Aoborsoft.Flows.Transition)">
+            <summary>
+            验证Transition的Target是属于当前FlowChart的。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowChartCollection">
+            <summary>
+            FlowChart集合。该集合保证其中的FlowChart不会具有相同的Version。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowCondition">
+            <summary>
+            流程条件。本类是抽象类，要实现具体的流程条件，一般可继承本类。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowCondition.CheckSatisfy(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断是否满足该条件。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowCondition.CheckSatisfy(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断是否满足该条件。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowCondition`1">
+            <summary>
+            流程条件。本类是抽象类，要实现具体的流程条件，一般可继承本类。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowCondition`1.CheckSatisfy(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断是否满足该条件。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowCondition`1.CheckSatisfy(`0,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断是否满足该条件。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowDefinition">
+            <summary>
+            表示流程定义。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowDefinition.#ctor(System.Guid)">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinition.Id">
+            <summary>
+            获取Id。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinition.Name">
+            <summary>
+            获取或设置名称。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinition.DefaultFlowChartVersion">
+            <summary>
+            获取或设置默认流程图版本。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinition.DefaultFlowChart">
+            <summary>
+            获取默认流程图。当DefaultFlowChartVersion为null时，DefaultFlowChart也为null。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinition.IsActive">
+            <summary>
+            获取或设置是否活动标识。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinition.Notes">
+            <summary>
+            获取或设置备注。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinition.FlowCharts">
+            <summary>
+            获取流程图集合。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinition.Interceptors">
+            <summary>
+            获取Interceptor列表。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinition.Properties">
+            <summary>
+            获取动态属性。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowDefinitionCollection">
+            <summary>
+            FlowDefinition集合。该集合保证其中的FlowDefinition不会具有相同的Id。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowDefinitionManager">
+            <summary>
+            FlowDefinition集合管理者，管理所有的FlowDefinition。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinitionManager.FlowDefinitions">
+            <summary>
+            获取FlowDefinition集合。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinitionManager.ActiveFlowDefinitions">
+            <summary>
+            获取活动的FlowDefinition序列。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowDefinitionManager.InactiveFlowDefinitions">
+            <summary>
+            获取非活动的FlowDefinition序列。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ICountersignStrategy">
+            <summary>
+            会签策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ICountersignStrategy.WillPass(Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.IFlowCondition">
+            <summary>
+            流程条件。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.IFlowCondition.CheckSatisfy(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断是否满足该条件。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.INextHandlerStrategy">
+            <summary>
+            下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.INextHandlerStrategy.Translate(Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的下一步处理者结果。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.NextHandlerResult">
+            <summary>
+            下一步处理者策略根据查询上下文计算的下一步处理者结果。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.NextHandlerResult.NextHandlerIds">
+            <summary>
+            获取下一步处理者Id集。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.NextHandlerResult.SelectMode">
+            <summary>
+            获取或设置下一步处理者选择模式。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.NextHandlerResult.AllowMultiple">
+            <summary>
+            获取或设置是否允许选择多人。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.NextHandlerSelectMode">
+            <summary>
+            下一步处理者选择模式。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.NextHandlerSelectMode.Referenced">
+            <summary>
+            参考的，既允许在当前人员中进行选择，也允许在当前人员外进行选择。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.NextHandlerSelectMode.Candidate">
+            <summary>
+            候选的，仅允许在当前人员中进行选择。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.NextHandlerSelectMode.Fixed">
+            <summary>
+            固定的，不允许进行选择。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.NextHandlerStrategy">
+            <summary>
+            下一步处理者策略。本类是抽象类，要实现具体的下一步处理者策略，一般可继承本类。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.NextHandlerStrategy.SelectMode">
+            <summary>
+            获取或设置下一步处理者选择模式。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.NextHandlerStrategy.AllowMultiple">
+            <summary>
+            获取或设置是否允许选择多人。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.NextHandlerStrategy.Translate(Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的下一步处理者结果。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.NextHandlerStrategy.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.NextHandlerStrategy`1">
+            <summary>
+            特定流程类型的下一步处理者策略。本类是抽象类，要实现具体的下一步处理者策略，一般可继承本类。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.NextHandlerStrategy`1.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.NextHandlerStrategy`1.Translate(`0,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.Transition">
+            <summary>
+            表示流程图中的一个活动迁移。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.Transition.#ctor(System.Int32,Aoborsoft.Flows.Activity)">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.Id">
+            <summary>
+            获取Id。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.Target">
+            <summary>
+            获取目标活动。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.Name">
+            <summary>
+            获取或设置名称。
+            </summary>
+            <exception cref="T:System.ArgumentNullException">当value为null时抛出。</exception>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.Type">
+            <summary>
+            获取或设置活动迁移类型。默认值：Unspecified。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.Condition">
+            <summary>
+            获取或设置流程条件，保证不为null。默认值：TrueCondition。
+            </summary>
+            <exception cref="T:System.ArgumentNullException">当value为null时抛出。</exception>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.Countersign">
+            <summary>
+            获取或设置会签策略，保证不为null。默认值：AnyCountersignStrategy。
+            </summary>
+            <exception cref="T:System.ArgumentNullException">当value为null时抛出。</exception>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.NextHandler">
+            <summary>
+            获取或设置下一步处理者策略，保证不为null。默认值：NoneNextHandlerStrategy，SelectMode为Referenced，AllowMultiple为true。
+            </summary>
+            <exception cref="T:System.ArgumentNullException">当value为null时抛出。</exception>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.AllowAutoTransform">
+            <summary>
+            获取或设置是否允许自动迁移。默认值：false。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.CommentRequired">
+            <summary>
+            获取或设置意见是否必填。默认值：false。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.DefaultComment">
+            <summary>
+            获取或设置默认意见内容。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.Inform">
+            <summary>
+            获取或设置是否启用通知。默认值：true。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.Notes">
+            <summary>
+            获取或设置备注。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.Transition.Properties">
+            <summary>
+            获取动态属性。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.TransitionType">
+            <summary>
+            活动迁移类型。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.TransitionType.Unspecified">
+            <summary>
+            未指定的。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.TransitionType.Forward">
+            <summary>
+            前进的。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.TransitionType.Backward">
+            <summary>
+            后退的。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowException">
+            <summary>
+            表示流程异常。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowExtensions">
+            <summary>
+            为IFlow接口提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowExtensions.Init(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.FlowDefinition)">
+            <summary>
+            用指定的FlowDefinition的DefaultFlowChart初始化Flow。
+            <para>设置Flow的FlowDefinitionId为指定FlowDefinition的Id。</para>
+            <para>设置Flow的FlowChartVersion为指定FlowDefinition的DefaultFlowChart的Version。</para>
+            <para>设置Flow的ActivityName为指定FlowDefinition的DefaultFlowChart的StartActivity的Name。</para>
+            <para>设置Flow的ActivityState为指定FlowDefinition的DefaultFlowChart的StartActivity的State。</para>
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowExtensions.Init(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.FlowDefinition,Aoborsoft.Flows.FlowChart)">
+            <summary>
+            用指定的FlowDefinition、FlowChart初始化Flow。
+            <para>设置Flow的FlowDefinitionId为指定FlowDefinition的Id。</para>
+            <para>设置Flow的FlowChartVersion为指定FlowChart的Version。</para>
+            <para>设置Flow的ActivityName为指定FlowChart的StartActivity的Name。</para>
+            <para>设置Flow的ActivityState为指定FlowChart的StartActivity的State。</para>
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowExtensions.GetFlowDefinition(Aoborsoft.Flows.IFlow)">
+            <summary>
+            获取Flow对应的FlowDefinition。若获取不到，抛出FlowException异常。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:Aoborsoft.Flows.FlowException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowExtensions.GetFlowChart(Aoborsoft.Flows.IFlow)">
+            <summary>
+            获取Flow对应的FlowChart。若获取不到，抛出FlowException异常。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:Aoborsoft.Flows.FlowException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.FlowExtensions.GetActivity(Aoborsoft.Flows.IFlow)">
+            <summary>
+            获取Flow当前所处的Activity。若获取不到，抛出FlowException异常。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:Aoborsoft.Flows.FlowException"></exception>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowHandle">
+            <summary>
+            表示流程处理。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowHandle.HandleComment">
+            <summary>
+            获取或设置处理意见。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowHandle.IsAutoHandle">
+            <summary>
+            获取或设置是否自动处理。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowHandle.Properties">
+            <summary>
+            获取动态属性。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowTransform">
+            <summary>
+            表示流程的迁移处理。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowTransform.TransitionId">
+            <summary>
+            获取或设置迁移Id。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowTransform.TransitionName">
+            <summary>
+            获取或设置迁移名称。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowTransform.NextStepHandlerIds">
+            <summary>
+            获取下一步处理人集合。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowHandover">
+            <summary>
+            表示流程的转办处理。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.FlowHandover.HandoverUserId">
+            <summary>
+            获取或设置转办人Id。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowHandleType">
+            <summary>
+            流程处理类型。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.FlowHandleType.Transform">
+            <summary>
+            迁移。
+            </summary>
+        </member>
+        <member name="F:Aoborsoft.Flows.FlowHandleType.Handover">
+            <summary>
+            转办。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.FlowOptions">
+            <summary>
+            流程选项，可以在DoQuery、DoTransform时设置一些选项，对处理过程施加影响。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.IDynamicInvoker">
+            <summary>
+            动态调用器。实现本接口的类，将在引擎处理过程中被动态调用。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.IDynamicInvoker.CheckSatisfy(Aoborsoft.Flows.IFlow)">
+            <summary>
+            判断指定Flow是否满足被动态调用的条件。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.IDynamicInvoker.PostQuery(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.QueryContext)">
+            <summary>
+            在引擎处理完Query事件时被调用。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.IDynamicInvoker.PreTransform(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.TransformContext)">
+            <summary>
+            在引擎即将处理Transform事件时被调用。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.IDynamicInvoker.PostTransform(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.TransformContext)">
+            <summary>
+            在引擎处理完Transform事件时被调用。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.IDynamicInvoker.PreHandover(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.HandoverContext)">
+            <summary>
+            在引擎即将处理Handover事件时被调用。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.IDynamicInvoker.PostHandover(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.HandoverContext)">
+            <summary>
+            在引擎处理完Handover事件时被调用。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.DynamicInvoker">
+            <summary>
+            动态调用器抽象类。一般情况下，可通过继承本类，然后覆盖相应的方法，来实现动态调用器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.DynamicInvoker.CheckSatisfy(Aoborsoft.Flows.IFlow)">
+            <summary>
+            判断指定Flow是否满足被动态调用的条件。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.DynamicInvoker.PostQuery(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.QueryContext)">
+            <summary>
+            在引擎处理完Query事件时被调用。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.DynamicInvoker.PreTransform(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.TransformContext)">
+            <summary>
+            在引擎即将处理Transform事件时被调用。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.DynamicInvoker.PostTransform(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.TransformContext)">
+            <summary>
+            在引擎处理完Transform事件时被调用。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.DynamicInvoker.PreHandover(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.HandoverContext)">
+            <summary>
+            在引擎即将处理Handover事件时被调用。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.DynamicInvoker.PostHandover(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.HandoverContext)">
+            <summary>
+            在引擎处理完Handover事件时被调用。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.IEngineModule">
+            <summary>
+            引擎模块接口，其实现类为引擎提供各种具体功能。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.IEngineModule.Init(Aoborsoft.Flows.Engine,System.Xml.Linq.XElement)">
+            <summary>
+            初始化引擎模块。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.IFlow">
+            <summary>
+            表示一个流程的具体实例。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.IFlow.FlowDefinitionId">
+            <summary>
+            获取或设置FlowDefinitionId。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.IFlow.FlowChartVersion">
+            <summary>
+            获取或设置FlowChartVersion。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.IFlow.ActivityId">
+            <summary>
+            获取或设置活动Id。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.IFlow.ActivityName">
+            <summary>
+            获取或设置活动名称。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.IFlow.ActivityState">
+            <summary>
+            获取或设置活动状态。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ICustomQueryFlow">
+            <summary>
+            表示一个定义了自定义查询方法的流程实例。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ICustomQueryFlow.Query(Aoborsoft.Flows.QueryContext)">
+            <summary>
+            查询流程。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ICustomTransformFlow">
+            <summary>
+            表示一个定义了自定义迁移方法的流程实例。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ICustomTransformFlow.Transform(Aoborsoft.Flows.TransformContext)">
+            <summary>
+            迁移流程。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ICustomHandoverFlow">
+            <summary>
+            表示一个定义了自定义转办方法的流程实例。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ICustomHandoverFlow.Handover(Aoborsoft.Flows.HandoverContext)">
+            <summary>
+            转办流程。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.Interception.IHandoverInterceptor">
+            <summary>
+            对Flow的Handover过程进行拦截的Interceptor接口。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.Interception.IHandoverInterceptor.PreHandover(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.HandoverContext)">
+            <summary>
+            在引擎即将处理Handover事件时被调用。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.Interception.IHandoverInterceptor.PostHandover(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.HandoverContext)">
+            <summary>
+            在引擎处理完Handover事件时被调用。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.Interception.IInterceptor">
+            <summary>
+            所有Interceptor的基接口。这是个标记接口，本身未定义任何成员。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.Interception.IQueryInterceptor">
+            <summary>
+            对Flow的Query过程进行拦截的Interceptor接口。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.Interception.IQueryInterceptor.PostQuery(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.QueryContext)">
+            <summary>
+            在引擎处理完Query事件时被调用。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.Interception.ITransformInterceptor">
+            <summary>
+            对Flow的Transform过程进行拦截的Interceptor接口。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.Interception.ITransformInterceptor.PreTransform(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.TransformContext)">
+            <summary>
+            在引擎即将处理Transform事件时被调用。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.Interception.ITransformInterceptor.PostTransform(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.TransformContext)">
+            <summary>
+            在引擎处理完Transform事件时被调用。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.NextHandlerStrategies.ConditionalNextHandlerStrategy">
+            <summary>
+            根据不同条件决定不同下一步处理者策略的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.NextHandlerStrategies.ConditionalNextHandlerStrategy.Entries">
+            <summary>
+            根据不同条件设置不同下一步处理者策略的条目列表。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.NextHandlerStrategies.ConditionalNextHandlerStrategy.DefaultStrategy">
+            <summary>
+            当所有条件都不满足时所使用的默认下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.NextHandlerStrategies.ConditionalNextHandlerStrategy.Translate(Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的下一步处理者结果。
+            <para>首先从列表中找到第一个满足条件的下一步处理者策略；若所有条件都不满足，则使用默认下一步处理者策略；如果没设置默认策略，返回人员列表为空，模式为Fixed的下一步处理者结果。</para>
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.NextHandlerStrategies.CurrentUserNextHandlerStrategy">
+            <summary>
+            表示当前用户的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.NextHandlerStrategies.CurrentUserNextHandlerStrategy.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.NextHandlerStrategies.NoneNextHandlerStrategy">
+            <summary>
+            表示空用户的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.NextHandlerStrategies.NoneNextHandlerStrategy.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ReadWrite.FlowCountersignStrategyConverter">
+            <summary>
+            支持AnyCountersignStrategy的转换。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowCountersignStrategyConverter.TryConvertFrom(System.String,Aoborsoft.Flows.ICountersignStrategy@)">
+            <summary>
+            尝试将文本转换为会签策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowCountersignStrategyConverter.TryConvertTo(Aoborsoft.Flows.ICountersignStrategy,System.String@)">
+            <summary>
+            尝试将会签策略转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ReadWrite.FlowConditionConverter">
+            <summary>
+            支持TrueCondition、FalseCondition的转换。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowConditionConverter.TryConvertFrom(System.String,Aoborsoft.Flows.IFlowCondition@)">
+            <summary>
+            尝试将文本转换为流程条件。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowConditionConverter.TryConvertTo(Aoborsoft.Flows.IFlowCondition,System.String@)">
+            <summary>
+            尝试将流程条件转换为文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter">
+            <summary>
+            FlowDefinition读写器。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.FlowConditionConverters">
+            <summary>
+            获取FlowConditionConverter集合。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.CountersignStrategyConverters">
+            <summary>
+            获取CountersignStrategyConverter集合。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.NextHandlerStrategyConverters">
+            <summary>
+            获取NextHandlerStrategyConverter集合。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.InterceptorConverters">
+            <summary>
+            获取InterceptorConverter集合。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.FlowDefinitionPropertyConverters">
+            <summary>
+            获取FlowDefinition的属性转换器字典，可通过该字典添加删除属性转换器。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.FlowChartPropertyConverters">
+            <summary>
+            获取FlowChart的属性转换器字典，可通过该字典添加删除属性转换器。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.ActivityPropertyConverters">
+            <summary>
+            获取ActivityProperty的属性转换器字典，可通过该字典添加删除属性转换器。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.TransitionPropertyConverters">
+            <summary>
+            获取TransitionProperty的属性转换器字典，可通过该字典添加删除属性转换器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.Read(System.String)">
+            <summary>
+            从文件中读取FlowDefinition。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.Read(System.IO.Stream)">
+            <summary>
+            从流中读取FlowDefinition。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.Write(Aoborsoft.Flows.FlowDefinition,System.String)">
+            <summary>
+            将FlowDefinition写入文件。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.Write(Aoborsoft.Flows.FlowDefinition,System.IO.Stream)">
+            <summary>
+            将FlowDefinition写入流。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.ReadFromXElement(System.Xml.Linq.XElement)">
+            <summary>
+            从XElement读取FlowDefinition。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.WriteToXElement(Aoborsoft.Flows.FlowDefinition)">
+            <summary>
+            讲FlowDefinition写入到XElement。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.ReadFlowDefinitionProperty(System.Xml.Linq.XElement)">
+            <summary>
+            读取FlowDefinition的其他属性。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.ReadFlowChartProperty(System.Xml.Linq.XElement)">
+            <summary>
+            读取FlowChart的其他属性。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.ReadActivityProperty(System.Xml.Linq.XElement)">
+            <summary>
+            读取Activity的其他属性。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.ReadTransitionProperty(System.Xml.Linq.XElement)">
+            <summary>
+            读取Transition的其他属性。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.WriteFlowDefinitionProperty(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            写入FlowDefinition的其他属性。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.WriteFlowChartProperty(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            写入FlowChart的其他属性。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.WriteActivityProperty(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            写入Activity的其他属性。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowDefinitionReaderWriter.WriteTransitionProperty(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            写入Transition的其他属性。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ReadWrite.IFlowDefinitionReaderWriter">
+            <summary>
+            FlowDefinition读写器接口。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.IFlowDefinitionReaderWriter.Read(System.IO.Stream)">
+            <summary>
+            从流中读取FlowDefinition。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.IFlowDefinitionReaderWriter.Write(Aoborsoft.Flows.FlowDefinition,System.IO.Stream)">
+            <summary>
+            将FlowDefinition写入流。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ReadWrite.FlowNextHandlerStrategyConverter">
+            <summary>
+            支持NoneNextHandlerStrategy、CurrentUserNextHandlerStrategy的转换。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowNextHandlerStrategyConverter.TryConvertFromBasic(System.String,Aoborsoft.Flows.NextHandlerStrategy@)">
+            <summary>
+            尝试转换为基本的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.FlowNextHandlerStrategyConverter.TryConvertToBasic(Aoborsoft.Flows.NextHandlerStrategy,System.String@)">
+            <summary>
+            尝试转换为基本的文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ReadWrite.NextHandlerStrategyConverter">
+            <summary>
+            下一步处理者策略转换器。该类是抽象类，要实现自己的转换器，一般可继承本类。
+            <para>本类只可以处理继承自NextHandlerStrategy的子类。</para>
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.NextHandlerStrategyConverter.TryConvertFrom(System.String,Aoborsoft.Flows.INextHandlerStrategy@)">
+            <summary>
+            尝试将文本转换为下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.NextHandlerStrategyConverter.TryConvertFromBasic(System.String,Aoborsoft.Flows.NextHandlerStrategy@)">
+            <summary>
+            尝试转换为基本的下一步处理者策略。即忽略SelectMode、AllowMultiple的转换。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.NextHandlerStrategyConverter.TryConvertTo(Aoborsoft.Flows.INextHandlerStrategy,System.String@)">
+            <summary>
+            尝试将下一步处理者策略转换为文本。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.NextHandlerStrategyConverter.TryConvertToBasic(Aoborsoft.Flows.NextHandlerStrategy,System.String@)">
+            <summary>
+            尝试转换为基本的文本。即忽略SelectMode、AllowMultiple的转换。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.TransitionResult">
+            <summary>
+            活动迁移根据查询上下文计算的最终结果。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.TransitionResult.#ctor(Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            通过Transition与EngineContext构造TransitionResult。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransitionResult.Transition">
+            <summary>
+            获取Transition。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransitionResult.Id">
+            <summary>
+            获取Transition的Id。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransitionResult.Name">
+            <summary>
+            获取Transition的Name。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransitionResult.Target">
+            <summary>
+            获取Transition的Target。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransitionResult.Type">
+            <summary>
+            获取Transition的Type。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransitionResult.AllowAutoTransform">
+            <summary>
+            获取Transition的AllowAutoTransform。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransitionResult.CommentRequired">
+            <summary>
+            获取Transition的CommentRequired。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransitionResult.DefaultComment">
+            <summary>
+            获取Transition的DefaultComment。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransitionResult.WillPass">
+            <summary>
+            根据Transition的Countersign计算出来的如果进行该迁移则会签是否通过的标识。
+            <para>该值可在引擎中动态调整，以实现一些动态效果。</para>
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.TransitionResult.NextHandlerResult">
+            <summary>
+            根据Transition的NextHandler计算出来的下一步处理人结果。
+            <para>该值可在引擎中动态调整，以实现一些动态效果。</para>
+            </summary>
+        </member>
+    </members>
+</doc>

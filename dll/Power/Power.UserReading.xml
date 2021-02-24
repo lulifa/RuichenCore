@@ -1,0 +1,323 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.UserReading</name>
+    </assembly>
+    <members>
+        <member name="T:Power.UserReading.ReadRecord">
+            <summary>
+            表示一条阅读记录。
+            </summary>
+        </member>
+        <member name="T:Power.UserReading.ReadServices">
+            <summary>
+            对象阅读服务。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByObject(System.String,System.Guid)">
+            <summary>
+            清除指定对象的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByObject``1(System.Guid)">
+            <summary>
+            清除指定对象的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByObjectAsync(System.String,System.Guid)">
+            <summary>
+            异步清除指定对象的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByObjectAsync``1(System.Guid)">
+            <summary>
+            异步清除指定对象的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByObjects(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            清除指定对象序列的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByObjects``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            清除指定对象序列的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByObjectsAsync(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步清除指定对象序列的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByObjectsAsync``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步清除指定对象序列的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByUser(System.String)">
+            <summary>
+            清除指定用户的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByUserAsync(System.String)">
+            <summary>
+            异步清除指定用户的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByUsers(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            清除指定用户序列的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByUsersAsync(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            异步清除指定用户序列的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByPredicate(System.Linq.Expressions.Expression{System.Func{Power.UserReading.ReadRecord,System.Boolean}})">
+            <summary>
+            清除满足指定条件表达式的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.ClearByPredicateAsync(System.Linq.Expressions.Expression{System.Func{Power.UserReading.ReadRecord,System.Boolean}})">
+            <summary>
+            异步清除满足指定条件表达式的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetReaded(System.String,System.String,System.Guid)">
+            <summary>
+            设置为已读。阅读时间为当前时间。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetReaded``1(System.String,System.Guid)">
+            <summary>
+            设置为已读。阅读时间为当前时间。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetReadedAsync(System.String,System.String,System.Guid)">
+            <summary>
+            异步设置为已读。阅读时间为当前时间。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetReadedAsync``1(System.String,System.Guid)">
+            <summary>
+            异步设置为已读。阅读时间为当前时间。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetReaded(System.String,System.String,System.Guid,System.DateTime)">
+            <summary>
+            设置为已读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetReaded``1(System.String,System.Guid,System.DateTime)">
+            <summary>
+            设置为已读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetReadedAsync(System.String,System.String,System.Guid,System.DateTime)">
+            <summary>
+            异步设置为已读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetReadedAsync``1(System.String,System.Guid,System.DateTime)">
+            <summary>
+            异步设置为已读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetNotReaded(System.String,System.String,System.Guid)">
+            <summary>
+            设置为未读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetNotReaded``1(System.String,System.Guid)">
+            <summary>
+            设置为未读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetNotReadedAsync(System.String,System.String,System.Guid)">
+            <summary>
+            异步设置为未读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.SetNotReadedAsync``1(System.String,System.Guid)">
+            <summary>
+            异步设置为未读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.HasReaded(System.String,System.String,System.Guid)">
+            <summary>
+            判断是否已读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.HasReaded``1(System.String,System.Guid)">
+            <summary>
+            判断是否已读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.HasReadedAsync(System.String,System.String,System.Guid)">
+            <summary>
+            异步判断是否已读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.HasReadedAsync``1(System.String,System.Guid)">
+            <summary>
+            异步判断是否已读。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedObjectIds(System.String,System.String)">
+            <summary>
+            获取指定用户已读的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedObjectIds``1(System.String)">
+            <summary>
+            获取指定用户已读的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedObjectIdsAsync(System.String,System.String)">
+            <summary>
+            异步获取指定用户已读的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedObjectIdsAsync``1(System.String)">
+            <summary>
+            异步获取指定用户已读的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedObjectIds(System.String,System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取指定ObjectId序列中，被指定用户已读的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedObjectIds``1(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取指定ObjectId序列中，被指定用户已读的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedObjectIdsAsync(System.String,System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步获取指定ObjectId序列中，被指定用户已读的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedObjectIdsAsync``1(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步获取指定ObjectId序列中，被指定用户已读的ObjectId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedUserIds(System.String,System.Guid)">
+            <summary>
+            获取已读的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedUserIds``1(System.Guid)">
+            <summary>
+            获取已读的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedUserIdsAsync(System.String,System.Guid)">
+            <summary>
+            异步获取已读的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedUserIdsAsync``1(System.Guid)">
+            <summary>
+            异步获取已读的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedUserIds(System.String,System.Guid,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取指定UserId序列中，已读的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedUserIds``1(System.Guid,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            获取指定UserId序列中，已读的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedUserIdsAsync(System.String,System.Guid,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            异步获取指定UserId序列中，已读的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetReadedUserIdsAsync``1(System.Guid,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            异步获取指定UserId序列中，已读的UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByObject(System.String,System.Guid)">
+            <summary>
+            获取指定对象的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByObject``1(System.Guid)">
+            <summary>
+            获取指定对象的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByObjectAsync(System.String,System.Guid)">
+            <summary>
+            异步获取指定对象的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByObjectAsync``1(System.Guid)">
+            <summary>
+            异步获取指定对象的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByObjects(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取指定对象序列的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByObjects``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取指定对象序列的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByObjectsAsync(System.String,System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步获取指定对象序列的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByObjectsAsync``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步获取指定对象序列的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByUser(System.String,System.String)">
+            <summary>
+            获取指定用户指定对象类型的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByUser``1(System.String)">
+            <summary>
+            获取指定用户指定对象类型的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByUserAsync(System.String,System.String)">
+            <summary>
+            异步获取指定用户指定对象类型的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByUserAsync``1(System.String)">
+            <summary>
+            异步获取指定用户指定对象类型的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByPredicate(System.Linq.Expressions.Expression{System.Func{Power.UserReading.ReadRecord,System.Boolean}})">
+            <summary>
+            获取满足指定条件表达式的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetByPredicateAsync(System.Linq.Expressions.Expression{System.Func{Power.UserReading.ReadRecord,System.Boolean}})">
+            <summary>
+            异步获取满足指定条件表达式的所有阅读记录。
+            </summary>
+        </member>
+        <member name="M:Power.UserReading.ReadServices.GetQueryable">
+            <summary>
+            获取返回所有阅读记录的查询。
+            </summary>
+        </member>
+    </members>
+</doc>

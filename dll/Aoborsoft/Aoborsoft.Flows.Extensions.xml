@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.Flows.Extensions</name>
+    </assembly>
+    <members>
+        <member name="M:Aoborsoft.Flows.ActivityExtensions.GetActivityHandler(Aoborsoft.Flows.Activity)">
+            <summary>
+            获取IActivityHandler。可能为null。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ActivityExtensions.SetActivityHandler(Aoborsoft.Flows.Activity,Aoborsoft.Flows.IActivityHandler)">
+            <summary>
+            设置IActivityHandler。可以设置为null。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.NextHandlerStrategies.ActivityHandlerNextHandlerStrategy">
+            <summary>
+            表示目标活动指定处理者的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ReadWrite.ActivityHandlerNextHandlerStrategyConverter">
+            <summary>
+            支持ActivityHandlerNextHandlerStrategy的转换。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.ActivityHandlerNextHandlerStrategyConverter.TryConvertFromBasic(System.String,Aoborsoft.Flows.NextHandlerStrategy@)">
+            <summary>
+            尝试转换为基本的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ReadWrite.ActivityHandlerNextHandlerStrategyConverter.TryConvertToBasic(Aoborsoft.Flows.NextHandlerStrategy,System.String@)">
+            <summary>
+            尝试转换为基本的文本。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ConditionalActivityHandler">
+            <summary>
+            根据不同条件决定不同活动处理者的处理者。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.ConditionalActivityHandler.Entries">
+            <summary>
+            根据不同条件设置不同活动处理者的条目列表。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Flows.ConditionalActivityHandler.DefaultHandler">
+            <summary>
+            当所有条件都不满足时所使用的默认活动处理者。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ConditionalActivityHandler.Translate(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            <para>首先从列表中找到第一个满足条件的活动处理者；若所有条件都不满足，则使用默认活动处理者；如果没设置默认处理者，返回空序列。</para>
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineModules.PreflightModule">
+            <summary>
+            预检模块。在Transofrm前先做预检，如果预检不通过，抛出FlowPreflightException。
+            <para>当前预检内容：检查迁移后，下一步处理人会不会没有人。</para>
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.EngineModules.FlowPreflightException">
+            <summary>
+            流程Transform过程中，预检失败时抛出。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.IActivityHandler">
+            <summary>
+            活动处理者。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.IActivityHandler.Translate(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Flows.ActivityHandler">
+            <summary>
+            活动处理者。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ActivityHandler.Translate(Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Flows.ActivityHandler.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+    </members>
+</doc>

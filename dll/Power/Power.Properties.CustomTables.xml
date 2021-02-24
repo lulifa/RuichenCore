@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Properties.CustomTables</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Properties.CustomProperty">
+            <summary>
+            表示某业务对象的自定义属性。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.CustomProperty.FieldName">
+            <summary>字段名称。</summary>
+        </member>
+        <member name="P:Power.Properties.CustomProperty.DbType">
+            <summary>数据类型。</summary>
+        </member>
+        <member name="P:Power.Properties.CustomProperty.MaxLength">
+            <summary>字符串类型字段长度。</summary>
+        </member>
+        <member name="P:Power.Properties.CustomProperty.IsRequired">
+            <summary>是否必填。</summary>
+        </member>
+        <member name="P:Power.Properties.CustomProperty.DisplayNameNeutral">
+            <summary>显示名称（中性）。</summary>
+        </member>
+        <member name="P:Power.Properties.CustomProperty.DisplayNameEn">
+            <summary>显示名称（英文）。</summary>
+        </member>
+        <member name="P:Power.Properties.CustomProperty.DisplayUnitNeutral">
+            <summary>显示单位（中性）。</summary>
+        </member>
+        <member name="P:Power.Properties.CustomProperty.DisplayUnitEn">
+            <summary>显示单位（英文）。</summary>
+        </member>
+        <member name="P:Power.Properties.CustomProperty.Order">
+            <summary>序号。</summary>
+        </member>
+        <member name="P:Power.Properties.CustomProperty.DisplayName">
+            <summary>显示名称。</summary>
+        </member>
+        <member name="P:Power.Properties.CustomProperty.DisplayUnit">
+            <summary>显示单位。</summary>
+        </member>
+        <member name="M:Power.Properties.CustomProperty.GetMetadata``1(System.String,``0)">
+            <summary>
+            获取值。内部采用Json序列化的方式。
+            </summary>
+            <exception cref="T:System.ArgumentException">当Key为null或空字符串时抛出。</exception>
+        </member>
+        <member name="M:Power.Properties.CustomProperty.SetMetadata``1(System.String,``0)">
+            <summary>
+            获取值。内部采用Json序列化的方式。
+            </summary>
+            <exception cref="T:System.ArgumentException">当Key为null或空字符串时抛出。</exception>
+        </member>
+        <member name="T:Power.Properties.CustomTable">
+            <summary>
+            表示某业务对象的自定义属性表。
+            </summary>
+        </member>
+        <member name="P:Power.Properties.CustomTableManager.VersionCache">
+            <summary>
+            获取或设置分布式缓存，该缓存用于存放最新数据版本时间。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.CustomTableManager.GetById(System.Guid)">
+            <summary>
+            通过Id获取CustomTable。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.CustomTableManager.GetByOwnerType(System.String)">
+            <summary>
+            通过OwnerType获取CustomTable序列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.CustomTableManager.GetByOwnerType``1">
+            <summary>
+            通过OwnerType获取CustomTable序列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.CustomTableManager.GetSingle(System.Func{Power.Properties.CustomTable,System.Boolean})">
+            <summary>
+            获取满足条件的第一个CustomTable。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.CustomTableManager.GetMultiple(System.Func{Power.Properties.CustomTable,System.Boolean})">
+            <summary>
+            获取满足条件的所有CustomTable序列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.CustomTableManager.GetAll">
+            <summary>
+            获取所有CustomTable序列。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.CustomTableManager.ExistsId(System.Guid)">
+            <summary>
+            判断是否存在指定Id的CustomTable。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.CustomTableManager.Add(Power.Properties.CustomTable)">
+            <summary>
+            添加CustomTable。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.CustomTableManager.Remove(Power.Properties.CustomTable)">
+            <summary>
+            移除CustomTable。
+            </summary>
+        </member>
+        <member name="M:Power.Properties.CustomTableManager.SaveChanges">
+            <summary>
+            保存修改。
+            </summary>
+        </member>
+    </members>
+</doc>

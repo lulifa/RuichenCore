@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Approvals</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Approvals.Approval">
+            <summary>
+            审核。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.Approval.Approve(System.String,System.Boolean,System.DateTime,System.String)">
+            <summary>
+            进行审核，并返回对应的ApprovalMember。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.Approval.LaunchApproval(System.String,System.Guid,System.Int32,Power.Approvals.ApproveMode,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            发起审核。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.Approval.LaunchApproval``1(System.Guid,System.Int32,Power.Approvals.ApproveMode,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            发起审核。
+            </summary>
+        </member>
+        <member name="P:Power.Approvals.Approval.Level">
+            <summary>审核级别。一级审核，值为1，二级审核，值为2，依次类推。</summary>
+        </member>
+        <member name="P:Power.Approvals.Approval.Mode">
+            <summary>审核模式。</summary>
+        </member>
+        <member name="P:Power.Approvals.Approval.SubmitterId">
+            <summary>提交人Id。</summary>
+        </member>
+        <member name="P:Power.Approvals.Approval.SubmitTime">
+            <summary>提交时间。</summary>
+        </member>
+        <member name="P:Power.Approvals.Approval.SubmitNotes">
+            <summary>提交备注。</summary>
+        </member>
+        <member name="P:Power.Approvals.Approval.ApprovePassed">
+            <summary>审核是否通过。</summary>
+        </member>
+        <member name="M:Power.Approvals.Approval.GetMemberIds">
+            <summary>
+            获取所有Member的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.Approval.GetMembers">
+            <summary>
+            获取所有Member序列。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.Approval.IsMember(System.String)">
+            <summary>
+            判断是否是Member。
+            </summary>
+        </member>
+        <member name="T:Power.Approvals.ApproveMode">
+            <summary>
+            审核模式。
+            </summary>
+        </member>
+        <member name="F:Power.Approvals.ApproveMode.Any">
+            <summary>
+            同时审核。任一人审核通过，则整个审核通过；任一人审核不通过，则整个审核不通过。
+            </summary>
+        </member>
+        <member name="F:Power.Approvals.ApproveMode.All">
+            <summary>
+            同时审核。所有人都审核通过，则整个审核通过；任一人审核不通过，则整个审核不通过。
+            </summary>
+        </member>
+        <member name="F:Power.Approvals.ApproveMode.InTurn">
+            <summary>
+            依次审核。前序人员审核通过，则进入后续人员审核；前序人员审核不通过，后续人员无需审核。所有人都审核通过，整个审核通过；任一人审核不通过，则整个审核不通过。
+            </summary>
+        </member>
+        <member name="T:Power.Approvals.ApprovalMember">
+            <summary>
+            审核成员。
+            </summary>
+        </member>
+        <member name="P:Power.Approvals.ApprovalMember.UserId">
+            <summary>审核人Id。</summary>
+        </member>
+        <member name="P:Power.Approvals.ApprovalMember.CanApprove">
+            <summary>
+            当前是否可以审核。若值为true，且ApprovePassed为null，则当前审核人必定可以进行审核。
+            <para>在依次审核中，用于标注是否已经轮到当前审核人进行审核。</para>
+            <para>在同时审核中，如果最终审核结论已经出来，则其余未审核人员不再进行审核，将值置为false。</para>
+            </summary>
+        </member>
+        <member name="P:Power.Approvals.ApprovalMember.ApprovePassed">
+            <summary>审核是否通过。</summary>
+        </member>
+        <member name="P:Power.Approvals.ApprovalMember.ApproveTime">
+            <summary>审核时间。</summary>
+        </member>
+        <member name="P:Power.Approvals.ApprovalMember.ApproveNotes">
+            <summary>审核备注。</summary>
+        </member>
+        <member name="P:Power.Approvals.ApprovalMember.Order">
+            <summary>审核人先后序号。在依次审核中，用于表示先后顺序。</summary>
+        </member>
+        <member name="T:Power.Approvals.ApprovalMemberVisitorBase">
+            <summary>
+            ApprovalMember访问器。
+            </summary>
+        </member>
+        <member name="P:Power.Approvals.ApprovalMemberVisitorBase.ApprovalMember">
+            <summary>
+            获取ApprovalMember。
+            </summary>
+        </member>
+        <member name="T:Power.Approvals.ApprovalVisitorBase">
+            <summary>
+            Approval访问器。
+            </summary>
+        </member>
+        <member name="P:Power.Approvals.ApprovalVisitorBase.Approval">
+            <summary>
+            获取Approval。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.AsQuery(System.Linq.Expressions.Expression{System.Func{Power.Approvals.Approval,System.Boolean}},Power.Approvals.ApprovalContext)">
+            <summary>
+            构造指定谓词表达式的查询。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsSubmitter(Power.Users.User)">
+            <summary>
+            获取我作为提交人的Approval序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsSubmitter(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取我作为提交人的Approval序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsSubmitter``1(Power.Users.User)">
+            <summary>
+            获取我作为提交人的Approval序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsSubmitter``1(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取我作为提交人的Approval序列的谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsApprover(Power.Users.User)">
+            <summary>
+            获取我作为审核人的Approval序列的谓词表达式。审核人指可进行审核的人员，包括已审和未审的人员。CanApprove为false的不包括在内。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsApprover(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取我作为审核人的Approval序列的谓词表达式。审核人指可进行审核的人员，包括已审和未审的人员。CanApprove为false的不包括在内。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsApprover``1(Power.Users.User)">
+            <summary>
+            获取我作为审核人的Approval序列的谓词表达式。审核人指可进行审核的人员，包括已审和未审的人员。CanApprove为false的不包括在内。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsApprover``1(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取我作为审核人的Approval序列的谓词表达式。审核人指可进行审核的人员，包括已审和未审的人员。CanApprove为false的不包括在内。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsApprover(Power.Users.User,Power.Approvals.ApprovalHandleType)">
+            <summary>
+            获取我作为审核人的Approval序列的谓词表达式。审核人指可进行审核的人员，包括已审和未审的人员。CanApprove为false的不包括在内。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsApprover(System.Collections.Generic.IEnumerable{Power.Users.User},Power.Approvals.ApprovalHandleType)">
+            <summary>
+            获取我作为审核人的Approval序列的谓词表达式。审核人指可进行审核的人员，包括已审和未审的人员。CanApprove为false的不包括在内。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsApprover``1(Power.Users.User,Power.Approvals.ApprovalHandleType)">
+            <summary>
+            获取我作为审核人的Approval序列的谓词表达式。审核人指可进行审核的人员，包括已审和未审的人员。CanApprove为false的不包括在内。
+            </summary>
+        </member>
+        <member name="M:Power.Approvals.UserExtensions.ApprovalsAsApprover``1(System.Collections.Generic.IEnumerable{Power.Users.User},Power.Approvals.ApprovalHandleType)">
+            <summary>
+            获取我作为审核人的Approval序列的谓词表达式。审核人指可进行审核的人员，包括已审和未审的人员。CanApprove为false的不包括在内。
+            </summary>
+        </member>
+    </members>
+</doc>

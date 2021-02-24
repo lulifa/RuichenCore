@@ -29,6 +29,8 @@
           "RuichenCore.IService": "1.0.0",
           "RuichenCore.Repository": "1.0.0",
           "RuichenCore.Service": "1.0.0",
+          "Aoborsoft.Core": "1.0.0.0",
+          "Utility.Core": "1.0.0.0",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -1950,6 +1952,28 @@
         },
         "compile": {
           "RuichenCore.Service.dll": {}
+        }
+      },
+      "Aoborsoft.Core/1.0.0.0": {
+        "runtime": {
+          "Aoborsoft.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "Aoborsoft.Core.dll": {}
+        }
+      },
+      "Utility.Core/1.0.0.0": {
+        "runtime": {
+          "Utility.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "Utility.Core.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -4570,6 +4594,16 @@
     },
     "RuichenCore.Service/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Aoborsoft.Core/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Utility.Core/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     },

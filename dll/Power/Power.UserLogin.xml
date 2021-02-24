@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.UserLogin</name>
+    </assembly>
+    <members>
+        <member name="T:Power.UserLogin.UserLoginInfo">
+            <summary>
+            用户登录信息。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginInfo.UserId">
+            <summary>
+            用户Id。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginInfo.DeviceId">
+            <summary>
+            设备Id。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginInfo.Token">
+            <summary>
+            发给的登录Token。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginInfo.TokenIssueTime">
+            <summary>
+            Token发行时间。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginInfo.TokenExpireTime">
+            <summary>
+            Token过期时间。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginInfo.DeviceType">
+            <summary>
+            设备类型。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginInfo.DeviceUserAgent">
+            <summary>
+            设备用户代理。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginInfo.DeviceInfo">
+            <summary>
+            设备信息。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginInfo.AppVersion">
+            <summary>
+            App版本号。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginInfo.LoginTime">
+            <summary>
+            登录时间。
+            </summary>
+        </member>
+        <member name="T:Power.UserLogin.UserLoginManager">
+            <summary>
+            用户登录管理。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginManager.Cache">
+            <summary>
+            获取或设置缓存。
+            </summary>
+        </member>
+        <member name="P:Power.UserLogin.UserLoginManager.SlidingExpiration">
+            <summary>
+            获取或设置滑动期限。该值表示某个缓存项在多久时间未被访问时将被移出缓存。默认值：1小时。
+            </summary>
+        </member>
+        <member name="M:Power.UserLogin.UserLoginManager.Get(System.String,System.Guid)">
+            <summary>
+            获取UserLoginInfo。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.UserLogin.UserLoginManager.AddOrUpdate(Power.UserLogin.UserLoginInfo)">
+            <summary>
+            添加或更新UserLoginInfo。
+            </summary>
+        </member>
+        <member name="M:Power.UserLogin.UserLoginManager.Delete(System.String,System.Guid)">
+            <summary>
+            删除UserLoginInfo。
+            </summary>
+        </member>
+        <member name="M:Power.UserLogin.UserLoginManager.DeleteMultiple(System.Linq.Expressions.Expression{System.Func{Power.UserLogin.UserLoginInfo,System.Boolean}})">
+            <summary>
+            删除满足条件的所有UserLoginInfo。
+            </summary>
+        </member>
+        <member name="M:Power.UserLogin.UserLoginManager.GetSingle(System.Linq.Expressions.Expression{System.Func{Power.UserLogin.UserLoginInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的第一个UserLoginInfo。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.UserLogin.UserLoginManager.GetMultiple(System.Linq.Expressions.Expression{System.Func{Power.UserLogin.UserLoginInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的所有UserLoginInfo序列。
+            </summary>
+        </member>
+        <member name="M:Power.UserLogin.UserLoginManager.GetAll">
+            <summary>
+            获取所有UserLoginInfo序列。
+            </summary>
+        </member>
+    </members>
+</doc>

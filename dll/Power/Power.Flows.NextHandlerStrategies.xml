@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Flows.NextHandlerStrategies</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Flows.NextHandlerStrategies.CurrentUserApproveLeaderNextHandlerStrategy">
+            <summary>
+            表示当前用户的审批上级的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.CurrentUserApproveLeaderNextHandlerStrategy.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Power.Flows.NextHandlerStrategies.CurrentUserDepartmentLeaderNextHandlerStrategy">
+            <summary>
+            表示当前用户所在部门的所有领导的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.CurrentUserDepartmentLeaderNextHandlerStrategy.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Power.Flows.NextHandlerStrategies.CurrentUserLeaderNextHandlerStrategy">
+            <summary>
+            表示当前用户的上级的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.CurrentUserLeaderNextHandlerStrategy.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Power.Flows.NextHandlerStrategies.RoleNameNextHandlerStrategy">
+            <summary>
+            指定角色名称的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.RoleNameNextHandlerStrategy.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.RoleNameNextHandlerStrategy.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            构造方法，并指定角色名称序列。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.RoleNameNextHandlerStrategy.#ctor(System.String[])">
+            <summary>
+            构造方法，并指定角色名称序列。
+            </summary>
+        </member>
+        <member name="P:Power.Flows.NextHandlerStrategies.RoleNameNextHandlerStrategy.RoleNames">
+            <summary>
+            获取指定的角色名称集合。
+            </summary>
+        </member>
+        <member name="P:Power.Flows.NextHandlerStrategies.RoleNameNextHandlerStrategy.Roles">
+            <summary>
+            获取指定的角色序列。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.RoleNameNextHandlerStrategy.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Power.Flows.NextHandlerStrategies.RoleNextHandlerStrategy">
+            <summary>
+            指定角色的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.RoleNextHandlerStrategy.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.RoleNextHandlerStrategy.#ctor(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            构造方法，并指定角色Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.RoleNextHandlerStrategy.#ctor(System.Guid[])">
+            <summary>
+            构造方法，并指定角色Id序列。
+            </summary>
+        </member>
+        <member name="P:Power.Flows.NextHandlerStrategies.RoleNextHandlerStrategy.RoleIds">
+            <summary>
+            获取指定的角色Id集合。
+            </summary>
+        </member>
+        <member name="P:Power.Flows.NextHandlerStrategies.RoleNextHandlerStrategy.Roles">
+            <summary>
+            获取指定的角色序列。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.RoleNextHandlerStrategy.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Power.Flows.NextHandlerStrategies.UserNextHandlerStrategy">
+            <summary>
+            指定具体用户的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.UserNextHandlerStrategy.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.UserNextHandlerStrategy.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            构造方法，并指定用户Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.UserNextHandlerStrategy.#ctor(System.String[])">
+            <summary>
+            构造方法，并指定用户Id序列。
+            </summary>
+        </member>
+        <member name="P:Power.Flows.NextHandlerStrategies.UserNextHandlerStrategy.UserIds">
+            <summary>
+            获取指定的用户Id集合。
+            </summary>
+        </member>
+        <member name="P:Power.Flows.NextHandlerStrategies.UserNextHandlerStrategy.Users">
+            <summary>
+            获取指定的用户序列。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.UserNextHandlerStrategy.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Power.Flows.NextHandlerStrategies.UsersProviderNextHandlerStrategy">
+            <summary>
+            通过UsersProvider表示下一步处理者的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.UsersProviderNextHandlerStrategy.#ctor(Power.Users.UsersProviders.UsersProvider)">
+            <summary>
+            构造方法，并指定UsersProvider。
+            </summary>
+        </member>
+        <member name="P:Power.Flows.NextHandlerStrategies.UsersProviderNextHandlerStrategy.UsersProvider">
+            <summary>
+            获取UsersProvider。
+            </summary>
+        </member>
+        <member name="M:Power.Flows.NextHandlerStrategies.UsersProviderNextHandlerStrategy.Translate(Aoborsoft.Flows.IFlow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+    </members>
+</doc>

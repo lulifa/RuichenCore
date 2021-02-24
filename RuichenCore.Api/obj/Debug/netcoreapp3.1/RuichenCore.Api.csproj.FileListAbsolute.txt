@@ -194,3 +194,7 @@ D:\Study\Git\RuichenCore\RuichenCore.Api\obj\Debug\netcoreapp3.1\RuichenCore.Api
 D:\Study\Git\RuichenCore\RuichenCore.Api\obj\Debug\netcoreapp3.1\RuichenCore.Api.dll
 D:\Study\Git\RuichenCore\RuichenCore.Api\obj\Debug\netcoreapp3.1\RuichenCore.Api.pdb
 D:\Study\Git\RuichenCore\RuichenCore.Api\obj\Debug\netcoreapp3.1\RuichenCore.Api.genruntimeconfig.cache
+D:\Study\Git\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Utility.Core.dll
+D:\Study\Git\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Utility.Core.xml
+D:\Study\Git\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Aoborsoft.Core.dll
+D:\Study\Git\RuichenCore\RuichenCore.Api\bin\Debug\netcoreapp3.1\Aoborsoft.Core.xml

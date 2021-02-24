@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.Extensions.Caching</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions">
+            <summary>
+            为IDistributedCache提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetObject``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String)">
+            <summary>
+            获取指定键的对象值。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.GetObjectAsync``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,System.Threading.CancellationToken)">
+            <summary>
+            异步获取指定键的对象值。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetObject``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,``0)">
+            <summary>
+            设置指定键的对象值。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetObject``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,``0,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions)">
+            <summary>
+            设置指定键的对象值。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetObjectAsync``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,``0,System.Threading.CancellationToken)">
+            <summary>
+            异步设置指定键的对象值。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Caching.Distributed.DistributedCacheExtensions.SetObjectAsync``1(Microsoft.Extensions.Caching.Distributed.IDistributedCache,System.String,``0,Microsoft.Extensions.Caching.Distributed.DistributedCacheEntryOptions,System.Threading.CancellationToken)">
+            <summary>
+            异步设置指定键的对象值。
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.ObjectFetching</name>
+    </assembly>
+    <members>
+        <member name="T:Aoborsoft.ObjectFetching.CompositeObjectFetcher">
+            <summary>
+            组合多个对象抽取器进行抽取的抽取器。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.ObjectFetching.CompositeObjectFetcher.ObjectFetchers">
+            <summary>
+            对象抽取器列表。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.ObjectFetching.CompositeObjectFetcher.Fetch``1(System.Object)">
+            <summary>
+            从指定对象中抽取出需要的类型的对象。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.ObjectFetching.IObjectFetcher">
+            <summary>
+            对象抽取器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.ObjectFetching.IObjectFetcher.Fetch``1(System.Object)">
+            <summary>
+            从指定对象中抽取出需要的类型的对象。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.ObjectFetching.ObjectFetcherFromDictionary">
+            <summary>
+            如果指定对象是字典，则从字典中抽取对象的抽取器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.ObjectFetching.ObjectFetcherFromDictionary.Fetch``1(System.Object)">
+            <summary>
+            从指定对象中抽取出需要的类型的对象。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.ObjectFetching.ObjectFetcherFromList">
+            <summary>
+            如果指定对象是序列，则从序列中抽取对象的抽取器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.ObjectFetching.ObjectFetcherFromList.Fetch``1(System.Object)">
+            <summary>
+            从指定对象中抽取出需要的类型的对象。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.ObjectFetching.ObjectFetcherFromProperty">
+            <summary>
+            从指定对象的属性中抽取对象的抽取器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.ObjectFetching.ObjectFetcherFromProperty.Fetch``1(System.Object)">
+            <summary>
+            从指定对象中抽取出需要的类型的对象。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.ObjectFetching.ObjectFetcherFromSelf">
+            <summary>
+            如果指定对象就是需要的类型的对象，则直接返回该对象的抽取器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.ObjectFetching.ObjectFetcherFromSelf.Fetch``1(System.Object)">
+            <summary>
+            从指定对象中抽取出需要的类型的对象。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.ObjectFetching.ObjectFetchServices">
+            <summary>
+            对象抽取服务。用于从指定对象中抽取出需要的类型的对象。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.ObjectFetching.ObjectFetchServices.ObjectFetchers">
+            <summary>
+            对象抽取器列表。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.ObjectFetching.ObjectFetchServices.Fetch``1(System.Object)">
+            <summary>
+            从指定对象中抽取出需要的类型的对象。若抽取不到，返回null。
+            </summary>
+        </member>
+    </members>
+</doc>

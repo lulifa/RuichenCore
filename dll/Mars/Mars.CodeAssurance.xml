@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mars.CodeAssurance</name>
+    </assembly>
+    <members>
+        <member name="T:Mars.CodeAssurance.CodeMaintainAttribute">
+            <summary>
+            指示代码维护信息。
+            </summary>
+        </member>
+        <member name="M:Mars.CodeAssurance.CodeMaintainAttribute.#ctor(System.String,Mars.CodeAssurance.CodeMaintainLevel)">
+            <summary>
+            构造方法。指定维护人员、维护级别。
+            </summary>
+        </member>
+        <member name="P:Mars.CodeAssurance.CodeMaintainAttribute.Maintainer">
+            <summary>
+            维护人员。
+            </summary>
+        </member>
+        <member name="P:Mars.CodeAssurance.CodeMaintainAttribute.Level">
+            <summary>
+            维护级别。
+            </summary>
+        </member>
+        <member name="P:Mars.CodeAssurance.CodeMaintainAttribute.Message">
+            <summary>
+            额外消息。
+            </summary>
+        </member>
+        <member name="T:Mars.CodeAssurance.CodeMaintainLevel">
+            <summary>
+            维护级别。
+            </summary>
+        </member>
+        <member name="F:Mars.CodeAssurance.CodeMaintainLevel.Private">
+            <summary>
+            私有，只有维护人员能编辑。
+            </summary>
+        </member>
+        <member name="F:Mars.CodeAssurance.CodeMaintainLevel.Public">
+            <summary>
+            公开，所有人员皆可编辑。
+            </summary>
+        </member>
+    </members>
+</doc>

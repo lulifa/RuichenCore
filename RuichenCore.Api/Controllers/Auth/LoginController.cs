@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using RuichenCore.Common;
 using RuichenCore.EFCore;
 using RuichenCore.IService;
+using Utility.Core;
 
 namespace RuichenCore.Api.Controllers
 {
@@ -37,7 +38,7 @@ namespace RuichenCore.Api.Controllers
             {
                 return JsonCore(false, "用户不存在");
             }
-            string password = "qf2M4Facmq4koaBljbCUIw==";
+            string password = CryptoHelper.EncryptAes(model.Password);
             if (user.Password != password)
             {
                 return JsonCore(false, "密码错误");

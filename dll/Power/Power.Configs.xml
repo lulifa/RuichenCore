@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Configs</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Configs.ConfigManager">
+            <summary>
+            Config数据管理者。提供Config数据的查找、加载、保存的服务。
+            </summary>
+        </member>
+        <member name="P:Power.Configs.ConfigManager.VersionCache">
+            <summary>
+            获取或设置分布式缓存，该缓存用于存放最新数据版本时间。
+            </summary>
+        </member>
+        <member name="M:Power.Configs.ConfigManager.FindConfig``1">
+            <summary>
+            查找指定类型的Config数据。
+            </summary>
+        </member>
+        <member name="M:Power.Configs.ConfigManager.FindRealTime``1">
+            <summary>
+            获取实时Config数据。即首先从数据库查找，若查找不到，返回默认值。
+            </summary>
+        </member>
+        <member name="M:Power.Configs.ConfigManager.SaveConfig``1(``0)">
+            <summary>
+            保存指定类型的Config数据。
+            </summary>
+        </member>
+        <member name="M:Power.Configs.ConfigManager.PreloadAllConfigs(System.Reflection.Assembly)">
+            <summary>
+            从数据库中预加载指定程序集中定义的所有类型的Config数据。
+            </summary>
+        </member>
+        <member name="T:Power.Configs.ConfigManager.Entry">
+            <summary>
+            存储Config数据和版本的条目。
+            </summary>
+        </member>
+        <member name="T:Power.Configs.IConfig">
+            <summary>
+            Config接口。具体的Config数据类，需实现本接口。
+            </summary>
+        </member>
+    </members>
+</doc>

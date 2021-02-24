@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Users.Synchronization.DingTalk</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Users.Synchronization.DingTalk.DingTalkSynchronizer">
+            <summary>
+            钉钉组织架构同步。
+            注意：同步前保证钉钉人员的工号与系统用户登录名一致。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkSynchronizer.AppKey">
+            <summary>
+            微应用唯一标识Key。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkSynchronizer.AppSecret">
+            <summary>
+            微应用密钥。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.UserId">
+            <summary>
+            钉钉唯一标识。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.JobNumber">
+            <summary>
+            员工工号。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.Name">
+            <summary>
+            姓名。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.Position">
+            <summary>
+            职位。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.WorkPlace">
+            <summary>
+            办公地点。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.Email">
+            <summary>
+            邮箱。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.Tel">
+            <summary>
+            分机号。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.Mobile">
+            <summary>
+            手机号。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.HiredDate">
+            <summary>
+            入职时间。Unix时间戳。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.ExtAttr">
+            <summary>
+            扩展属性。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.IsLeader">
+            <summary>
+            是否部门领导。
+            </summary>
+        </member>
+        <member name="P:Power.Users.Synchronization.DingTalk.DingTalkUser.Departments">
+            <summary>
+            所属部门Id列表。
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.Extensions.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Extensions.Logging.LogManager">
+            <summary>
+            Log管理者。
+            </summary>
+        </member>
+        <member name="P:Microsoft.Extensions.Logging.LogManager.LoggerFactory">
+            <summary>
+            获取或设置LoggerFactory。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Logging.LogManager.CreateLogger(System.String)">
+            <summary>
+            创建一个Microsoft.Extensions.Logging.ILogger实例。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Logging.LogManager.CreateLogger(System.Type)">
+            <summary>
+            创建一个Microsoft.Extensions.Logging.ILogger实例。
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.Logging.LogManager.CreateLogger``1">
+            <summary>
+            创建一个Microsoft.Extensions.Logging.ILogger实例。
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,521 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.BasicServices</name>
+    </assembly>
+    <members>
+        <member name="T:Power.BasicServices.CommentBase">
+            <summary>
+            表示一条评论。
+            </summary>
+        </member>
+        <member name="T:Power.BasicServices.CommentServices`1">
+            <summary>
+            评论服务。
+            <para>Add、Remove、Clear、Get四块互相独立。各块在不涉及到批量操作的情况下，线程安全。</para>
+            </summary>
+        </member>
+        <member name="P:Power.BasicServices.CommentServices`1.AddPreprocessor">
+            <summary>
+            当调用Add方法添加Comment时，将对Comment做进一步的预处理。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.Add(`0)">
+            <summary>
+            添加一条评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            添加多条评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.StartBatchAdd">
+            <summary>
+            开始批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.CancelBatchAdd">
+            <summary>
+            取消批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.FinishBatchAdd">
+            <summary>
+            完成批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.FinishBatchAddAsync">
+            <summary>
+            异步完成批量添加。
+            </summary>
+        </member>
+        <member name="E:Power.BasicServices.CommentServices`1.CommentsAdded">
+            <summary>
+            当评论添加后发生。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.Remove(`0)">
+            <summary>
+            移除一条评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            移除多条评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.StartBatchRemove">
+            <summary>
+            开始批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.CancelBatchRemove">
+            <summary>
+            取消批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.FinishBatchRemove">
+            <summary>
+            完成批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.FinishBatchRemoveAsync">
+            <summary>
+            异步完成批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.Clear(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            清空满足指定条件的所有评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.Clear``1(System.Guid)">
+            <summary>
+            清空指定对象的所有评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.Clear``1(``0)">
+            <summary>
+            清空指定对象的所有评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.StartBatchClear">
+            <summary>
+            开始批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.CancelBatchClear">
+            <summary>
+            取消批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.FinishBatchClear">
+            <summary>
+            完成批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.FinishBatchClearAsync">
+            <summary>
+            异步完成批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.GetById(System.Guid)">
+            <summary>
+            通过Id获取评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.GetByIdAsync(System.Guid)">
+            <summary>
+            异步通过Id获取评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.GetByIds(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过Id序列获取评论序列。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.GetByIdsAsync(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步通过Id序列获取评论序列。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.GetByObject``1(System.Guid)">
+            <summary>
+            获取指定对象的所有评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.GetByObjectAsync``1(System.Guid)">
+            <summary>
+            异步获取指定对象的所有评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.GetByObject``1(``0)">
+            <summary>
+            获取指定对象的所有评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.GetByObjectAsync``1(``0)">
+            <summary>
+            异步获取指定对象的所有评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.GetComments(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            获取满足指定条件表达式的所有评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.GetCommentsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            异步获取满足指定条件表达式的所有评论。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.CommentServices`1.GetQueryable">
+            <summary>
+            获取返回所有评论的查询。
+            </summary>
+        </member>
+        <member name="T:Power.BasicServices.ObjectOperationBase">
+            <summary>
+            表示一条对象操作记录。
+            </summary>
+        </member>
+        <member name="T:Power.BasicServices.ObjectOperationServices`1">
+            <summary>
+            对象操作记录服务。
+            <para>Add、Remove、Clear、Get四块互相独立。各块在不涉及到批量操作的情况下，线程安全。</para>
+            </summary>
+        </member>
+        <member name="P:Power.BasicServices.ObjectOperationServices`1.AddPreprocessor">
+            <summary>
+            当调用Add方法添加ObjectOperation时，将对ObjectOperation做进一步的预处理。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.Add(`0)">
+            <summary>
+            添加一条对象操作记录。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            添加多条对象操作记录。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.StartBatchAdd">
+            <summary>
+            开始批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.CancelBatchAdd">
+            <summary>
+            取消批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.FinishBatchAdd">
+            <summary>
+            完成批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.FinishBatchAddAsync">
+            <summary>
+            异步完成批量添加。
+            </summary>
+        </member>
+        <member name="E:Power.BasicServices.ObjectOperationServices`1.ObjectOperationsAdded">
+            <summary>
+            当对象操作记录添加后发生。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.Remove(`0)">
+            <summary>
+            移除一条对象操作记录。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            移除多条对象操作记录。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.StartBatchRemove">
+            <summary>
+            开始批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.CancelBatchRemove">
+            <summary>
+            取消批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.FinishBatchRemove">
+            <summary>
+            完成批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.FinishBatchRemoveAsync">
+            <summary>
+            异步完成批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.Clear(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            清空满足指定条件的所有对象操作记录。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.Clear``1(System.Guid)">
+            <summary>
+            清空指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.Clear``1(``0)">
+            <summary>
+            清空指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.StartBatchClear">
+            <summary>
+            开始批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.CancelBatchClear">
+            <summary>
+            取消批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.FinishBatchClear">
+            <summary>
+            完成批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.FinishBatchClearAsync">
+            <summary>
+            异步完成批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.GetById(System.Guid)">
+            <summary>
+            通过Id获取对象操作记录。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.GetByIdAsync(System.Guid)">
+            <summary>
+            异步通过Id获取对象操作记录。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.GetByIds(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过Id序列获取对象操作记录序列。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.GetByIdsAsync(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步通过Id序列获取对象操作记录序列。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.GetByObject``1(System.Guid)">
+            <summary>
+            获取指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.GetByObjectAsync``1(System.Guid)">
+            <summary>
+            异步获取指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.GetByObject``1(``0)">
+            <summary>
+            获取指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.GetByObjectAsync``1(``0)">
+            <summary>
+            异步获取指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.GetObjectOperations(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            获取满足指定条件表达式的所有对象操作记录。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.GetObjectOperationsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            异步获取满足指定条件表达式的所有对象操作记录。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.ObjectOperationServices`1.GetQueryable">
+            <summary>
+            获取返回所有对象操作记录的查询。
+            </summary>
+        </member>
+        <member name="T:Power.BasicServices.SystemLogBase">
+            <summary>
+            表示一条系统日志。
+            </summary>
+        </member>
+        <member name="T:Power.BasicServices.SystemLogServices`1">
+            <summary>
+            系统日志服务。
+            <para>Add、Remove、Clear、Get四块互相独立。各块在不涉及到批量操作的情况下，线程安全。</para>
+            </summary>
+        </member>
+        <member name="P:Power.BasicServices.SystemLogServices`1.AddPreprocessor">
+            <summary>
+            当调用Add方法添加SystemLog时，将对SystemLog做进一步的预处理。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.Add(`0)">
+            <summary>
+            添加一条系统日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            添加多条系统日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.StartBatchAdd">
+            <summary>
+            开始批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.CancelBatchAdd">
+            <summary>
+            取消批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.FinishBatchAdd">
+            <summary>
+            完成批量添加。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.FinishBatchAddAsync">
+            <summary>
+            异步完成批量添加。
+            </summary>
+        </member>
+        <member name="E:Power.BasicServices.SystemLogServices`1.SystemLogsAdded">
+            <summary>
+            当系统日志添加后发生。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.Remove(`0)">
+            <summary>
+            移除一条系统日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.RemoveRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            移除多条系统日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.StartBatchRemove">
+            <summary>
+            开始批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.CancelBatchRemove">
+            <summary>
+            取消批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.FinishBatchRemove">
+            <summary>
+            完成批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.FinishBatchRemoveAsync">
+            <summary>
+            异步完成批量移除。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.Clear(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            清空满足指定条件的所有系统日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.Clear``1(System.Guid)">
+            <summary>
+            清空指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.Clear``1(``0)">
+            <summary>
+            清空指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.StartBatchClear">
+            <summary>
+            开始批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.CancelBatchClear">
+            <summary>
+            取消批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.FinishBatchClear">
+            <summary>
+            完成批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.FinishBatchClearAsync">
+            <summary>
+            异步完成批量清空。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.GetById(System.Guid)">
+            <summary>
+            通过Id获取系统日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.GetByIdAsync(System.Guid)">
+            <summary>
+            异步通过Id获取系统日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.GetByIds(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过Id序列获取系统日志序列。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.GetByIdsAsync(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            异步通过Id序列获取系统日志序列。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.GetByObject``1(System.Guid)">
+            <summary>
+            获取指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.GetByObjectAsync``1(System.Guid)">
+            <summary>
+            异步获取指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.GetByObject``1(``0)">
+            <summary>
+            获取指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.GetByObjectAsync``1(``0)">
+            <summary>
+            异步获取指定对象的所有操作日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.GetSystemLogs(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            获取满足指定条件表达式的所有系统日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.GetSystemLogsAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            异步获取满足指定条件表达式的所有系统日志。
+            </summary>
+        </member>
+        <member name="M:Power.BasicServices.SystemLogServices`1.GetQueryable">
+            <summary>
+            获取返回所有系统日志的查询。
+            </summary>
+        </member>
+    </members>
+</doc>

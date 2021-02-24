@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Rights</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Rights.RightRule`1">
+            <summary>
+            表示一个实体对象的一条权限规则。
+            </summary>
+        </member>
+        <member name="T:Power.Rights.RightRuleServices">
+            <summary>
+            权限规则服务，负责对权限规则的增删改查。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.GetById``1(System.Guid)">
+            <summary>
+            通过Id获取权限规则。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.GetByIds``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过Id序列获取权限规则序列。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.GetByObject``1(System.Guid)">
+            <summary>
+            获取指定对象的所有权限规则。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.GetByObject``1(``0)">
+            <summary>
+            获取指定对象的所有权限规则。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.GetByObjects``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取指定对象序列的所有权限规则。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.GetByObjects``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            获取指定对象序列的所有权限规则。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.GetByType``1">
+            <summary>
+            获取指定类型的所有权限规则。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.Add``1(Power.Rights.RightRule{``0})">
+            <summary>
+            添加一条权限规则。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.AddRange``1(System.Collections.Generic.IEnumerable{Power.Rights.RightRule{``0}})">
+            <summary>
+            添加多条权限规则。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.Remove``1(Power.Rights.RightRule{``0})">
+            <summary>
+            移除一条权限规则。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.RemoveRange``1(System.Collections.Generic.IEnumerable{Power.Rights.RightRule{``0}})">
+            <summary>
+            移除多条权限规则。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.Modify``1(Power.Rights.RightRule{``0})">
+            <summary>
+            修改一条权限规则。
+            </summary>
+        </member>
+        <member name="M:Power.Rights.RightRuleServices.ModifyRange``1(System.Collections.Generic.IEnumerable{Power.Rights.RightRule{``0}})">
+            <summary>
+            修改多条权限规则。
+            </summary>
+        </member>
+    </members>
+</doc>

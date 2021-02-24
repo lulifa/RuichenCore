@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.DingTalk</name>
+    </assembly>
+    <members>
+        <member name="T:Aoborsoft.DingTalk.DingTalkResponse">
+            <summary>
+            DingTalk响应。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.DingTalk.DingTalkUtility">
+            <summary>
+            提供钉钉的一些实用工具方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.DingTalk.DingTalkUtility.GetAccessToken(System.String,System.String)">
+            <summary>
+            获取AccessToken。
+            </summary>
+        </member>
+    </members>
+</doc>

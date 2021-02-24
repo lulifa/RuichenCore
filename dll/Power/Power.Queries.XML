@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Queries</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Queries.Query">
+            <summary>
+            表示一个查询。
+            </summary>
+        </member>
+        <member name="T:Power.Queries.QueryCentralExecuter">
+            <summary>
+            查询中央执行器，对查询做统一管理和执行。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.Register``1">
+            <summary>
+            注册某类型，使该类型可以被查询。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.AddRegistration``1(Power.Queries.QueryRegistration{``0})">
+            <summary>
+            添加Registration。同一类型只允许添加一次。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.Interpret``1(Power.Queries.Query)">
+            <summary>
+            将查询解释为具体的查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.Interpret``1(System.Collections.Generic.IEnumerable{Power.Queries.QueryCondition})">
+            <summary>
+            将查询条件序列解释为具体的查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.InterpretForUser``1(Power.Queries.Query,System.String)">
+            <summary>
+            结合指定用户的可见范围，将查询解释为具体的查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.InterpretForUser``1(System.Collections.Generic.IEnumerable{Power.Queries.QueryCondition},System.String)">
+            <summary>
+            结合指定用户的可见范围，将查询条件序列解释为具体的查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.InterpretForUsers``1(Power.Queries.Query,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            结合指定用户序列的可见范围，将查询解释为具体的查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.InterpretForUsers``1(System.Collections.Generic.IEnumerable{Power.Queries.QueryCondition},System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            结合指定用户序列的可见范围，将查询条件序列解释为具体的查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.Execute``1(Power.Queries.Query,Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            执行指定的查询。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.Execute``1(System.Collections.Generic.IEnumerable{Power.Queries.QueryCondition},Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            执行指定的查询条件序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.ExecuteForUser``1(Power.Queries.Query,System.String,Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            结合指定用户的可见范围，执行指定的查询。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.ExecuteForUser``1(System.Collections.Generic.IEnumerable{Power.Queries.QueryCondition},System.String,Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            结合指定用户的可见范围，执行指定的查询条件序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.ExecuteForUsers``1(Power.Queries.Query,System.Collections.Generic.IEnumerable{System.String},Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            结合指定用户序列的可见范围，执行指定的查询。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Queries.QueryCentralExecuter.ExecuteForUsers``1(System.Collections.Generic.IEnumerable{Power.Queries.QueryCondition},System.Collections.Generic.IEnumerable{System.String},Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            结合指定用户序列的可见范围，执行指定的查询条件序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Power.Queries.QueryCondition">
+            <summary>
+            表示一个查询条件。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueString">
+            <summary>
+            将CompareValue作为String来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueBoolean">
+            <summary>
+            将CompareValue作为Boolean来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueGuid">
+            <summary>
+            将CompareValue作为Guid来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueInt32">
+            <summary>
+            将CompareValue作为Int32来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueDouble">
+            <summary>
+            将CompareValue作为Double来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueDecimal">
+            <summary>
+            将CompareValue作为Decimal来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueDateTime">
+            <summary>
+            将CompareValue作为DateTime来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueTimeSpan">
+            <summary>
+            将CompareValue作为TimeSpan来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueStrings">
+            <summary>
+            将CompareValue作为String序列来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueBooleans">
+            <summary>
+            将CompareValue作为Boolean序列来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueGuids">
+            <summary>
+            将CompareValue作为Guid序列来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueInt32s">
+            <summary>
+            将CompareValue作为Int32序列来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueDoubles">
+            <summary>
+            将CompareValue作为Double序列来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueDecimals">
+            <summary>
+            将CompareValue作为Decimal序列来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueDateTimes">
+            <summary>
+            将CompareValue作为DateTime序列来存取。
+            </summary>
+        </member>
+        <member name="P:Power.Queries.QueryCondition.CompareValueTimeSpans">
+            <summary>
+            将CompareValue作为TimeSpan序列来存取。
+            </summary>
+        </member>
+        <member name="T:Power.Queries.QueryConditionCompareType">
+            <summary>
+            查询条件比较类型。
+            </summary>
+        </member>
+        <member name="T:Power.Queries.QueryInterpreter`1">
+            <summary>
+            查询解释器，负责将Query或QueryCondition解释为具体的查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryInterpreter`1.Interpret(Power.Queries.Query)">
+            <summary>
+            将查询解释为具体的查询表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Queries.QueryInterpreter`1.Interpret(System.Collections.Generic.IEnumerable{Power.Queries.QueryCondition})">
+            <summary>
+            将查询条件序列解释为具体的查询表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Queries.QueryInterpreter`1.Interpret(Power.Queries.QueryCondition)">
+            <summary>
+            将查询条件解释为具体的查询表达式。
+            </summary>
+        </member>
+        <member name="T:Power.Queries.QueryRegistration`1">
+            <summary>
+            对某类型的对象进行查询的细节信息进行配置。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryRegistration`1.QueryInterpreter(System.Func{Power.Queries.QueryInterpreter{`0}})">
+            <summary>
+            配置QueryInterpreter。用来将Query、QueryCondition解释为查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryRegistration`1.UserVisibleScope(System.Func{System.String,System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}})">
+            <summary>
+            配置UserVisibleScope。当进行对指定用户执行查询时，用来表示该用户的可见范围，只在该范围内进行查询。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryRegistration`1.UsersVisibleScope(System.Func{System.Collections.Generic.IEnumerable{System.String},System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}}})">
+            <summary>
+            配置UsersVisibleScope。当进行对指定用户序列执行查询时，用来表示该用户序列的可见范围，只在该范围内进行查询。
+            </summary>
+        </member>
+        <member name="T:Power.Queries.QueryRegistrationManager">
+            <summary>
+            QueryRegistration管理者。该类线程安全。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryRegistrationManager.Get``1(System.Boolean)">
+            <summary>
+            获取Registration。根据参数决定不存在时是否抛出异常。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="M:Power.Queries.QueryRegistrationManager.GetOrAdd``1">
+            <summary>
+            获取Registration。若不存在，则添加默认注册信息。
+            </summary>
+        </member>
+        <member name="M:Power.Queries.QueryRegistrationManager.Add``1(Power.Queries.QueryRegistration{``0})">
+            <summary>
+            添加Registration。同一类型只允许添加一次。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+    </members>
+</doc>

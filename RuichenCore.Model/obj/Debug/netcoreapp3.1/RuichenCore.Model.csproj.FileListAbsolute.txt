@@ -14,3 +14,4 @@ D:\Study\Git\RuichenCore\RuichenCore.Model\obj\Debug\netcoreapp3.1\RuichenCore.M
 D:\Study\Git\RuichenCore\RuichenCore.Model\obj\Debug\netcoreapp3.1\RuichenCore.Model.csproj.CoreCompileInputs.cache
 D:\Study\Git\RuichenCore\RuichenCore.Model\obj\Debug\netcoreapp3.1\RuichenCore.Model.dll
 D:\Study\Git\RuichenCore\RuichenCore.Model\obj\Debug\netcoreapp3.1\RuichenCore.Model.pdb
+D:\Study\Git\RuichenCore\RuichenCore.Model\obj\Debug\netcoreapp3.1\RuichenCore.Model.csprojAssemblyReference.cache

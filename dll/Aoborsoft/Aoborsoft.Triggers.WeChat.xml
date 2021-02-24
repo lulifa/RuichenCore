@@ -1,0 +1,286 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.Triggers.WeChat</name>
+    </assembly>
+    <members>
+        <member name="T:Aoborsoft.Triggers.WeChat.IWeChatReceiver">
+            <summary>
+            表示微信接收者。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.WeChat.IWeChatReceiver.TranslateToWeChatAddresses(Aoborsoft.Triggers.TriggerAction)">
+            <summary>
+            根据指定TriggerAction将当前IWeChatReceiver翻译为具体微信地址序列。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.WeChatAddressReceiver">
+            <summary>
+            表示某些特定的微信地址接收者。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.WeChat.WeChatAddressReceiver.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.WeChat.WeChatAddressReceiver.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            构造方法。并指定地址集。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.WeChat.WeChatAddressReceiver.#ctor(System.String[])">
+            <summary>
+            构造方法。并指定地址集。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.WeChatAddressReceiver.Addresses">
+            <summary>
+            获取地址集。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.WeChat.WeChatAddressReceiver.TranslateToWeChatAddresses(Aoborsoft.Triggers.TriggerAction)">
+            <summary>
+            翻译为具体微信地址序列。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.WeChatMessage">
+            <summary>
+            微信消息。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.WeChatMessage.MsgType">
+            <summary>消息类型。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.WeChatMessage.MsgDomain">
+            <summary>消息域。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.WeChatMessage.To">
+            <summary>消息接收地址集合。</summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.WeChatMsgType">
+            <summary>
+            消息类型。除大小写外，与官方接口文本保持一致。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.WeChatMsgDomain">
+            <summary>
+            消息域。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.TextDomain">
+            <summary>
+            文本消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TextDomain.Content">
+            <summary>
+            消息内容，最长不超过2048个字节，超过将截断。支持id转译。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.ImageDomain">
+            <summary>
+            图片消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.ImageDomain.MediaId">
+            <summary>
+            图片媒体文件id，可以调用上传临时素材接口获取。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.VoiceDomain">
+            <summary>
+            语音消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.VoiceDomain.MediaId">
+            <summary>
+            语音文件id，可以调用上传临时素材接口获取。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.VideoDomain">
+            <summary>
+            视频消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.VideoDomain.MediaId">
+            <summary>
+            视频媒体文件id，可以调用上传临时素材接口获取。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.VideoDomain.Title">
+            <summary>
+            视频消息的标题，不超过128个字节，超过会自动截断。非必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.VideoDomain.Description">
+            <summary>
+            视频消息的描述，不超过512个字节，超过会自动截断。非必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.FileDomain">
+            <summary>
+            文件消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.FileDomain.MediaId">
+            <summary>
+            文件id，可以调用上传临时素材接口获取。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.MarkdownDomain">
+            <summary>
+            Markdown消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.MarkdownDomain.Content">
+            <summary>
+            Markdown内容，最长不超过2048个字节，必须是utf8编码。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.TextCardDomain">
+            <summary>
+            文本卡片消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TextCardDomain.Title">
+            <summary>
+            标题，不超过128个字节，超过会自动截断（支持id转译）。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TextCardDomain.Description">
+            <summary>
+            描述，不超过512个字节，超过会自动截断（支持id转译）。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TextCardDomain.Url">
+            <summary>
+            点击后跳转的链接。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TextCardDomain.ButtonText">
+            <summary>
+            按钮文字。 默认为“详情”， 不超过4个文字，超过自动截断。非必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.TaskCardDomain">
+            <summary>
+            任务卡片消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TaskCardDomain.Title">
+            <summary>
+            标题，不超过128个字节，超过会自动截断（支持id转译）。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TaskCardDomain.Description">
+            <summary>
+            描述，不超过512个字节，超过会自动截断（支持id转译）。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TaskCardDomain.Url">
+            <summary>
+            点击后跳转的链接。最长2048字节，请确保包含了协议头(http/https)。非必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TaskCardDomain.TaskId">
+            <summary>
+            任务id，同一个应用发送的任务卡片消息的任务id不能重复，只能由数字、字母和“_-@”组成，最长支持128字节。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TaskCardDomain.Buttons">
+            <summary>
+            按钮列表，按钮个数为1~2个。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.TaskCardDomainButton">
+            <summary>
+            消息域按钮。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TaskCardDomainButton.Key">
+            <summary>
+            按钮key值，用户点击后，会产生任务卡片回调事件，回调事件会带上该key值，只能由数字、字母和“_-@”组成，最长支持128字节。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TaskCardDomainButton.Name">
+            <summary>
+            按钮名称。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TaskCardDomainButton.ReplaceName">
+            <summary>
+            点击按钮后显示的名称，默认为“已处理”。非必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TaskCardDomainButton.Color">
+            <summary>
+            按钮字体颜色，可选“red”或者“blue”,默认为“blue”。非必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.TaskCardDomainButton.IsBold">
+            <summary>
+            按钮字体是否加粗，默认false。非必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.IWeChatWork">
+            <summary>
+            表示微信消息工作。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.IWeChatWork.MsgType">
+            <summary>消息类型。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.IWeChatWork.Title">
+            <summary>消息标题。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.IWeChatWork.Content">
+            <summary>消息内容。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.IWeChatWork.To">
+            <summary>消息接收人集合。</summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.WeChatWork">
+            <summary>
+            表示微信消息工作。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.WeChatWork.MsgType">
+            <summary>消息类型。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.WeChatWork.Title">
+            <summary>消息标题。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.WeChatWork.Content">
+            <summary>消息内容。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.WeChatWork.To">
+            <summary>消息接收人集合。</summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.WeChat.WeChatWorkHandler">
+            <summary>
+            微信工作内容处理者，负责发送微信消息。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.WeChatWorkHandler.CorpId">
+            <summary>
+            企业Id。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.WeChatWorkHandler.AgentId">
+            <summary>
+            应用Id。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.WeChat.WeChatWorkHandler.AppSecret">
+            <summary>
+            应用密钥。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.WeChat.WeChatWorkHandler.SendMessage(Aoborsoft.Triggers.WeChat.WeChatMessage)">
+            <summary>
+            发送微信消息。
+            </summary>
+        </member>
+    </members>
+</doc>

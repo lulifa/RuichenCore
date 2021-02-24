@@ -1,0 +1,1164 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Users</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Users.CompaniesExtensions">
+            <summary>
+            为IEnumerable&lt;Company&gt;提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.CompaniesExtensions.GetMemberIds(System.Collections.Generic.IEnumerable{Power.Users.Company})">
+            <summary>
+            获取所有Member的Id序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.CompaniesExtensions.GetMembers(System.Collections.Generic.IEnumerable{Power.Users.Company})">
+            <summary>
+            获取所有Member序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.CompaniesExtensions.GetActiveMemberIds(System.Collections.Generic.IEnumerable{Power.Users.Company},System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Member的Id序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.CompaniesExtensions.GetActiveMembers(System.Collections.Generic.IEnumerable{Power.Users.Company},System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Member序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.CompaniesExtensions.GetActiveMemberIds(System.Collections.Generic.IEnumerable{Power.Users.Company})">
+            <summary>
+            获取当前日期活动的所有Member的Id序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.CompaniesExtensions.GetActiveMembers(System.Collections.Generic.IEnumerable{Power.Users.Company})">
+            <summary>
+            获取当前日期活动的所有Member序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.CompaniesExtensions.IsMember(System.Collections.Generic.IEnumerable{Power.Users.Company},System.String)">
+            <summary>
+            判断是否是其中任何一个Company的Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.CompaniesExtensions.IsActiveMember(System.Collections.Generic.IEnumerable{Power.Users.Company},System.String,System.DateTime)">
+            <summary>
+            判断是否是其中任何一个Company的指定日期活动的Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.CompaniesExtensions.IsActiveMember(System.Collections.Generic.IEnumerable{Power.Users.Company},System.String)">
+            <summary>
+            判断是否是其中任何一个Company的当前日期活动的Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.Company.GetMemberIds">
+            <summary>
+            获取所有Member的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Company.GetMembers">
+            <summary>
+            获取所有Member序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Company.GetActiveMemberIds(System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Member的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Company.GetActiveMembers(System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Member序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Company.GetActiveMemberIds">
+            <summary>
+            获取当前日期活动的所有Member的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Company.GetActiveMembers">
+            <summary>
+            获取当前日期活动的所有Member序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Company.IsMember(System.String)">
+            <summary>
+            判断是否是Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.Company.IsActiveMember(System.String,System.DateTime)">
+            <summary>
+            判断是否是指定日期活动的Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.Company.IsActiveMember(System.String)">
+            <summary>
+            判断是否是当前日期活动的Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Power.Users.CompanyManager">
+            <summary>
+            Company管理者。
+            </summary>
+        </member>
+        <member name="P:Power.Users.CompanyManager.Cache">
+            <summary>
+            获取或设置缓存。
+            </summary>
+        </member>
+        <member name="P:Power.Users.CompanyManager.SlidingExpiration">
+            <summary>
+            获取或设置滑动期限。该值表示某个缓存项在多久时间未被访问时将被移出缓存。默认值：1小时。
+            </summary>
+        </member>
+        <member name="P:Power.Users.CompanyManager.UnknownCompanyResolver">
+            <summary>
+            获取或设置UnknownCompanyResolver。
+            <para>当调用GetById、GetByIds方法时，若指定Id的Company不存在，同时ApplyResolverWhenNotExists参数为true且UnknownCompanyResolver不为null，返回UnknownCompanyResolver解析的Company，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.CompanyManager.GetById(System.Guid)">
+            <summary>
+            通过Id获取Company。
+            <para>若指定Id的Company不存在，且UnknownCompanyResolver不为null，返回UnknownCompanyResolver解析的Company，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.CompanyManager.GetById(System.Guid,System.Boolean)">
+            <summary>
+            通过Id获取Company。
+            <para>若指定Id的Company不存在，同时ApplyResolverWhenNotExists参数为true且UnknownCompanyResolver不为null，返回UnknownCompanyResolver解析的Company，否则返回null。</para>
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Company不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Users.CompanyManager.GetById(System.Nullable{System.Guid})">
+            <summary>
+            通过Id获取Company。
+            <para>若Id为null，返回null。若指定Id的Company不存在，且UnknownCompanyResolver不为null，返回UnknownCompanyResolver解析的Company，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.CompanyManager.GetById(System.Nullable{System.Guid},System.Boolean)">
+            <summary>
+            通过Id获取Company。
+            <para>若Id为null，返回null。若指定Id的Company不存在，同时ApplyResolverWhenNotExists参数为true且UnknownCompanyResolver不为null，返回UnknownCompanyResolver解析的Company，否则返回null。</para>
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Company不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Users.CompanyManager.GetByIds(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过Id序列获取Company序列。返回序列的顺序与输入序列的顺序相同。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.CompanyManager.GetByIds(System.Collections.Generic.IEnumerable{System.Guid},System.Boolean)">
+            <summary>
+            通过Id序列获取Company序列。返回序列的顺序与输入序列的顺序相同。
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Company不存在时，指示是否应用Resolver进行解析。</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.CompanyManager.GetSingle(System.Linq.Expressions.Expression{System.Func{Power.Users.Company,System.Boolean}})">
+            <summary>
+            获取满足条件的第一个Company。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Users.CompanyManager.GetMultiple(System.Linq.Expressions.Expression{System.Func{Power.Users.Company,System.Boolean}})">
+            <summary>
+            获取满足条件的所有Company序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.CompanyManager.GetAll">
+            <summary>
+            获取所有Company序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.CompanyManager.ExistsId(System.Guid)">
+            <summary>
+            判断是否存在指定Id的Company。
+            </summary>
+        </member>
+        <member name="T:Power.Users.CompanyVisitorBase">
+            <summary>
+            Company访问器。
+            </summary>
+        </member>
+        <member name="P:Power.Users.CompanyVisitorBase.Company">
+            <summary>
+            获取Company。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.IsActive(System.DateTime)">
+            <summary>
+            判断在某一个日期是否处于活动状态。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.HasActiveDate(System.DateTime,System.DateTime)">
+            <summary>
+            判断在指定日期区间内是否存在活动日期。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetDescendants">
+            <summary>
+            获取所有后代。不包括自身。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetDescendantsAndSelf">
+            <summary>
+            获取自身以及所有后代。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetLeaderIds">
+            <summary>
+            获取所有Leader的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetLeaders">
+            <summary>
+            获取所有Leader序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetOrderedLeaderIds">
+            <summary>
+            获取所有Leader的Id序列。该序列是已排序的。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetOrderedLeaders">
+            <summary>
+            获取所有Leader序列。该序列是已排序的。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetActiveLeaderIds(System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Leader的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetActiveLeaders(System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Leader序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetOrderedActiveLeaderIds(System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Leader的Id序列。该序列是已排序的。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetOrderedActiveLeaders(System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Leader序列。该序列是已排序的。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetActiveLeaderIds">
+            <summary>
+            获取当前日期活动的所有Leader的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetActiveLeaders">
+            <summary>
+            获取当前日期活动的所有Leader序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetOrderedActiveLeaderIds">
+            <summary>
+            获取当前日期活动的所有Leader的Id序列。该序列是已排序的。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetOrderedActiveLeaders">
+            <summary>
+            获取当前日期活动的所有Leader序列。该序列是已排序的。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.IsLeader(System.String)">
+            <summary>
+            判断是否是Leader。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.Department.IsActiveLeader(System.String,System.DateTime)">
+            <summary>
+            判断是否是指定日期活动的Leader。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.Department.IsActiveLeader(System.String)">
+            <summary>
+            判断是否是当前日期活动的Leader。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.Department.GetMemberIds">
+            <summary>
+            获取所有Member的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetMembers">
+            <summary>
+            获取所有Member序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetActiveMemberIds(System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Member的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetActiveMembers(System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Member序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetActiveMemberIds">
+            <summary>
+            获取当前日期活动的所有Member的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.GetActiveMembers">
+            <summary>
+            获取当前日期活动的所有Member序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Department.IsMember(System.String)">
+            <summary>
+            判断是否是Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.Department.IsActiveMember(System.String,System.DateTime)">
+            <summary>
+            判断是否是指定日期活动的Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.Department.IsActiveMember(System.String)">
+            <summary>
+            判断是否是当前日期活动的Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Power.Users.DepartmentManager">
+            <summary>
+            Department管理者。
+            </summary>
+        </member>
+        <member name="P:Power.Users.DepartmentManager.Cache">
+            <summary>
+            获取或设置缓存。
+            </summary>
+        </member>
+        <member name="P:Power.Users.DepartmentManager.SlidingExpiration">
+            <summary>
+            获取或设置滑动期限。该值表示某个缓存项在多久时间未被访问时将被移出缓存。默认值：1小时。
+            </summary>
+        </member>
+        <member name="P:Power.Users.DepartmentManager.UnknownDepartmentResolver">
+            <summary>
+            获取或设置UnknownDepartmentResolver。
+            <para>当调用GetById、GetByIds方法时，若指定Id的Department不存在，同时ApplyResolverWhenNotExists参数为true且UnknownDepartmentResolver不为null，返回UnknownDepartmentResolver解析的Department，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.DepartmentManager.GetById(System.Guid)">
+            <summary>
+            通过Id获取Department。
+            <para>若指定Id的Department不存在，且UnknownDepartmentResolver不为null，返回UnknownDepartmentResolver解析的Department，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.DepartmentManager.GetById(System.Guid,System.Boolean)">
+            <summary>
+            通过Id获取Department。
+            <para>若指定Id的Department不存在，同时ApplyResolverWhenNotExists参数为true且UnknownDepartmentResolver不为null，返回UnknownDepartmentResolver解析的Department，否则返回null。</para>
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Department不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Users.DepartmentManager.GetById(System.Nullable{System.Guid})">
+            <summary>
+            通过Id获取Department。
+            <para>若Id为null，返回null。若指定Id的Department不存在，且UnknownDepartmentResolver不为null，返回UnknownDepartmentResolver解析的Department，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.DepartmentManager.GetById(System.Nullable{System.Guid},System.Boolean)">
+            <summary>
+            通过Id获取Department。
+            <para>若Id为null，返回null。若指定Id的Department不存在，同时ApplyResolverWhenNotExists参数为true且UnknownDepartmentResolver不为null，返回UnknownDepartmentResolver解析的Department，否则返回null。</para>
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Department不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Users.DepartmentManager.GetByIds(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            通过Id序列获取Department序列。返回序列的顺序与输入序列的顺序相同。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentManager.GetByIds(System.Collections.Generic.IEnumerable{System.Guid},System.Boolean)">
+            <summary>
+            通过Id序列获取Department序列。返回序列的顺序与输入序列的顺序相同。
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的Department不存在时，指示是否应用Resolver进行解析。</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentManager.GetSingle(System.Linq.Expressions.Expression{System.Func{Power.Users.Department,System.Boolean}})">
+            <summary>
+            获取满足条件的第一个Department。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Users.DepartmentManager.GetMultiple(System.Linq.Expressions.Expression{System.Func{Power.Users.Department,System.Boolean}})">
+            <summary>
+            获取满足条件的所有Department序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.DepartmentManager.GetAll">
+            <summary>
+            获取所有Department序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.DepartmentManager.ExistsId(System.Guid)">
+            <summary>
+            判断是否存在指定Id的Department。
+            </summary>
+        </member>
+        <member name="T:Power.Users.DepartmentsExtensions">
+            <summary>
+            为IEnumerable&lt;Department&gt;提供扩展方法。
+            </summary>
+            <summary>
+            为IEnumerable&lt;Department&gt;提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetLeaderIds(System.Collections.Generic.IEnumerable{Power.Users.Department})">
+            <summary>
+            获取所有Leader的Id序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetLeaders(System.Collections.Generic.IEnumerable{Power.Users.Department})">
+            <summary>
+            获取所有Leader序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetActiveLeaderIds(System.Collections.Generic.IEnumerable{Power.Users.Department},System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Leader的Id序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetActiveLeaders(System.Collections.Generic.IEnumerable{Power.Users.Department},System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Leader序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetActiveLeaderIds(System.Collections.Generic.IEnumerable{Power.Users.Department})">
+            <summary>
+            获取当前日期活动的所有Leader的Id序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetActiveLeaders(System.Collections.Generic.IEnumerable{Power.Users.Department})">
+            <summary>
+            获取当前日期活动的所有Leader序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.IsLeader(System.Collections.Generic.IEnumerable{Power.Users.Department},System.String)">
+            <summary>
+            判断是否是其中任何一个Department的Leader。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.IsActiveLeader(System.Collections.Generic.IEnumerable{Power.Users.Department},System.String,System.DateTime)">
+            <summary>
+            判断是否是其中任何一个Department的指定日期活动的Leader。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.IsActiveLeader(System.Collections.Generic.IEnumerable{Power.Users.Department},System.String)">
+            <summary>
+            判断是否是其中任何一个Department的当前日期活动的Leader。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetMemberIds(System.Collections.Generic.IEnumerable{Power.Users.Department})">
+            <summary>
+            获取所有Member的Id序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetMembers(System.Collections.Generic.IEnumerable{Power.Users.Department})">
+            <summary>
+            获取所有Member序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetActiveMemberIds(System.Collections.Generic.IEnumerable{Power.Users.Department},System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Member的Id序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetActiveMembers(System.Collections.Generic.IEnumerable{Power.Users.Department},System.DateTime)">
+            <summary>
+            获取指定日期活动的所有Member序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetActiveMemberIds(System.Collections.Generic.IEnumerable{Power.Users.Department})">
+            <summary>
+            获取当前日期活动的所有Member的Id序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.GetActiveMembers(System.Collections.Generic.IEnumerable{Power.Users.Department})">
+            <summary>
+            获取当前日期活动的所有Member序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.IsMember(System.Collections.Generic.IEnumerable{Power.Users.Department},System.String)">
+            <summary>
+            判断是否是其中任何一个Department的Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.IsActiveMember(System.Collections.Generic.IEnumerable{Power.Users.Department},System.String,System.DateTime)">
+            <summary>
+            判断是否是其中任何一个Department的指定日期活动的Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.DepartmentsExtensions.IsActiveMember(System.Collections.Generic.IEnumerable{Power.Users.Department},System.String)">
+            <summary>
+            判断是否是其中任何一个Department的当前日期活动的Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Power.Users.DepartmentVisitorBase">
+            <summary>
+            Department访问器。
+            </summary>
+        </member>
+        <member name="P:Power.Users.DepartmentVisitorBase.Department">
+            <summary>
+            获取Department。
+            </summary>
+        </member>
+        <member name="T:Power.Users.Extensions">
+            <summary>
+            提供与User、Company、Department、Role有关的扩展方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsUser(System.String)">
+            <summary>
+            将指定String作为UserId看待，来获取User。
+            <para>本方法与UserManager.GetById方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsUser(System.String,System.Boolean)">
+            <summary>
+            将指定String作为UserId看待，来获取User。
+            <para>本方法与UserManager.GetById方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsUsers(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            将指定String序列作为UserId序列看待，来获取User序列。
+            <para>本方法与UserManager.GetByIds方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsUsers(System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            将指定String序列作为UserId序列看待，来获取User序列。
+            <para>本方法与UserManager.GetByIds方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsCompany(System.Guid)">
+            <summary>
+            将指定Guid作为CompanyId看待，来获取Company。
+            <para>本方法与CompanyManager.GetById方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsCompany(System.Guid,System.Boolean)">
+            <summary>
+            将指定Guid作为CompanyId看待，来获取Company。
+            <para>本方法与CompanyManager.GetById方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsCompanies(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            将指定Guid序列作为CompanyId序列看待，来获取Company序列。
+            <para>本方法与CompanyManager.GetByIds方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsCompanies(System.Collections.Generic.IEnumerable{System.Guid},System.Boolean)">
+            <summary>
+            将指定Guid序列作为CompanyId序列看待，来获取Company序列。
+            <para>本方法与CompanyManager.GetByIds方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsDepartment(System.Guid)">
+            <summary>
+            将指定Guid作为DepartmentId看待，来获取Department。
+            <para>本方法与DepartmentManager.GetById方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsDepartment(System.Guid,System.Boolean)">
+            <summary>
+            将指定Guid作为DepartmentId看待，来获取Department。
+            <para>本方法与DepartmentManager.GetById方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsDepartments(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            将指定Guid序列作为DepartmentId序列看待，来获取Department序列。
+            <para>本方法与DepartmentManager.GetByIds方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.Extensions.AsDepartments(System.Collections.Generic.IEnumerable{System.Guid},System.Boolean)">
+            <summary>
+            将指定Guid序列作为DepartmentId序列看待，来获取Department序列。
+            <para>本方法与DepartmentManager.GetByIds方法一致。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.User.IsActive(System.DateTime)">
+            <summary>
+            判断在某一个日期是否处于活动状态。
+            </summary>
+        </member>
+        <member name="M:Power.Users.User.HasActiveDate(System.DateTime,System.DateTime)">
+            <summary>
+            判断在指定日期区间内是否存在活动日期。
+            </summary>
+        </member>
+        <member name="M:Power.Users.User.GetCompany">
+            <summary>
+            获取所属的Company。可能为null。
+            </summary>
+        </member>
+        <member name="M:Power.Users.User.GetDepartment">
+            <summary>
+            获取所属的Department。可能为null。
+            </summary>
+        </member>
+        <member name="M:Power.Users.User.GetLeadingDepartmentIds">
+            <summary>
+            获取领导的Department的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.User.GetLeadingDepartments">
+            <summary>
+            获取领导的Department序列。
+            </summary>
+        </member>
+        <member name="P:Power.Users.User.IsLeader">
+            <summary>
+            判断是否是领导。
+            </summary>
+        </member>
+        <member name="M:Power.Users.User.ToString">
+            <summary>
+            格式化当前实例的值。等同于使用“G”格式化字符串，即返回Name。
+            </summary>
+        </member>
+        <member name="M:Power.Users.User.ToString(System.String)">
+            <summary>
+            使用指定的格式格式化当前实例的值。支持以下格式字符串：
+            <para>N：返回Name。</para>
+            <para>I：返回Id。</para>
+            <para>NI：返回Name(Id)。</para>
+            <para>IN：返回Id(Name)。</para>
+            <para>NA：若人员在职，返回Name；若人员离职，返回Name(离职)。</para>
+            <para>IA：若人员在职，返回Id；若人员离职，返回Id(离职)。</para>
+            <para>null、string.Empty、G：返回Name。</para>
+            </summary>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:Power.Users.User.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            使用指定的格式格式化当前实例的值。支持以下格式字符串：
+            <para>N：返回Name。</para>
+            <para>I：返回Id。</para>
+            <para>NI：返回Name(Id)。</para>
+            <para>IN：返回Id(Name)。</para>
+            <para>NA：若人员在职，返回Name；若人员离职，返回Name(离职)。</para>
+            <para>IA：若人员在职，返回Id；若人员离职，返回Id(离职)。</para>
+            <para>null、string.Empty、G：返回Name。</para>
+            </summary>
+            <exception cref="T:System.FormatException"></exception>
+        </member>
+        <member name="M:Power.Users.User.GetDescendants">
+            <summary>
+            获取所有后代。不包括自身。
+            </summary>
+        </member>
+        <member name="M:Power.Users.User.GetDescendantsAndSelf">
+            <summary>
+            获取自身以及所有后代。
+            </summary>
+        </member>
+        <member name="T:Power.Users.UserManager">
+            <summary>
+            User管理者。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UserManager.Cache">
+            <summary>
+            获取或设置缓存。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UserManager.SlidingExpiration">
+            <summary>
+            获取或设置滑动期限。该值表示某个缓存项在多久时间未被访问时将被移出缓存。默认值：1小时。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UserManager.UnknownUserResolver">
+            <summary>
+            获取或设置UnknownUserResolver。
+            <para>当调用GetById、GetByIds方法时，若指定Id的User不存在，同时ApplyResolverWhenNotExists参数为true且UnknownUserResolver不为null，返回UnknownUserResolver解析的User，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.UserManager.GetById(System.String)">
+            <summary>
+            通过Id获取User。
+            <para>若Id为null，返回null。若指定Id的User不存在，且UnknownUserResolver不为null，返回UnknownUserResolver解析的User，否则返回null。</para>
+            </summary>
+        </member>
+        <member name="M:Power.Users.UserManager.GetById(System.String,System.Boolean)">
+            <summary>
+            通过Id获取User。
+            <para>若Id为null，返回null。若指定Id的User不存在，同时ApplyResolverWhenNotExists参数为true且UnknownUserResolver不为null，返回UnknownUserResolver解析的User，否则返回null。</para>
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的User不存在时，指示是否应用Resolver进行解析。</param>
+        </member>
+        <member name="M:Power.Users.UserManager.GetByIds(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            通过Id序列获取User序列。返回序列的顺序与输入序列的顺序相同。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.UserManager.GetByIds(System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            通过Id序列获取User序列。返回序列的顺序与输入序列的顺序相同。
+            </summary>
+            <param name="applyResolverWhenNotExists">当指定Id的User不存在时，指示是否应用Resolver进行解析。</param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.UserManager.GetSingle(System.Linq.Expressions.Expression{System.Func{Power.Users.User,System.Boolean}})">
+            <summary>
+            获取满足条件的第一个User。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UserManager.GetMultiple(System.Linq.Expressions.Expression{System.Func{Power.Users.User,System.Boolean}})">
+            <summary>
+            获取满足条件的所有User序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UserManager.GetAll">
+            <summary>
+            获取所有User序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UserManager.ExistsId(System.String)">
+            <summary>
+            判断是否存在指定Id的User。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Power.Users.UsersExtensions">
+            <summary>
+            为IEnumerable&lt;User&gt;提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersExtensions.GetDepartmentIds(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取所属的DepartmentId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersExtensions.GetDepartments(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取所属的Department序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersExtensions.GetLeadingDepartmentIds(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取领导的Department的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersExtensions.GetLeadingDepartments(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取领导的Department序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.IntersectUsersProvider.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.IntersectUsersProvider.#ctor(System.Collections.Generic.IEnumerable{Power.Users.UsersProviders.UsersProvider})">
+            <summary>
+            构造方法，并指定UsersProvider序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.UsersProviders.IntersectUsersProvider.#ctor(Power.Users.UsersProviders.UsersProvider[])">
+            <summary>
+            构造方法，并指定UsersProvider序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Power.Users.UsersProviders.IntersectUsersProvider.Providers">
+            <summary>
+            获取UsersProvider集合。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.IntersectUsersProvider.GetUserIds(System.Object)">
+            <summary>
+            获取UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.IntersectUsersProvider.Contains(System.String,System.Object)">
+            <summary>
+            判断是否包含指定User。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UnionUsersProvider.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UnionUsersProvider.#ctor(System.Collections.Generic.IEnumerable{Power.Users.UsersProviders.UsersProvider})">
+            <summary>
+            构造方法，并指定UsersProvider序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UnionUsersProvider.#ctor(Power.Users.UsersProviders.UsersProvider[])">
+            <summary>
+            构造方法，并指定UsersProvider序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UnionUsersProvider.Providers">
+            <summary>
+            获取UsersProvider集合。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UnionUsersProvider.GetUserIds(System.Object)">
+            <summary>
+            获取UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UnionUsersProvider.Contains(System.String,System.Object)">
+            <summary>
+            判断是否包含指定User。
+            </summary>
+        </member>
+        <member name="T:Power.Users.UsersProviders.UsersProvider">
+            <summary>
+            User序列提供者。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProvider.GetUserIds(System.Object)">
+            <summary>
+            获取UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProvider.GetUsers(System.Object)">
+            <summary>
+            获取User序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProvider.Contains(System.String,System.Object)">
+            <summary>
+            判断是否包含指定User。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProvider.ContainsAny(System.Collections.Generic.IEnumerable{System.String},System.Object)">
+            <summary>
+            判断是否包含指定User序列中的任一User。若指定序列为空序列，认为不包含任一User，返回false。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProvider.ContainsAll(System.Collections.Generic.IEnumerable{System.String},System.Object)">
+            <summary>
+            判断是否包含指定User序列中的所有User。若指定序列为空序列，认为是包含所有User，返回true。
+            </summary>
+        </member>
+        <member name="T:Power.Users.UsersProviders.UsersProviderOfCompany">
+            <summary>
+            表示指定公司的所有人员的UsersProvider。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfCompany.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfCompany.#ctor(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            构造方法，并指定CompanyId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfCompany.#ctor(System.Guid[])">
+            <summary>
+            构造方法，并指定CompanyId序列。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfCompany.CompanyIds">
+            <summary>
+            获取指定的CompanyId集。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfCompany.Companies">
+            <summary>
+            获取指定的Company序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfCompany.GetUserIds(System.Object)">
+            <summary>
+            获取UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfCompany.Contains(System.String,System.Object)">
+            <summary>
+            判断是否包含指定User。
+            </summary>
+        </member>
+        <member name="T:Power.Users.UsersProviders.UsersProviderOfCompanyName">
+            <summary>
+            表示指定公司名称的所有人员的UsersProvider。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfCompanyName.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfCompanyName.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            构造方法，并指定CompanyName序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfCompanyName.#ctor(System.String[])">
+            <summary>
+            构造方法，并指定CompanyName序列。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfCompanyName.CompanyNames">
+            <summary>
+            获取指定的CompanyName集。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfCompanyName.Companies">
+            <summary>
+            获取指定的Company序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfCompanyName.GetUserIds(System.Object)">
+            <summary>
+            获取UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfCompanyName.Contains(System.String,System.Object)">
+            <summary>
+            判断是否包含指定User。
+            </summary>
+        </member>
+        <member name="T:Power.Users.UsersProviders.UsersProviderOfDepartment">
+            <summary>
+            表示指定部门的所有人员的UsersProvider。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfDepartment.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfDepartment.#ctor(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            构造方法，并指定DepartmentId序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfDepartment.#ctor(System.Guid[])">
+            <summary>
+            构造方法，并指定DepartmentId序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfDepartment.DepartmentIds">
+            <summary>
+            获取指定的DepartmentId集。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfDepartment.IncludeDescendants">
+            <summary>
+            获取或设置是否包含子孙部门。默认值为true。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfDepartment.Departments">
+            <summary>
+            获取指定的Department序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfDepartment.GetUserIds(System.Object)">
+            <summary>
+            获取UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfDepartment.Contains(System.String,System.Object)">
+            <summary>
+            判断是否包含指定User。
+            </summary>
+        </member>
+        <member name="T:Power.Users.UsersProviders.UsersProviderOfDepartmentName">
+            <summary>
+            表示指定部门名称的所有人员的UsersProvider。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfDepartmentName.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfDepartmentName.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            构造方法，并指定DepartmentName序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfDepartmentName.#ctor(System.String[])">
+            <summary>
+            构造方法，并指定DepartmentName序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfDepartmentName.DepartmentNames">
+            <summary>
+            获取指定的DepartmentName集。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfDepartmentName.IncludeDescendants">
+            <summary>
+            获取或设置是否包含子孙部门。默认值为true。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfDepartmentName.Departments">
+            <summary>
+            获取指定的Department序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfDepartmentName.GetUserIds(System.Object)">
+            <summary>
+            获取UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfDepartmentName.Contains(System.String,System.Object)">
+            <summary>
+            判断是否包含指定User。
+            </summary>
+        </member>
+        <member name="T:Power.Users.UsersProviders.UsersProviderOfEveryone">
+            <summary>
+            表示所有人员的UsersProvider。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfEveryone.GetUserIds(System.Object)">
+            <summary>
+            获取UserId序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfEveryone.Contains(System.String,System.Object)">
+            <summary>
+            判断是否包含指定User。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfEveryone.ContainsAny(System.Collections.Generic.IEnumerable{System.String},System.Object)">
+            <summary>
+            判断是否包含指定User序列中的任一User。若指定序列为空序列，认为不包含任一User，返回false。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfEveryone.ContainsAll(System.Collections.Generic.IEnumerable{System.String},System.Object)">
+            <summary>
+            判断是否包含指定User序列中的所有User。若指定序列为空序列，认为是包含所有User，返回true。
+            </summary>
+        </member>
+        <member name="T:Power.Users.UsersProviders.UsersProviderOfProviderParent">
+            <summary>
+            表示指定UsersProvider的直接上级的UsersProvider。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfProviderParent.#ctor(Power.Users.UsersProviders.UsersProvider)">
+            <summary>
+            构造方法。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfProviderParent.InnerUsersProvider">
+            <summary>
+            获取内部的UsersProvider。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfProviderParent.GetUserIds(System.Object)">
+            <summary>
+            获取UserId序列。
+            </summary>
+        </member>
+        <member name="T:Power.Users.UsersProviders.UsersProviderOfUser">
+            <summary>
+            表示指定人员的UsersProvider。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfUser.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfUser.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            构造方法，并指定UserId序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfUser.#ctor(System.String[])">
+            <summary>
+            构造方法，并指定UserId序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfUser.UserIds">
+            <summary>
+            获取指定的UserId集。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UsersProviders.UsersProviderOfUser.Users">
+            <summary>
+            获取指定的User序列。
+            </summary>
+        </member>
+        <member name="M:Power.Users.UsersProviders.UsersProviderOfUser.GetUserIds(System.Object)">
+            <summary>
+            获取指定的UserId序列。
+            </summary>
+        </member>
+        <member name="T:Power.Users.UserVisitorBase">
+            <summary>
+            User访问器。
+            </summary>
+        </member>
+        <member name="P:Power.Users.UserVisitorBase.User">
+            <summary>
+            获取User。
+            </summary>
+        </member>
+    </members>
+</doc>

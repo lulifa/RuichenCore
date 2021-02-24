@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.LockRecords</name>
+    </assembly>
+    <members>
+        <member name="T:Power.LockRecords.LockRecord">
+            <summary>
+            表示一条锁定记录。
+            </summary>
+        </member>
+        <member name="T:Power.LockRecords.LockServices">
+            <summary>
+            对象锁定服务。
+            </summary>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.TryLock``1(System.Guid,System.String)">
+            <summary>
+            尝试锁定指定对象。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.TryLock``1(System.Guid,System.String,Power.LockRecords.LockRecord@)">
+            <summary>
+            尝试锁定指定对象。锁定成功，返回成功后的LockRecord；锁定失败，返回已经存在的LockRecord。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.TryUnlock``1(System.Guid,System.String)">
+            <summary>
+            尝试解锁指定对象。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.TryUnlock``1(System.Guid,System.String,Power.LockRecords.LockRecord@)">
+            <summary>
+            尝试解锁指定对象。成功解锁，返回被解锁掉的LockRecord；解锁失败，返回未能解锁掉的LockRecord或null。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.CanLock``1(System.Guid,System.String)">
+            <summary>
+            判断指定对象是否可以被指定用户加锁。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.CanUnlock``1(System.Guid,System.String)">
+            <summary>
+            判断指定对象是否可以被指定用户解锁。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.IsLocked``1(System.Guid)">
+            <summary>
+            判断指定对象是否已经被锁定。
+            </summary>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.IsLocked``1(System.Guid,System.String)">
+            <summary>
+            判断指定对象是否已经被指定用户锁定。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.ForceUnlock``1(System.Guid)">
+            <summary>
+            强制解锁指定对象。
+            </summary>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.ForceUnlock``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            强制解锁指定对象序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.GetLockRecord``1(System.Guid)">
+            <summary>
+            获取指定对象的锁定记录。若不存在，返回null。
+            </summary>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.GetLockRecords``1(System.Collections.Generic.IEnumerable{System.Guid})">
+            <summary>
+            获取指定对象序列的锁定记录。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.GetLockRecords(System.Linq.Expressions.Expression{System.Func{Power.LockRecords.LockRecord,System.Boolean}})">
+            <summary>
+            获取满足指定条件表达式的所有锁定记录。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.LockRecords.LockServices.GetQueryable">
+            <summary>
+            获取返回所有锁定记录的查询。
+            </summary>
+        </member>
+    </members>
+</doc>

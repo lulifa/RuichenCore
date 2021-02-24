@@ -1,0 +1,648 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Workflows</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Workflows.CountersignStrategies.AllCountersignStrategy">
+            <summary>
+            要求所有处理者都通过的会签策略。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.CountersignStrategies.AllCountersignStrategy.WillPass(Power.Workflows.Workflow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.CountersignStrategies.HalfCountersignStrategy">
+            <summary>
+            要求一半以上处理者通过的会签策略。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.CountersignStrategies.HalfCountersignStrategy.WillPass(Power.Workflows.Workflow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.CountersignStrategies.PercentCountersignStrategy">
+            <summary>
+            要求指定百分比以上处理者通过的会签策略。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.CountersignStrategies.PercentCountersignStrategy.#ctor(System.Int32)">
+            <summary>
+            构造方法，并指定百分比。
+            </summary>
+            <exception cref="T:System.ArgumentOutOfRangeException">当百分比不在0与100之间时抛出。</exception>
+        </member>
+        <member name="P:Power.Workflows.CountersignStrategies.PercentCountersignStrategy.Percent">
+            <summary>
+            获取百分比。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.CountersignStrategies.PercentCountersignStrategy.WillPass(Power.Workflows.Workflow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            判断如果进行相应的Transition，会签是否将通过。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.EngineExtensions">
+            <summary>
+            为Engine提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.EngineExtensions.DoQueryForWorkflow(Aoborsoft.Flows.Engine,Power.Workflows.Workflow,System.Security.Principal.IPrincipal,Power.Workflows.WorkflowOptions)">
+            <summary>
+            针对Workflow的DoQuery的特化版本。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.EngineExtensions.DoTransformForWorkflow(Aoborsoft.Flows.Engine,Power.Workflows.Workflow,Power.Workflows.WorkflowTransform,System.Security.Principal.IPrincipal,Power.Workflows.WorkflowOptions)">
+            <summary>
+            针对Workflow的DoTransform的特化版本。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.EngineExtensions.DoHandoverForWorkflow(Aoborsoft.Flows.Engine,Power.Workflows.Workflow,Power.Workflows.WorkflowHandover,System.Security.Principal.IPrincipal,Power.Workflows.WorkflowOptions)">
+            <summary>
+            针对Workflow的DoHandover的特化版本。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.Interception.ForbidRepeatInterceptor">
+            <summary>
+            禁止流程重复发起的拦截器。
+            <para>本拦截器只作用于对象流程，对于一般流程则总是允许发起。</para>
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.Interception.ForbidRepeatInterceptor.AllowRepeatWhenRejected">
+            <summary>
+            当原流程被拒绝时，是否允许重复发起。默认值为true。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.Interception.ForbidRepeatInterceptor.AllowRepeatWhenPassed">
+            <summary>
+            当原流程已经通过时，是否允许重复发起。默认值为true。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Interception.ForbidRepeatInterceptor.CanCreate``1(``0,Aoborsoft.Flows.FlowDefinition,System.Security.Principal.IPrincipal)">
+            <summary>
+            判断指定Owner对象能否发起指定流程。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Interception.ForbidRepeatInterceptor.CanCreate(Aoborsoft.Flows.FlowDefinition,System.Security.Principal.IPrincipal)">
+            <summary>
+            判断能否作为一般流程发起指定流程。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.Interception.IWorkflowCreatableInterceptor">
+            <summary>
+            控制能否发起指定流程的拦截器。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Interception.IWorkflowCreatableInterceptor.CanCreate``1(``0,Aoborsoft.Flows.FlowDefinition,System.Security.Principal.IPrincipal)">
+            <summary>
+            判断指定Owner对象能否发起指定流程。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Interception.IWorkflowCreatableInterceptor.CanCreate(Aoborsoft.Flows.FlowDefinition,System.Security.Principal.IPrincipal)">
+            <summary>
+            判断能否作为一般流程发起指定流程。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.Interception.OwnerTypesInterceptor">
+            <summary>
+            只有在指定的OwnerType集合中的Owner才能发起的拦截器。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.Interception.OwnerTypesInterceptor.OwnerTypes">
+            <summary>
+            获取允许发起本流程的OwnerType集。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.Interception.OwnerTypesInterceptor.AllowNoOwner">
+            <summary>
+            获取或设置是否允许没有Owner。默认值为false。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Interception.OwnerTypesInterceptor.CanCreate``1(``0,Aoborsoft.Flows.FlowDefinition,System.Security.Principal.IPrincipal)">
+            <summary>
+            判断指定Owner对象能否发起指定流程。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Interception.OwnerTypesInterceptor.CanCreate(Aoborsoft.Flows.FlowDefinition,System.Security.Principal.IPrincipal)">
+            <summary>
+            判断能否作为一般流程发起指定流程。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.Interception.WorkflowCreatableInterceptor">
+            <summary>
+            控制能否发起指定流程的拦截器。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.Interception.WorkflowCreatableInterceptor.UsersProvider">
+            <summary>
+            获取UsersProvider。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.NextHandlerStrategies.WorkflowActivityHandlerNextHandlerStrategy">
+            <summary>
+            表示流程指定活动处理者的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.NextHandlerStrategies.WorkflowActivityHandlerNextHandlerStrategy.#ctor(System.Int32)">
+            <summary>
+            构造方法，并指定活动Id。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.NextHandlerStrategies.WorkflowActivityHandlerNextHandlerStrategy.ActivityId">
+            <summary>
+            获取活动Id。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.NextHandlerStrategies.WorkflowActivityHandlerNextHandlerStrategy.Translate(Power.Workflows.Workflow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.NextHandlerStrategies.WorkflowCreatorLeaderNextHandlerStrategy">
+            <summary>
+            表示流程创建者的上级的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.NextHandlerStrategies.WorkflowCreatorLeaderNextHandlerStrategy.Translate(Power.Workflows.Workflow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.NextHandlerStrategies.WorkflowCreatorNextHandlerStrategy">
+            <summary>
+            表示流程创建者的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.NextHandlerStrategies.WorkflowCreatorNextHandlerStrategy.Translate(Power.Workflows.Workflow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.NextHandlerStrategies.WorkflowHandlerLeaderNextHandlerStrategy">
+            <summary>
+            表示流程处理者的上级的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.NextHandlerStrategies.WorkflowHandlerLeaderNextHandlerStrategy.Translate(Power.Workflows.Workflow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.NextHandlerStrategies.WorkflowTargetHandlerNextHandlerStrategy">
+            <summary>
+            表示流程目标活动处理者的下一步处理者策略。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.NextHandlerStrategies.WorkflowTargetHandlerNextHandlerStrategy.Translate(Power.Workflows.Workflow,Aoborsoft.Flows.Transition,Aoborsoft.Flows.EngineContext)">
+            <summary>
+            翻译为具体的用户Id序列。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.ReadWrite.WorkflowCountersignStrategyConverter">
+            <summary>
+            支持Power.Workflows.CountersignStrategies命名空间下的所有CountersignStrategy的转换。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.ReadWrite.WorkflowCountersignStrategyConverter.TryConvertFrom(System.String,Aoborsoft.Flows.CountersignStrategy@)">
+            <summary>
+            尝试将文本转换为会签策略。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.ReadWrite.WorkflowCountersignStrategyConverter.TryConvertTo(Aoborsoft.Flows.CountersignStrategy,System.String@)">
+            <summary>
+            尝试将会签策略转换为文本。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.AsQuery(System.Linq.Expressions.Expression{System.Func{Power.Workflows.Workflow,System.Boolean}},Power.Workflows.WorkflowContext)">
+            <summary>
+            构造指定谓词表达式的查询。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsCreator(Power.Users.User)">
+            <summary>
+            获取我作为Creator的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsCreator(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取我作为Creator的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsMember(Power.Users.User)">
+            <summary>
+            获取我作为Member的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsMember(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取我作为Member的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsMember(Power.Users.User,System.String)">
+            <summary>
+            获取我作为Member的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsMember(System.Collections.Generic.IEnumerable{Power.Users.User},System.String)">
+            <summary>
+            获取我作为Member的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsHandler(Power.Users.User)">
+            <summary>
+            获取我作为Handler的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsHandler(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取我作为Handler的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsHandler(Power.Users.User,Power.Workflows.WorkflowHandleType)">
+            <summary>
+            获取我作为Handler的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsHandler(System.Collections.Generic.IEnumerable{Power.Users.User},Power.Workflows.WorkflowHandleType)">
+            <summary>
+            获取我作为Handler的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsReader(Power.Users.User)">
+            <summary>
+            获取我作为Reader的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsReader(System.Collections.Generic.IEnumerable{Power.Users.User})">
+            <summary>
+            获取我作为Reader的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsReader(Power.Users.User,Power.Workflows.WorkflowReadType)">
+            <summary>
+            获取我作为Reader的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.UserExtensions.WorkflowsAsReader(System.Collections.Generic.IEnumerable{Power.Users.User},Power.Workflows.WorkflowReadType)">
+            <summary>
+            获取我作为Reader的Workflow序列的谓词表达式。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:Power.Workflows.Workflow">
+            <summary>
+            IFlow的标准实现，支持迁移步骤记录、会签、自动判断下一步责任人等功能。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.Workflow.FirstStep">
+            <summary>
+            获取第一个Step。Workflow刚刚实例化时，将没有任何一个Step，此时值为null。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.Workflow.LastStep">
+            <summary>
+            获取最后一个Step。Workflow刚刚实例化时，将没有任何一个Step，此时值为null。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.Workflow.Creator">
+            <summary>
+            获取Creator。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetCreatableFlowDefinitions``1(``0,System.Security.Principal.IPrincipal)">
+            <summary>
+            获取指定Owner对象可发起的FlowDefinition序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.CanCreate``1(``0,Aoborsoft.Flows.FlowDefinition,System.Security.Principal.IPrincipal)">
+            <summary>
+            判断指定Owner对象能否发起指定流程。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.Create``1(``0,Aoborsoft.Flows.FlowDefinition,System.Security.Principal.IPrincipal)">
+            <summary>
+            发起隶属于指定Owner对象的流程。该流程已经初始化，不再需要调用Init方法。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetCreatableFlowDefinitions(System.Security.Principal.IPrincipal)">
+            <summary>
+            获取可作为一般流程发起的FlowDefinition序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.CanCreate(Aoborsoft.Flows.FlowDefinition,System.Security.Principal.IPrincipal)">
+            <summary>
+            判断能否作为一般流程发起指定流程。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.Create(Aoborsoft.Flows.FlowDefinition,System.Security.Principal.IPrincipal)">
+            <summary>
+            发起一般流程。该流程已经初始化，不再需要调用Init方法。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.Aoborsoft#Flows#ICustomTransformFlow#Transform(Aoborsoft.Flows.TransformContext)">
+            <summary>
+            迁移流程。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.Transform(Aoborsoft.Flows.TransformContext)">
+            <summary>
+            迁移流程。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.Aoborsoft#Flows#ICustomHandoverFlow#Handover(Aoborsoft.Flows.HandoverContext)">
+            <summary>
+            转办流程。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.Handover(Aoborsoft.Flows.HandoverContext)">
+            <summary>
+            转办流程。
+            </summary>
+        </member>
+        <member name="E:Power.Workflows.Workflow.Rollbacked">
+            <summary>
+            当流程回滚后发生。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.Rollback">
+            <summary>
+            回滚流程。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.RollbackAll">
+            <summary>
+            回滚流程到开始状态。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetCurrentHandlerIds">
+            <summary>
+            获取当前步骤的所有处理人Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetCurrentHandlers">
+            <summary>
+            获取当前步骤的所有处理人序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetCurrentHandlerIds(Power.Workflows.WorkflowHandleType)">
+            <summary>
+            获取当前步骤的指定类型的处理人Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetCurrentHandlers(Power.Workflows.WorkflowHandleType)">
+            <summary>
+            获取当前步骤的指定类型的处理人序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.IsCurrentHandler(System.String)">
+            <summary>
+            判断是否是当前步骤的处理人。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.Workflow.IsCurrentHandler(System.String,Power.Workflows.WorkflowHandleType)">
+            <summary>
+            判断是否是当前步骤的指定类型的处理人。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.Workflow.AddMember(System.String,System.String)">
+            <summary>
+            添加Member。若该Member已经存在，则忽略。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.Workflow.AddMembers(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            添加Member序列。若某Member已经存在，则忽略该Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.Workflow.RemoveMember(System.String,System.String)">
+            <summary>
+            移除Member。若该Member不存在，则忽略。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.Workflow.RemoveMembers(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            移除Member序列。若某Member不存在，则忽略该Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.Workflow.ClearMembers(System.String)">
+            <summary>
+            清空指定Role的所有Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.Workflow.ClearMembers">
+            <summary>
+            清空所有Member。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetMemberIds">
+            <summary>
+            获取所有Member的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetMemberIds(System.String)">
+            <summary>
+            获取指定Role的所有Member的Id序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetMembers">
+            <summary>
+            获取所有Member序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetMembers(System.String)">
+            <summary>
+            获取指定Role的所有Member序列。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.Workflow.IsMember(System.String)">
+            <summary>
+            判断是否是Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.Workflow.IsMember(System.String,System.String)">
+            <summary>
+            判断是否是指定Role的Member。
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Power.Workflows.Workflow.AddReader(System.String,System.String)">
+            <summary>
+            添加待阅人员。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.AddReaders(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            批量添加待阅人员。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetReaderIds">
+            <summary>
+            获取所有Reader的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetReaders">
+            <summary>
+            获取所有Reader序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetReaderIds(Power.Workflows.WorkflowReadType)">
+            <summary>
+            获取指定类型的Reader的Id序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.GetReaders(Power.Workflows.WorkflowReadType)">
+            <summary>
+            获取指定类型的Reader序列。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.IsReader(System.String)">
+            <summary>
+            判断是否是Reader。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.IsReader(System.String,Power.Workflows.WorkflowReadType)">
+            <summary>
+            判断是否是指定类型的Reader。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.Workflow.DoRead(System.String,System.String)">
+            <summary>
+            阅读流程。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.WorkflowRollbackedEventArgs">
+            <summary>
+            为Rollbacked事件提供数据。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.WorkflowContext.GetWorkflows``1">
+            <summary>
+            获取隶属于指定类型的所有流程。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.WorkflowContext.GetWorkflows``1(``0)">
+            <summary>
+            获取隶属于指定类型的指定对象的所有流程。
+            </summary>
+        </member>
+        <member name="M:Power.Workflows.WorkflowContext.GetWorkflows``1(System.Guid)">
+            <summary>
+            获取隶属于指定类型的指定对象的所有流程。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.WorkflowTransform">
+            <summary>
+            表示Workflow的迁移处理。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.WorkflowHandover">
+            <summary>
+            表示Workflow的转办处理。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.WorkflowMember">
+            <summary>
+            表示Workflow的成员。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.WorkflowOptions">
+            <summary>
+            工作流选项，可以在DoQuery、DoTransform时设置一些选项，对处理过程施加影响。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowOptions.IgnoreIsCurrentHandler">
+            <summary>
+            忽略是否是当前用户。如果忽略，则DoQuery、DoTransform的时候，不判断当前用户是否是工作流的当前待处理人。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.WorkflowStep">
+            <summary>
+            表示Workflow的每个步骤。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStep.DueTime">
+            <summary>到期时间。</summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStep.StepInUser">
+            <summary>
+            获取StepInUser。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStep.StepOutUser">
+            <summary>
+            获取StepOutUser。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStep.NormalHandlers">
+            <summary>
+            获取普通的（即正常待办、正常已办，排除已经转办的）Handler序列。
+            </summary>
+        </member>
+        <member name="T:Power.Workflows.WorkflowStepHandler">
+            <summary>
+            表示Workflow每个步骤的处理者。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStepHandler.UserId">
+            <summary>处理人Id。</summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStepHandler.HandleType">
+            <summary>处理类型。</summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStepHandler.HandleTime">
+            <summary>处理时间。</summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStepHandler.HandleComment">
+            <summary>处理意见。</summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStepHandler.IsAutoHandle">
+            <summary>是否自动处理。</summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStepHandler.TransformId">
+            <summary>迁移操作的TransitionId。只对Transform操作有意义。</summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStepHandler.TransformName">
+            <summary>迁移操作的TransitionName。只对Transform操作有意义。</summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowStepHandler.HandoverUserId">
+            <summary>转办操作的转办人Id。只对Handover操作有意义。</summary>
+        </member>
+        <member name="T:Power.Workflows.WorkflowVisitorBase">
+            <summary>
+            Workflow访问器。
+            </summary>
+        </member>
+        <member name="P:Power.Workflows.WorkflowVisitorBase.Workflow">
+            <summary>
+            获取Workflow。
+            </summary>
+        </member>
+    </members>
+</doc>

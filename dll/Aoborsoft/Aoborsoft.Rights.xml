@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.Rights</name>
+    </assembly>
+    <members>
+        <member name="T:Aoborsoft.Rights.IRightOwner">
+            <summary>
+            表示设置了一系列不同业务对象权限的权限拥有者接口。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.IRightOwner.GetAllowedRights(System.Type)">
+            <summary>
+            获取针对指定业务对象类型允许的权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.IRightOwner.GetRejectedRights(System.Type)">
+            <summary>
+            获取针对指定业务对象类型禁止的权限。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Rights.IRightRole`1">
+            <summary>
+            表示某一种对象类型的权限角色接口。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Rights.IRightRole`1.AllowedRights">
+            <summary>
+            获取或设置允许的权限。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Rights.IRightRole`1.RejectedRights">
+            <summary>
+            获取或设置拒绝的权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.IRightRole`1.IsThisRole(System.Security.Principal.IPrincipal,`0)">
+            <summary>
+            判断某用户是否是某对象的该角色。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Rights.CachedRightManager`1">
+            <summary>
+            带有缓存的权限管理者。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Rights.CachedRightManager`1.InnerRightManager">
+            <summary>
+            获取内部的RightManager。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Rights.CachedRightManager`1.CacheStrategy">
+            <summary>
+            获取或设置缓存策略。可以设置为null，表示不应用缓存策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.CachedRightManager`1.GetRights(System.Security.Principal.IPrincipal,`0)">
+            <summary>
+            获取某用户对某对象的权限。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Rights.IRightCacheStrategy">
+            <summary>
+            权限缓存策略。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.IRightCacheStrategy.GetRights(System.Security.Principal.IPrincipal,System.Object)">
+            <summary>
+            从缓存中读取某用户对某对象的权限，若获取不到，返回null。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.IRightCacheStrategy.SetRights(System.Security.Principal.IPrincipal,System.Object,System.Int64)">
+            <summary>
+            将某用户对某对象的权限，写入缓存。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Rights.IRightManager`1">
+            <summary>
+            权限管理者接口。负责管理某一种对象类型的所有权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.IRightManager`1.GetRights(System.Security.Principal.IPrincipal,`0)">
+            <summary>
+            获取某用户对某对象的权限。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Rights.RightManager`1">
+            <summary>
+            权限管理者接口的基本实现。负责管理某一种对象类型的所有权限。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Rights.RightManager`1.StaticRoles">
+            <summary>
+            获取所有静态角色集合。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Rights.RightManager`1.DynamicRolesFetcher">
+            <summary>
+            获取或设置动态角色获取器。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Rights.RightManager`1.RightOwnersFetcher">
+            <summary>
+            获取或设置权限拥有者获取器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightManager`1.GetDynamicRoles(System.Security.Principal.IPrincipal,`0)">
+            <summary>
+            获取动态角色序列。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightManager`1.GetAllRoles(System.Security.Principal.IPrincipal,`0)">
+            <summary>
+            获取所有角色序列，即静态角色加动态角色。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightManager`1.GetRightOwners(System.Security.Principal.IPrincipal,`0)">
+            <summary>
+            获取权限拥有者序列。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightManager`1.GetRights(System.Security.Principal.IPrincipal,`0)">
+            <summary>
+            获取某用户对某对象的权限。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Rights.RightOwnerExtensions">
+            <summary>
+            为RightOwner提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightOwnerExtensions.GetAllowedRights``1(Aoborsoft.Rights.IRightOwner)">
+            <summary>
+            获取针对指定业务对象类型允许的权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightOwnerExtensions.GetRejectedRights``1(Aoborsoft.Rights.IRightOwner)">
+            <summary>
+            获取针对指定业务对象类型禁止的权限。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Rights.RightRole`1">
+            <summary>
+            表示某一种对象类型的权限角色。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Rights.RightRole`1.Identifier">
+            <summary>
+            获取或设置标识符。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Rights.RightRole`1.AllowedRights">
+            <summary>
+            获取或设置允许的权限。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Rights.RightRole`1.RejectedRights">
+            <summary>
+            获取或设置拒绝的权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightRole`1.IsThisRole(System.Security.Principal.IPrincipal,`0)">
+            <summary>
+            判断某用户是否是某对象的该角色。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Rights.RightRoleExtensions">
+            <summary>
+            为IRightRole&lt;T&gt;和IEnumerable&lt;IRightRole&lt;T&gt;&gt;提供扩展方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightRoleExtensions.GetRights``1(System.Collections.Generic.IEnumerable{Aoborsoft.Rights.IRightRole{``0}},System.Security.Principal.IPrincipal,``0)">
+            <summary>
+            获取某用户对某对象的权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightRoleExtensions.GetRights``1(System.Collections.Generic.IEnumerable{Aoborsoft.Rights.IRightRole{``0}},System.Security.Principal.IPrincipal,``0,System.Int64@,System.Int64@)">
+            <summary>
+            获取某用户对某对象的权限。并通过输出参数返回允许的权限和禁止的权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightRoleExtensions.GetAllowedRights``1(System.Collections.Generic.IEnumerable{Aoborsoft.Rights.IRightRole{``0}},System.Security.Principal.IPrincipal,``0)">
+            <summary>
+            获取某用户对某对象的允许的权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightRoleExtensions.GetRejectedRights``1(System.Collections.Generic.IEnumerable{Aoborsoft.Rights.IRightRole{``0}},System.Security.Principal.IPrincipal,``0)">
+            <summary>
+            获取某用户对某对象的禁止的权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightRoleExtensions.GetRights``1(Aoborsoft.Rights.IRightRole{``0},System.Security.Principal.IPrincipal,``0)">
+            <summary>
+            获取某用户对某对象的权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightRoleExtensions.GetRights``1(Aoborsoft.Rights.IRightRole{``0},System.Security.Principal.IPrincipal,``0,System.Int64@,System.Int64@)">
+            <summary>
+            获取某用户对某对象的权限。并通过输出参数返回允许的权限和禁止的权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightRoleExtensions.GetAllowedRights``1(Aoborsoft.Rights.IRightRole{``0},System.Security.Principal.IPrincipal,``0)">
+            <summary>
+            获取某用户对某对象的允许的权限。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Rights.RightRoleExtensions.GetRejectedRights``1(Aoborsoft.Rights.IRightRole{``0},System.Security.Principal.IPrincipal,``0)">
+            <summary>
+            获取某用户对某对象的禁止的权限。
+            </summary>
+        </member>
+    </members>
+</doc>

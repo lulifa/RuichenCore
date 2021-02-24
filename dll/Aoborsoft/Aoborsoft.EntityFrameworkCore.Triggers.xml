@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.EntityFrameworkCore.Triggers</name>
+    </assembly>
+    <members>
+        <member name="M:Aoborsoft.EntityFrameworkCore.Triggers.DbContextExtensions.SaveChangesWithTriggers(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Boolean,System.Int32},System.Boolean)">
+            <summary>
+            Saves all changes made in this context to the underlying database, firing trigger events accordingly. Only call this within your DbContext class.
+            </summary>
+            <param name="dbContext"></param>
+            <param name="baseSaveChanges">Always pass base.SaveChanges</param>
+            <param name="acceptAllChangesOnSuccess">
+                Indicates whether <see cref="M:Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.AcceptAllChanges" /> is called after the changes have
+                been sent successfully to the database.
+            </param>
+            <example>this.SaveChangesWithTriggers(base.SaveChanges, true);</example>
+            <returns>The number of objects written to the underlying database.</returns>
+        </member>
+        <member name="M:Aoborsoft.EntityFrameworkCore.Triggers.DbContextExtensions.SaveChangesWithTriggers(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Boolean,System.Int32},System.IServiceProvider,System.Boolean)">
+            <summary>
+            Saves all changes made in this context to the underlying database, firing trigger events accordingly. Only call this within your DbContext class.
+            </summary>
+            <param name="dbContext"></param>
+            <param name="baseSaveChanges">Always pass base.SaveChanges</param>
+            <param name="acceptAllChangesOnSuccess">
+                Indicates whether <see cref="M:Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.AcceptAllChanges" /> is called after the changes have
+                been sent successfully to the database.
+            </param>
+            <example>this.SaveChangesWithTriggers(base.SaveChanges, true);</example>
+            <returns>The number of objects written to the underlying database.</returns>
+        </member>
+        <member name="M:Aoborsoft.EntityFrameworkCore.Triggers.DbContextExtensions.SaveChangesWithTriggersAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Boolean,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Int32}},System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously saves all changes made in this context to the underlying database, firing trigger events accordingly.
+            </summary>
+            <param name="dbContext"></param>
+            <param name="baseSaveChangesAsync">Always pass base.SaveChangesAsync</param>
+            <param name="acceptAllChangesOnSuccess">
+                Indicates whether <see cref="M:Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.AcceptAllChanges" /> is called after the changes have
+                been sent successfully to the database.
+            </param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> to observe while waiting for the task to complete.</param>
+            <example>this.SaveChangesWithTriggersAsync();</example>
+            <returns>A task that represents the asynchronous save operation. The task result contains the number of objects written to the underlying database.</returns>
+        </member>
+        <member name="M:Aoborsoft.EntityFrameworkCore.Triggers.DbContextExtensions.SaveChangesWithTriggersAsync(Microsoft.EntityFrameworkCore.DbContext,System.Func{System.Boolean,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Int32}},System.IServiceProvider,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Asynchronously saves all changes made in this context to the underlying database, firing trigger events accordingly.
+            </summary>
+            <param name="dbContext"></param>
+            <param name="baseSaveChangesAsync">Always pass base.SaveChangesAsync</param>
+            <param name="acceptAllChangesOnSuccess">
+                Indicates whether <see cref="M:Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.AcceptAllChanges" /> is called after the changes have
+                been sent successfully to the database.
+            </param>
+            <param name="cancellationToken">A <see cref="T:System.Threading.CancellationToken"/> to observe while waiting for the task to complete.</param>
+            <example>this.SaveChangesWithTriggersAsync();</example>
+            <returns>A task that represents the asynchronous save operation. The task result contains the number of objects written to the underlying database.</returns>
+        </member>
+        <member name="T:Aoborsoft.EntityFrameworkCore.Triggers.DbContextWithTriggers">
+            <summary>
+            A <see cref="T:Microsoft.EntityFrameworkCore.DbContext"/>-derived class with trigger functionality called automatically
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.EntityFrameworkCore.Triggers.IEntry`2">
+            <summary>Contains the context and the instance of the changed entity</summary>
+        </member>
+        <member name="P:Aoborsoft.EntityFrameworkCore.Triggers.IEntry`2.Entity">
+            <summary>The entity</summary>
+        </member>
+        <member name="P:Aoborsoft.EntityFrameworkCore.Triggers.IEntry`2.Context">
+            <summary>The DbContext instance</summary>
+        </member>
+        <member name="P:Aoborsoft.EntityFrameworkCore.Triggers.IEntry`2.Service">
+            <summary>The service provider, if one is provided</summary>
+        </member>
+        <member name="P:Aoborsoft.EntityFrameworkCore.Triggers.IUpdatingEntry`2.Original">
+            <summary>An object representing the state of the entity before the changes</summary>
+        </member>
+        <member name="P:Aoborsoft.EntityFrameworkCore.Triggers.IDeletingEntry`2.Original">
+            <summary>An object representing the state of the entity before the changes</summary>
+        </member>
+        <member name="T:Aoborsoft.EntityFrameworkCore.Triggers.ISaveChangesEntry`1">
+            <summary>Contains the context</summary>
+        </member>
+        <member name="P:Aoborsoft.EntityFrameworkCore.Triggers.ISaveChangesEntry`1.Context">
+            <summary>The DbContext instance</summary>
+        </member>
+        <member name="P:Aoborsoft.EntityFrameworkCore.Triggers.ISaveChangesEntry`1.Service">
+            <summary>The service provider, if one is provided</summary>
+        </member>
+        <member name="P:Aoborsoft.EntityFrameworkCore.Triggers.SaveChangesEntry`1.Context">
+            <summary>The DbContext instance</summary>
+        </member>
+        <member name="P:Aoborsoft.EntityFrameworkCore.Triggers.SaveChangesEntry`1.Service">
+            <summary>The service provider, if one is provided</summary>
+        </member>
+        <member name="E:Aoborsoft.EntityFrameworkCore.Triggers.Triggers`2.Inserting">
+            <summary>在实体插入前激发。</summary>
+        </member>
+        <member name="E:Aoborsoft.EntityFrameworkCore.Triggers.Triggers`2.Updating">
+            <summary>在实体更新前激发。</summary>
+        </member>
+        <member name="E:Aoborsoft.EntityFrameworkCore.Triggers.Triggers`2.Deleting">
+            <summary>在实体删除前激发。</summary>
+        </member>
+        <member name="E:Aoborsoft.EntityFrameworkCore.Triggers.Triggers`2.Inserted">
+            <summary>在实体插入后激发。</summary>
+        </member>
+        <member name="E:Aoborsoft.EntityFrameworkCore.Triggers.Triggers`2.Updated">
+            <summary>在实体更新后激发。</summary>
+        </member>
+        <member name="E:Aoborsoft.EntityFrameworkCore.Triggers.Triggers`2.Deleted">
+            <summary>在实体删除后激发。</summary>
+        </member>
+        <member name="E:Aoborsoft.EntityFrameworkCore.Triggers.Triggers`1.SavingChanges">
+            <summary>
+            在所有实体的增删改事件前激发，一次DbContext的SaveChanges只激发一次该事件。
+            </summary>
+        </member>
+        <member name="E:Aoborsoft.EntityFrameworkCore.Triggers.Triggers`1.SavedChanges">
+            <summary>
+            在所有实体的增删改事件后激发，一次DbContext的SaveChanges只激发一次该事件。
+            </summary>
+        </member>
+    </members>
+</doc>

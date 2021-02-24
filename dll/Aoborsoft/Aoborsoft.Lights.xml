@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.Lights</name>
+    </assembly>
+    <members>
+        <member name="T:Aoborsoft.Lights.AdjustLightCalculator`1">
+            <summary>
+            对原计算结果进行调整的灯计算器。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Lights.AdjustLightCalculator`1.InnerCalculator">
+            <summary>
+            内部计算器。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Lights.AdjustLightCalculator`1.AdjustFunc">
+            <summary>
+            计算结果调整方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Lights.AdjustLightCalculator`1.Calculate(`0,System.Object)">
+            <summary>
+            计算单个目标对象的灯。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Lights.AdjustLightCalculator`1.CalculateBatch(System.Collections.Generic.IEnumerable{`0},System.Object)">
+            <summary>
+            批量计算多个目标对象的灯。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Lights.CompositeLightCalculator`1">
+            <summary>
+            由一系列灯计算器复合合成的计算器。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Lights.CompositeLightCalculator`1.InnerCalculators">
+            <summary>
+            内部灯计算器列表。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Lights.CompositeLightCalculator`1.Calculate(`0,System.Object)">
+            <summary>
+            计算单个目标对象的灯。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Lights.CompositeLightCalculator`1.CalculateBatch(System.Collections.Generic.IEnumerable{`0},System.Object)">
+            <summary>
+            批量计算多个目标对象的灯。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Lights.CompositeLightResult">
+            <summary>
+            由一系列ILightResult复合合成的ILightResult。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Lights.FixedLightCalculator`1">
+            <summary>
+            永远返回固定灯的灯计算器。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Lights.ILightCalculator`1">
+            <summary>
+            灯计算器。负责计算指定目标对象的灯。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Lights.ILightCalculator`1.Calculate(`0,System.Object)">
+            <summary>
+            计算单个目标对象的灯。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Lights.ILightCalculator`1.CalculateBatch(System.Collections.Generic.IEnumerable{`0},System.Object)">
+            <summary>
+            批量计算多个目标对象的灯。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Lights.ILightResult">
+            <summary>
+            表示灯的计算结果。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Lights.LightResult">
+            <summary>
+            ILightResult的基本实现。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Lights.Light">
+            <summary>
+            灯。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Lights.LightCalculator`1">
+            <summary>
+            ILightCalculator&lt;T&gt;的包含上下文对象抽取器的抽象类。一般的具体计算器应继承自本类。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Lights.LightCalculator`1.ObjectFetchers">
+            <summary>
+            从上下文中抽取对象的抽取器列表。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Lights.LightCalculator`1.Fetch``1(System.Object)">
+            <summary>
+            从上下文中抽取指定类型的对象。若抽取不到，返回null。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Lights.LightCalculator`1.Calculate(`0,System.Object)">
+            <summary>
+            计算单个目标对象的灯。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Lights.LightCalculator`1.CalculateBatch(System.Collections.Generic.IEnumerable{`0},System.Object)">
+            <summary>
+            批量计算多个目标对象的灯。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Lights.RouteLightCalculator`1">
+            <summary>
+            路由灯计算器。根据路由规则，使用不同的灯计算器。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Lights.RouteLightCalculator`1.Routes">
+            <summary>
+            路由列表。如果有多个路由同时满足，优先选择靠前的路由。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Lights.RouteLightCalculator`1.DefaultCalculator">
+            <summary>
+            默认灯计算器。当所有路由都不满足时使用该计算器。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Lights.RouteLightCalculator`1.Calculate(`0,System.Object)">
+            <summary>
+            计算单个目标对象的灯。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Lights.RouteLightCalculator`1.CalculateBatch(System.Collections.Generic.IEnumerable{`0},System.Object)">
+            <summary>
+            批量计算多个目标对象的灯。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Lights.LightCalculateRoute`1">
+            <summary>
+            灯计算路由。
+            </summary>
+        </member>
+    </members>
+</doc>

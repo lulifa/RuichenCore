@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Attendances</name>
+    </assembly>
+    <members>
+        <member name="T:Power.Attendances.Attendance">
+            <summary>
+            表示基本考勤单元。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.Attendance.UserId">
+            <summary>
+            获取或设置UserId。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.Attendance.Date">
+            <summary>
+            获取或设置日期。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.Attendance.CheckInTime">
+            <summary>
+            获取或设置签到时间。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.Attendance.CheckInContent">
+            <summary>
+            获取或设置签到内容。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.Attendance.CheckInIPAddress">
+            <summary>
+            获取或设置签到IP地址。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.Attendance.CheckOutTime">
+            <summary>
+            获取或设置签退时间。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.Attendance.CheckOutContent">
+            <summary>
+            获取或设置签退内容。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.Attendance.CheckOutIPAddress">
+            <summary>
+            获取或设置签退IP地址。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.Attendance.WorkTime">
+            <summary>
+            获取工时。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceContext.CheckIn(System.String,System.DateTime,System.DateTime,System.String,System.String)">
+            <summary>
+            用户签到。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceContext.CheckInAsync(System.String,System.DateTime,System.DateTime,System.String,System.String)">
+            <summary>
+            异步用户签到。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceContext.CheckOut(System.String,System.DateTime,System.DateTime,System.String,System.String)">
+            <summary>
+            用户签退。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceContext.CheckOutAsync(System.String,System.DateTime,System.DateTime,System.String,System.String)">
+            <summary>
+            异步用户签退。
+            </summary>
+        </member>
+        <member name="T:Power.Attendances.AttendanceInfos.AttendanceInfo">
+            <summary>
+            考勤信息抽象类。提供按不同日期条件进行考勤查询统计的功能。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.AttendanceInfos.AttendanceInfo.AdditionalPredicate">
+            <summary>
+            获取或设置额外的谓词表达式。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.AttendanceInfos.AttendanceInfo.IncludeCheckInContent">
+            <summary>
+            获取或设置在检索Attendance对象时是否包含CheckInContent属性。默认值为true。
+            <para>当不需要CheckInContent数据时，可以设置为false，这样可以提高性能。</para>
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.AttendanceInfos.AttendanceInfo.IncludeCheckInIPAddress">
+            <summary>
+            获取或设置在检索Attendance对象时是否包含CheckInIPAddress属性。默认值为true。
+            <para>当不需要CheckInIPAddress数据时，可以设置为false，这样可以提高性能。</para>
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.AttendanceInfos.AttendanceInfo.IncludeCheckOutContent">
+            <summary>
+            获取或设置在检索Attendance对象时是否包含CheckOutContent属性。默认值为true。
+            <para>当不需要CheckOutContent数据时，可以设置为false，这样可以提高性能。</para>
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.AttendanceInfos.AttendanceInfo.IncludeCheckOutIPAddress">
+            <summary>
+            获取或设置在检索Attendance对象时是否包含CheckOutIPAddress属性。默认值为true。
+            <para>当不需要CheckOutIPAddress数据时，可以设置为false，这样可以提高性能。</para>
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.AttendanceInfos.AttendanceInfo.CacheUnit">
+            <summary>
+            获取或设置缓存单位。默认值为月。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.ClearCache">
+            <summary>
+            清空已经缓存的数据。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.Preload(System.DateTime,System.DateTime)">
+            <summary>
+            预加载指定时间段的满足统计条件的考勤数据，后续获取相关考勤数据时，只要不超出这个时间段，不会再访问数据库。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.Preload">
+            <summary>
+            预加载所有的满足统计条件的考勤数据，后续获取相关考勤数据时，不会再访问数据库。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetWorkTime">
+            <summary>
+            获取总工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetWorkTime(System.DateTime)">
+            <summary>
+            获取指定日期的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetWorkTime(System.DateTime,System.DateTime)">
+            <summary>
+            获取指定时间段的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetWorkTime(System.Int32,System.Int32)">
+            <summary>
+            获取指定月的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetWorkTime(System.Int32)">
+            <summary>
+            获取指定年的工时数。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetAttendances">
+            <summary>
+            获取所有的Attendance序列。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetAttendances(System.DateTime)">
+            <summary>
+            获取指定日期的Attendance序列。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetAttendances(System.DateTime,System.DateTime)">
+            <summary>
+            获取指定时间段的Attendance序列。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetAttendances(System.Int32,System.Int32)">
+            <summary>
+            获取指定月的Attendance序列。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetAttendances(System.Int32)">
+            <summary>
+            获取指定年的Attendance序列。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetTotalEntry">
+            <summary>
+            获取记录总考勤数据的Entry。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetDayEntry(System.DateTime)">
+            <summary>
+            获取记录某天考勤数据的Entry。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.CalculateCacheDates(System.DateTime,System.DateTime@,System.DateTime@)">
+            <summary>
+            根据指定日期，计算出需要缓存的日期期间。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.CalculateDayEntries(System.DateTime,System.DateTime)">
+            <summary>
+            计算指定时间段的考勤数据。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.CalculateTotalEntry">
+            <summary>
+            计算总的考勤数据。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.RetrieveAttendances(System.DateTime,System.DateTime)">
+            <summary>
+            根据类本身的条件，以及指定时间段条件，获取Attendance序列。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.RetrieveAttendances">
+            <summary>
+            根据类本身的条件，获取Attendance序列。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.ExecuteQuery(System.Linq.Expressions.Expression{System.Func{Power.Attendances.Attendance,System.Boolean}})">
+            <summary>
+            执行指定的查询表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetPredicate(System.DateTime,System.DateTime)">
+            <summary>
+            根据类本身的条件，以及指定时间段条件，获取对Attendance的查询谓词表达式。
+            </summary>
+        </member>
+        <member name="M:Power.Attendances.AttendanceInfos.AttendanceInfo.GetPredicate">
+            <summary>
+            根据类本身的条件，获取对Attendance的查询谓词表达式。
+            </summary>
+        </member>
+        <member name="T:Power.Attendances.AttendanceInfos.AttendanceInfoCacheUnit">
+            <summary>
+            考勤信息缓存单位。
+            </summary>
+        </member>
+        <member name="T:Power.Attendances.AttendanceInfos.EmptyAttendanceInfo">
+            <summary>
+            空白考勤信息类。提供对空白考勤按不同日期条件进行考勤查询统计的功能。
+            </summary>
+        </member>
+        <member name="T:Power.Attendances.AttendanceInfos.GlobalAttendanceInfo">
+            <summary>
+            全局考勤信息类。提供对全局考勤按不同日期条件进行考勤查询统计的功能。
+            </summary>
+        </member>
+        <member name="T:Power.Attendances.AttendanceInfos.PredicateAttendanceInfo">
+            <summary>
+            指定谓词表达式的考勤信息类。提供对满足指定谓词表达式的考勤数据，按不同日期条件进行考勤查询统计的功能。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.AttendanceInfos.PredicateAttendanceInfo.Predicate">
+            <summary>
+            获取谓词表达式。
+            </summary>
+        </member>
+        <member name="T:Power.Attendances.AttendanceInfos.UserAttendanceInfo">
+            <summary>
+            User考勤信息类。提供对指定User按不同日期条件进行考勤查询统计的功能。
+            </summary>
+        </member>
+        <member name="P:Power.Attendances.AttendanceInfos.UserAttendanceInfo.UserIds">
+            <summary>
+            获取UserId只读集合。
+            </summary>
+        </member>
+    </members>
+</doc>

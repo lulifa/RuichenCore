@@ -1,0 +1,326 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Aoborsoft.Triggers.DingTalk</name>
+    </assembly>
+    <members>
+        <member name="T:Aoborsoft.Triggers.DingTalk.DingTalkAddressReceiver">
+            <summary>
+            表示某些特定的钉钉地址接收者。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.DingTalk.DingTalkAddressReceiver.#ctor">
+            <summary>
+            构造方法。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.DingTalk.DingTalkAddressReceiver.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            构造方法。并指定地址集。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.DingTalk.DingTalkAddressReceiver.#ctor(System.String[])">
+            <summary>
+            构造方法。并指定地址集。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.DingTalkAddressReceiver.Addresses">
+            <summary>
+            获取地址集。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.DingTalk.DingTalkAddressReceiver.TranslateToDingTalkAddresses(Aoborsoft.Triggers.TriggerAction)">
+            <summary>
+            翻译为具体钉钉地址序列。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.DingTalkMessage">
+            <summary>
+            钉钉消息。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.DingTalkMessage.MsgType">
+            <summary>消息类型。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.DingTalkMessage.MsgDomain">
+            <summary>消息域。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.DingTalkMessage.To">
+            <summary>消息接收地址集合。</summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.DingTalkMsgType">
+            <summary>
+            消息类型。除大小写外，与官方接口文本保持一致。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.DingTalkMsgDomain">
+            <summary>
+            消息域。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.TextDomain">
+            <summary>
+            文本消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.TextDomain.Content">
+            <summary>
+            消息内容，建议500字符以内。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.ImageDomain">
+            <summary>
+            图片消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.ImageDomain.MediaId">
+            <summary>
+            媒体文件id，可以通过媒体文件接口上传图片获取。建议宽600像素 x 400像素，宽高比3 : 2。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.VoiceDomain">
+            <summary>
+            语音消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.VoiceDomain.MediaId">
+            <summary>
+            媒体文件id。2MB，播放长度不超过60s，AMR格式。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.VoiceDomain.Duration">
+            <summary>
+            正整数，小于60，表示音频时长。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.FileDomain">
+            <summary>
+            文件消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.FileDomain.MediaId">
+            <summary>
+            媒体文件id。引用的媒体文件最大10MB。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.LinkDomain">
+            <summary>
+            链接消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.LinkDomain.Text">
+            <summary>
+            消息标题，建议100字符以内。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.LinkDomain.Title">
+            <summary>
+            消息描述，建议500字符以内。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.LinkDomain.MessageUrl">
+            <summary>
+            消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.LinkDomain.PicUrl">
+            <summary>
+            图片地址。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.MarkdownDomain">
+            <summary>
+            Markdown消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.MarkdownDomain.Title">
+            <summary>
+            首屏会话透出的展示内容。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.MarkdownDomain.Text">
+            <summary>
+            Markdown格式的消息，建议500字符以内。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.OaDomain">
+            <summary>
+            OA消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.OaDomain.Head">
+            <summary>
+            消息头部。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.OaDomain.Body">
+            <summary>
+            消息主体。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.OaDomain.MessageUrl">
+            <summary>
+            消息点击链接地址，当发送消息为小程序时支持小程序跳转链接。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.OaDomain.PcMessageUrl">
+            <summary>
+            PC端点击消息时跳转到的地址。非必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.OaDomainHead">
+            <summary>
+            OA消息域头部。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.OaDomainHead.Text">
+            <summary>
+            消息的头部标题 (向普通会话发送时有效，向企业会话发送时会被替换为微应用的名字)，长度限制为最多10个字符。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.OaDomainHead.BgColor">
+            <summary>
+            消息头部的背景颜色。长度限制为8个英文字符，其中前2为表示透明度，后6位表示颜色值。不要添加0x。必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.OaDomainBody">
+            <summary>
+            OA消息域主体。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.OaDomainBody.Title">
+            <summary>
+            消息体的标题，建议50个字符以内。非必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.OaDomainBody.Content">
+            <summary>
+            消息体的内容，最多显示3行。非必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.OaDomainBody.Author">
+            <summary>
+            自定义的作者名字。非必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.ActionCardDomain">
+            <summary>
+            卡片消息域。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.ActionCardDomain.Title">
+            <summary>
+            透出到会话列表和通知的文案，最长64个字符。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.ActionCardDomain.Markdown">
+            <summary>
+            消息内容，支持markdown，语法参考标准markdown语法。建议1000个字符以内。必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.ActionCardDomain.SingleTitle">
+            <summary>
+            使用整体跳转ActionCard样式时的标题，必须与SingleUrl同时设置，最长20个字符。非必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.ActionCardDomain.SingleUrl">
+            <summary>
+            消息点击链接地址，当发送消息为小程序时支持小程序跳转链接，最长500个字符。非必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.ActionCardDomain.BtnOrientation">
+            <summary>
+            使用独立跳转ActionCard样式时的按钮排列方式，竖直排列(0)，横向排列(1)；必须与Buttons同时设置。非必须。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.ActionCardDomain.Buttons">
+            <summary>
+            使用独立跳转ActionCard样式时的按钮列表；必须与BtnOrientation同时设置。非必须。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.ActionCardDomainButton">
+            <summary>
+            卡片消息域按钮。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.ActionCardDomainButton.Title">
+            <summary>
+            使用独立跳转ActionCard样式时的按钮的标题，最长20个字符。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.ActionCardDomainButton.ActionUrl">
+            <summary>
+            消息点击链接地址，当发送消息为小程序时支持小程序跳转链接，最长500个字符。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.IDingTalkWork">
+            <summary>
+            表示钉钉消息工作。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.IDingTalkWork.MsgType">
+            <summary>消息类型。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.IDingTalkWork.Title">
+            <summary>消息标题。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.IDingTalkWork.Content">
+            <summary>消息内容。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.IDingTalkWork.To">
+            <summary>消息接收人集合。</summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.DingTalkWork">
+            <summary>
+            表示钉钉消息工作。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.DingTalkWork.MsgType">
+            <summary>消息类型。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.DingTalkWork.Title">
+            <summary>消息标题。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.DingTalkWork.Content">
+            <summary>消息内容。</summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.DingTalkWork.To">
+            <summary>消息接收人集合。</summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.DingTalkWorkHandler">
+            <summary>
+            钉钉工作内容处理者，负责发送钉钉消息。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.DingTalkWorkHandler.AgentId">
+            <summary>
+            微应用Id。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.DingTalkWorkHandler.AppKey">
+            <summary>
+            微应用唯一标识Key。
+            </summary>
+        </member>
+        <member name="P:Aoborsoft.Triggers.DingTalk.DingTalkWorkHandler.AppSecret">
+            <summary>
+            微应用密钥。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.DingTalk.DingTalkWorkHandler.SendMessage(Aoborsoft.Triggers.DingTalk.DingTalkMessage)">
+            <summary>
+            发送钉钉消息。
+            </summary>
+        </member>
+        <member name="T:Aoborsoft.Triggers.DingTalk.IDingTalkReceiver">
+            <summary>
+            表示钉钉接收者。
+            </summary>
+        </member>
+        <member name="M:Aoborsoft.Triggers.DingTalk.IDingTalkReceiver.TranslateToDingTalkAddresses(Aoborsoft.Triggers.TriggerAction)">
+            <summary>
+            根据指定TriggerAction将当前IDingTalkReceiver翻译为具体钉钉地址序列。
+            </summary>
+        </member>
+    </members>
+</doc>

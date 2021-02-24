@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Power.Lights</name>
+    </assembly>
+    <members>
+        <member name="M:Power.Lights.LightContext.GetLight``1(``0,System.String)">
+            <summary>
+            获取指定类型的灯。可能为null，null表示没有人工设置灯。
+            </summary>
+        </member>
+        <member name="M:Power.Lights.LightContext.GetLight``1(System.Guid,System.String)">
+            <summary>
+            获取指定类型的灯。可能为null，null表示没有人工设置灯。
+            </summary>
+        </member>
+        <member name="M:Power.Lights.LightContext.SetLight``1(``0,System.String,System.Nullable{Aoborsoft.Lights.Light},System.String,System.DateTime,System.String)">
+            <summary>
+            设置指定类型的灯。可以设置为null，null表示清空人工设置的灯。
+            </summary>
+        </member>
+        <member name="M:Power.Lights.LightContext.SetLight``1(System.Guid,System.String,System.Nullable{Aoborsoft.Lights.Light},System.String,System.DateTime,System.String)">
+            <summary>
+            设置指定类型的灯。可以设置为null，null表示清空人工设置的灯。
+            </summary>
+        </member>
+        <member name="T:Power.Lights.ManualFirstLightCalculator`1">
+            <summary>
+            人工设置的灯优先的灯计算器。
+            </summary>
+        </member>
+        <member name="M:Power.Lights.ManualFirstLightCalculator`1.Calculate(`0,System.Object)">
+            <summary>
+            计算单个目标对象的灯。
+            </summary>
+        </member>
+        <member name="M:Power.Lights.ManualFirstLightCalculator`1.CalculateBatch(System.Collections.Generic.IEnumerable{`0},System.Object)">
+            <summary>
+            批量计算多个目标对象的灯。
+            </summary>
+        </member>
+        <member name="T:Power.Lights.ManualLight">
+            <summary>
+            表示人工设置的灯。
+            </summary>
+        </member>
+    </members>
+</doc>
