@@ -22,6 +22,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:RuichenCore.Api.Controllers.Auth.UserSettingController.GetUserPassword">
+            <summary>
+            密码设置
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:RuichenCore.Api.Controllers.ContractController">
             <summary>
             商务模块
